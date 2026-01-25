@@ -1,0 +1,20 @@
+# Core HTTP + parsing
+requests>=2.31.0,<3
+beautifulsoup4>=4.12.2,<5
+lxml>=4.9.3,<6
+
+# URL / domain parsing
+tldextract>=5.1.1,<6
+
+# OpenAI + env vars
+openai>=1.40.0,<2
+python-dotenv>=1.0.1,<2
+
+# Browser automation
+selenium>=4.18.1,<5
+
+# Image download/convert
+Pillow>=10.2.0,<12
+
+# to load in .env variables
+python-dotenv>=1.0.1,<2

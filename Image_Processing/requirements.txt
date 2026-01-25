@@ -1,0 +1,33 @@
+# -----------------------------
+# Core numerical & image stack
+# -----------------------------
+numpy>=1.23
+opencv-python>=4.7
+Pillow>=9.5
+
+# -----------------------------
+# PyTorch (install CUDA build separately if needed)
+# -----------------------------
+torch>=2.1
+
+# -----------------------------
+# HuggingFace / GroundingDINO
+# -----------------------------
+transformers>=4.40
+accelerate>=0.27
+sentencepiece>=0.1.99
+
+# -----------------------------
+# COCO mask utilities
+# -----------------------------
+pycocotools>=2.0.7
+
+# -----------------------------
+# Visualization / annotation
+# -----------------------------
+supervision>=0.18
+
+# -----------------------------
+# Utilities
+# -----------------------------
+tqdm>=4.66
