@@ -1,0 +1,49 @@
+{
+  "runtimes": [
+    {
+      "url": "https://amazon.com/Seealle-Nightstand-Dimmable-Bedroom-Bedside/dp/B0F9X3PC9T/ref=sr_1_21_sspa?crid=1BYH9UBYOHLFT&dib=eyJ2IjoiMSJ9._pJtB6Vw5BW-H0MaeLgZEY5u7mA6-p4cO1pOtDgvQNd-BqZ7LM-1l0P3gzooIf9yalZrw2zEmE-TWVuAhwsbs6SvUjTNoakMjvRNtydIpBFc9OvUTb9thIrvhg97jQT9QRFSP4qi04JcJjmGCQY5QjY_9OHqoQsOTJdu_x0l_HqBe51BJN76Yk3aNtgLCM-a-oQ1Oa3dzLpyyUBbs2M3j_B__MKzbkyAiVvbtVArdyizRTvSQuPSKOMNaD9Gv1nOD14qeXAOUFFsOyTceogahZfrAKKkzgnYAokhdeotxdc.OIOO3rse_af8GhJfd82jdXedepapyNTzLhWAq8mE2Y8&dib_tag=se&keywords=lamp&qid=1772776139&sprefix=lamp%2Caps%2C196&sr=8-21-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9tdGY&psc=1",
+      "object_type": "lamp",
+      "runtime_sec": 31.4404,
+      "status": "ok"
+    },
+    {
+      "url": "https://amazon.com/Art-Leon-Office-Chair-Wheels/dp/B0DNYKH9N3/ref=sr_1_2_sspa?crid=3S2DEA5O9UH2X&dib=eyJ2IjoiMSJ9.O2tvPpxjzT1H3W6-Qhs4ILNoWWzaC3JsCCGOqHbsldp3qPS89Z0jCywhbbsSHr2Skv9_VM1oEKeE4Kne6-yhWCDjIqhI62RzM-zF1-cfSHDnwfVFwi_LJ_1xRupfyig-DdGVHTuvyAeqXYGWPKTQ9rFaI4e4HEdRjO4YIQ5YCShcfm_INdQEb1d_udgd9baNVG-KFuSPhBl-MszzFiardC0XDPBt9c8hn6D4-u6AE6KX0YaVkrHOaxsAUeSUcFI4e_Up95KXOMi39JBTTdTxZjGFF8XIQiKHTH2XRCHuyB0.afqAJh3FJGHpFOYdfZbP1xTXE-2hm5i4f2J3Uig1q6I&dib_tag=se&keywords=chair&qid=1772776042&sprefix=chai%2Caps%2C203&sr=8-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1",
+      "object_type": "chair",
+      "runtime_sec": 31.4674,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.amazon.com/BERYTH-Mid-Century-Adjustable-Computer-Leather/dp/B0FPCJSZHH/ref=sr_1_3_sspa?crid=3L3K5FG4EH911&dib=eyJ2IjoiMSJ9.O2tvPpxjzT1H3W6-Qhs4ILNoWWzaC3JsCCGOqHbsldp3qPS89Z0jCywhbbsSHr2Skv9_VM1oEKeE4Kne6-yhWCDjIqhI62RzM-zF1-cfSHDnwfVFwi_LJ_1xRupfyig-DdGVHTuvyAeqXYGWPKTQ9rFaI4e4HEdRjO4YIQ5YCShcfm_INdQEb1d_udgd9baNVG-KFuSPhBl-MszzFiardC0XDPBt9c8hn6D4-u6AE6KX0YaVkrHOaxsAUeSUcFI4e_Up95KXOMi39JBTTdTxZjGFF8XIQiKHTH2XRCHuyB0.afqAJh3FJGHpFOYdfZbP1xTXE-2hm5i4f2J3Uig1q6I&dib_tag=se&keywords=chair&qid=1772776064&sprefix=chair%2Caps%2C200&sr=8-3-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1",
+      "object_type": "chair",
+      "runtime_sec": 34.6984,
+      "status": "ok"
+    },
+    {
+      "url": "https://amazon.com/Artificial-Planter-Lifelike-Outdoor-Bedroom/dp/B0GLFFF7TK/ref=sr_1_4_sspa?crid=2S33ONFO342DJ&dib=eyJ2IjoiMSJ9.zFw19nga_jgnIm7UPn-CUH5Hi44WMsDpi6Y82wzOs3Jyj6CrFYDosbnmaBA1nVdwuHriU3sZlzP7eJftZVB2Uch94J5x6_ZwgdkKrpXmHkmEbDQQ7RpwOutL9KOXZXbgnQ_vl1-vdHC13R621V20zPdhLtaC4jYAXasAewW6lQKUV6SEn09ZBXjeSWfW0-G1pIR6GkxNzTIrzlwPVBAUzCLYgpgm0SvSTFmKdi8AO9kc7kEoS418wNoWsEuXZ_5q9lHHDuHS8NZyyiEc0ejtQGv_mCePsHm2lcgEa6VgLsY.P4v8feN_m6-7XP2SUqf4il6d5K93OlX2hfhXFPitvBU&dib_tag=se&keywords=plant&qid=1772776181&sprefix=plan%2Caps%2C194&sr=8-4-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1",
+      "object_type": "plant",
+      "runtime_sec": 0.0006,
+      "status": "fail",
+      "error": "No valid local image paths found in images[].local_path"
+    },
+    {
+      "url": "https://www.amazon.com/HOOBRO-Nightstand-Entryway-Farmhouse-Industrial/dp/B09MTGKK9R/ref=sr_1_6?crid=YGIO4DNL4I2R&dib=eyJ2IjoiMSJ9.ahWNQ7bSUHfmWQpL3qkFiJtjOPc6upnZ7ffLZfQFCMUbVCj9qUaDihuvTxa20X1kn-MSpQ93A82ORuBQjLOIz6FHYEieUJI4kS2i58BXfpD6Iuk_gAvUHBt7qjJlKgEuel2qH9FFZKmw_eDEvtMHMMSj1-R4knf8_eOEdIHtIRXqu2h9q1-ZXebyws6EZC8V72rT_ab3LiFzMFNf_3cLsYMDWccnFkpWsFohfTM26Zvjlf31ZCLo1pMHOJECJutpP4MqOMkWvNQV55iwviPfIDhc6sVqouUQ8NPiTBYarL8.7ZhiHr1lnsrI3S4LC8n9LIBtd6zet_BRjmtI4xh-rLM&dib_tag=se&keywords=table&qid=1772776014&sprefix=table%2Caps%2C281&sr=8-6",
+      "object_type": "table",
+      "runtime_sec": 51.5644,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.amazon.com/Simple-Standing-Hanging-Bedroom-Without/dp/B07Z5NQPDS/ref=sr_1_6_pp?crid=1CTESQAH69ZUY&dib=eyJ2IjoiMSJ9._pJtB6Vw5BW-H0MaeLgZEY5u7mA6-p4cO1pOtDgvQNd-BqZ7LM-1l0P3gzooIf9yalZrw2zEmE-TWVuAhwsbs6SvUjTNoakMjvRNtydIpBFc9OvUTb9thIrvhg97jQT9QRFSP4qi04JcJjmGCQY5QjY_9OHqoQsOTJdu_x0l_HqBe51BJN76Yk3aNtgLCM-a-oQ1Oa3dzLpyyUBbs2M3j_B__MKzbkyAiVvbtVArdyizRTvSQuPSKOMNaD9Gv1nOD14qeXAOUFFsOyTceogahZfrAKKkzgnYAokhdeotxdc.OIOO3rse_af8GhJfd82jdXedepapyNTzLhWAq8mE2Y8&dib_tag=se&keywords=lamp&qid=1772776107&sprefix=lamp%2Caps%2C189&sr=8-6",
+      "object_type": "lamp",
+      "runtime_sec": 38.2972,
+      "status": "ok"
+    },
+    {
+      "url": "https://amazon.com/Rose-Artificial-Monstera-Farmhouse-Bedroom/dp/B0BZ84VZY8/ref=sr_1_8?crid=158WIITXV48M4&dib=eyJ2IjoiMSJ9.zFw19nga_jgnIm7UPn-CUH5Hi44WMsDpi6Y82wzOs3Jyj6CrFYDosbnmaBA1nVdwuHriU3sZlzP7eJftZVB2Uch94J5x6_ZwgdkKrpXmHkmEbDQQ7RpwOutL9KOXZXbgnQ_vl1-vdHC13R621V20zPdhLtaC4jYAXasAewW6lQKUV6SEn09ZBXjeSWfW0-G1pIR6GkxNzTIrzlwPVBAUzCLYgpgm0SvSTFmKdi8AO9kc7kEoS418wNoWsEuXZ_5q9lHHDuHS8NZyyiEc0ejtQGv_mCePsHm2lcgEa6VgLsY.P4v8feN_m6-7XP2SUqf4il6d5K93OlX2hfhXFPitvBU&dib_tag=se&keywords=plant&qid=1772776207&sprefix=plan%2Caps%2C192&sr=8-8",
+      "object_type": "plant",
+      "runtime_sec": 0.0009,
+      "status": "fail",
+      "error": "No valid local image paths found in images[].local_path"
+    }
+  ],
+  "average_runtime_sec": 37.4936
+}

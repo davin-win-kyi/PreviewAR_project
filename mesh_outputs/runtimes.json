@@ -1,0 +1,14 @@
+{
+  "runtimes": [
+    {
+      "description": "table",
+      "runtime_sec": 61.55618977546692,
+      "status": "ok"
+    },
+    {
+      "description": "lamp",
+      "runtime_sec": 74.12646722793579,
+      "status": "ok"
+    }
+  ]
+}
