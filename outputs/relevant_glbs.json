@@ -1,0 +1,29 @@
+{
+  "prompt": "lamp",
+  "top_k": 10,
+  "similarity_threshold": 0.35,
+  "max_dims": {
+    "height": 30.0,
+    "width": 15.0,
+    "length": 15.0
+  },
+  "index_path": "index.json",
+  "data_path": "outputs/metadata/dimensions.json",
+  "n_returned": 1,
+  "n_glbs_found": 1,
+  "glbs": [
+    {
+      "clean_name": "white-crown-dimmable-charging-sensitive",
+      "score": 0.3534244305412066,
+      "path_to_glb": "outputs/meshes/white-crown-dimmable-charging-sensitive.glb",
+      "dimensions": {
+        "length": 1.57,
+        "width": 4.3,
+        "height": 16.3,
+        "source_string": "1.57 in D x 4.3 in W x 16.3 in H"
+      },
+      "product_name": "white-crown-Dimmable-Charging-Sensitive"
+    }
+  ],
+  "missing": []
+}

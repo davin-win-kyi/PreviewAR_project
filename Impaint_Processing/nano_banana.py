@@ -25,7 +25,8 @@ load_dotenv()
 # -------------------------------------------------------------------
 def run_full_inpaint_with_manual_mask(
     original_image_path: str,
-    product_url: str,
+    target_class: str = None,
+    classes_in_crop: str = None,
     conf: float = 0.25,
     iou: float = 0.45,
     use_gpt: bool = True,
@@ -54,9 +55,6 @@ def run_full_inpaint_with_manual_mask(
             - inpainted_image_path: Path to the final inpainted image
     """
     print("[nano-banana] Running MaskGenerationRunner...")
-
-    target_class = "couch" 
-    classes_in_crop = ["pillow"] 
 
     if not target_class:
         raise RuntimeError("MaskGenerationRunner did not return a target_class.")

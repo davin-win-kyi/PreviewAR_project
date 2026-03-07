@@ -58,14 +58,14 @@ except Exception:
     pass
 
 try:
-    from extract_url_info import extract_with_gpt5
+    from .extract_url_info import extract_with_gpt5
 except ImportError as e:
     print("ERROR: Could not import extract_with_gpt5 from extract_url_info.py", file=sys.stderr)
     raise
 
 try:
     # Your scraper signature: main(url: str, company: str) -> dict
-    from generic_web_scraper import main as scrape_main
+    from .generic_web_scraper import main as scrape_main
 except ImportError as e:
     print("ERROR: Could not import main from generic_web_scraper.py", file=sys.stderr)
     raise
@@ -237,8 +237,7 @@ def rank_images_with_gpt5(
 
 
 # pip install openai
-import os
-import json
+import os, json, re
 from typing import List, Dict, Optional
 from openai import OpenAI
 
@@ -247,29 +246,51 @@ def choose_dimensions_with_gpt(
     model: str = "gpt-5",
 ) -> Dict[str, Optional[float]]:
     """
-    Given a list of noisy dimension strings, returns:
-    {
-      "length": float|None,  # inches
-      "width":  float|None,  # inches
-      "height": float|None   # inches
-    }
+    Returns dimensions in inches:
+      length = Depth (D) or Length (L)
+      width  = Width (W)
+      height = Height (H)
     """
+
+    print("Potential Dimensions for GPT:", potential_dimension_values)
+
     client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
     user = (
-        "Candidate dimension strings:\n"
+        "You are extracting product dimensions from noisy candidate strings.\n\n"
+        "CANDIDATE STRINGS:\n"
         + "\n".join(f"- {s}" for s in potential_dimension_values)
-        + "\n\nRules:\n"
-          "- Prefer explicitly labeled product/item dimensions.\n"
-          "- Prefer product/item over package/box dimensions.\n"
-          "- Resolve synonyms: depth=breadth=width (unless clearly LxWxH triplet says otherwise); height is vertical.\n"
-          "- Normalize to inches (1 in = 2.54 cm; 25.4 mm = 1 in).\n"
-          "- Return ONLY JSON per the schema—no extra text.\n"
-          "- Depth is the same as width.\n"
-          "Return a json in the format: {length: <length value>, width: <width value>, height: <height value>}"
+        + "\n\n"
+        "GOAL:\n"
+        "Return the product/item dimensions (NOT package/shipping) as numeric inches.\n\n"
+        "CRITICAL RULES:\n"
+        "1) Prefer an explicitly labeled PRODUCT/ITEM dimension line like:\n"
+        "   - 'Product Dimensions' or 'Item Dimensions' or 'Dimensions'\n"
+        "2) Prefer patterns that explicitly label axes, e.g.:\n"
+        "   - 20\"D x 20\"W x 60\"H\n"
+        "   - 20 D x 20 W x 60 H\n"
+        "   - 20\"L x 20\"W x 60\"H\n"
+        "   - W x D x H (if letters indicate axis)\n"
+        "3) Axis mapping:\n"
+        "   - D (depth) or L (length) -> length\n"
+        "   - W (width) -> width\n"
+        "   - H (height) -> height\n"
+        "   If the order is D x W x H, map accordingly.\n"
+        "4) DO NOT equate depth and width. They are different axes.\n"
+        "5) Unit normalization:\n"
+        "   - If inches are implied or shown (\", in, inches), keep inches.\n"
+        "   - If cm/mm, convert to inches (1 in = 2.54 cm; 25.4 mm = 1 in).\n"
+        "6) If you cannot find a clear product/item dimension string, output nulls.\n"
+        "7) No guessing/hallucination: every number must come from one of the candidate strings.\n\n"
+        "OUTPUT:\n"
+        "Return ONLY valid JSON with this exact schema:\n"
+        "{\n"
+        '  "length": number|null,\n'
+        '  "width": number|null,\n'
+        '  "height": number|null,\n'
+        '  "source_string": string|null\n'
+        "}\n"
     )
-
-    # print("USER: ", user)
 
     resp = client.responses.create(
         model=model,
@@ -278,13 +299,17 @@ def choose_dimensions_with_gpt(
 
     data = json.loads(resp.output_text)
 
+    print("GPT Dimensions Output:", data)
+
     def _num(x):
         return None if x is None else float(x)
 
     return {
         "length": _num(data.get("length")),
-        "width":  _num(data.get("width")),
+        "width": _num(data.get("width")),
         "height": _num(data.get("height")),
+        # keep this around for debugging
+        "source_string": data.get("source_string"),
     }
 
 
@@ -345,20 +370,10 @@ def get_best_image_url(
     # 2) Scrape
     scrape_payload = scrape_main(url, company)[0]
 
-    # print("SCRAPE PAYLOAD:", scrape_payload)
-    # print("SCRAPE_PAYLOAD TYPE:", type(scrape_payload), file=sys.stderr)
-
-    # if print_scrape:
-    #     print("=== RAW SCRAPE PAYLOAD ===", file=sys.stderr)
-    #     print(json.dumps(scrape_payload, indent=2, ensure_ascii=False), file=sys.stderr)
-
     if isinstance(scrape_payload, str):
-        # Scraper returned JSON text
         data = json.loads(scrape_payload)
-
     elif isinstance(scrape_payload, dict):
         data = scrape_payload
-
     elif isinstance(scrape_payload, list) and scrape_payload:
         first = scrape_payload[0]
         if isinstance(first, str):
@@ -367,10 +382,21 @@ def get_best_image_url(
             data = first
         else:
             raise RuntimeError(f"Unexpected list element type: {type(first)}")
-
     else:
         raise RuntimeError(f"Unexpected scraper output format: {type(scrape_payload)}")
 
+    # --- NEW: pull description + attributes from scraper output ---
+    product_title = data.get("product_title")  # keep None if missing
+    high_level_description = data.get("high_level_description") or ""
+    attributes = data.get("attributes") if isinstance(data.get("attributes"), dict) else {}
+
+    # (Optional) enforce stable attribute keys
+    attributes.setdefault("color", None)
+    attributes.setdefault("material", None)
+    attributes.setdefault("style", None)
+    attributes.setdefault("seating_capacity", None)
+    attributes.setdefault("assembly_required", None)
+    attributes.setdefault("special_features", [])
 
     image_urls = normalize_url_list(data.get("image_urls", []), max_images=max_images)
 
@@ -383,12 +409,27 @@ def get_best_image_url(
     expanded_names = expand_product_aliases_via_gpt5(seed_names)
 
     # 3b) Rank
+    # If you UPDATED rank_images_with_gpt5 to accept these hints, use this:
+    # best = rank_images_with_gpt5(
+    #     image_urls, expanded_names, dims,
+    #     product_title=product_title or "",
+    #     high_level_description=high_level_description,
+    #     attributes=attributes,
+    # )
+
+    # Otherwise keep the old call:
     best = rank_images_with_gpt5(image_urls, expanded_names, dims)
 
     result: Dict[str, Any] = {
         "url": url,
         "company_name": company,
         "product_names": expanded_names,
+
+        # --- NEW fields in results ---
+        "product_title": product_title,
+        "high_level_description": high_level_description,
+        "attributes": attributes,
+
         "dimensions": dims,
         "all_image_urls": image_urls,
         "best_image": {

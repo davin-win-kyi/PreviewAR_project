@@ -1,78 +1,95 @@
+
 import os
 import json
-from openai import OpenAI
+import requests
+from io import BytesIO
+from PIL import Image
 
-from dotenv import load_dotenv  # type: ignore
+from google import genai
+from google.genai import types
+
+from dotenv import load_dotenv
 load_dotenv()
 
-client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
+# Create Gemini client (reads GEMINI_API_KEY automatically)
+client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
+
 
 def infer_positive_and_negative_prompt(
-    image_url: str,
-    classes: list[str],
-    model: str = "gpt-5.2",
+    image_path: str,
+    class_name: str,
+    model_name: str = "gemini-3.1-flash-lite-preview",
 ) -> dict:
+
     prompt_text = f"""
-You are a vision model helping generate prompts for image inpainting / segmentation.
+You are a vision model helping generate prompts for image inpainting.
 
 Given:
 - An image of a product.
-- Candidate product class names: {classes}
+- Product class name: "{class_name}"
 
 Tasks:
-1) Choose the SINGLE best name from the candidate list that describes the MAIN product.
-2) Identify OTHER objects visible in the image (not the main product).
-3) Produce:
-   - positive_prompt: the chosen product name, followed by a period.
-   - negative_prompt: other objects as short generic nouns or noun phrases,
-     separated by a period and a space, each ending with a period.
+1) Identify objects that are PHYSICALLY ON, TOUCHING, or OCCLUDING the main product
+(e.g., pillows on a couch, a blanket draped over it, a person sitting on it).
+Do NOT include background objects or items that are merely nearby or behind.
+
+2) Produce:
+- positive_prompt: the provided product class name, followed by a period.
+- negative_prompt: ONLY the objects from step (1), as short generic nouns or noun phrases,
+  separated by a period and a space, each ending with a period.
 
 Rules:
-- The positive_prompt MUST come from the provided class list (exact match).
+- The positive_prompt MUST be exactly the provided product class name.
 - Do NOT include the main product or its synonyms in the negative prompt.
-- Keep negative objects generic (e.g., pillow, rug, plant, table, lamp, wall art, person).
+- Only include objects that physically intersect or rest on the main product.
+- Keep negative objects generic (e.g., pillow, blanket, person).
 - Deduplicate negatives.
-- Return STRICT JSON ONLY with the exact schema below.
-- No markdown, no commentary, no extra keys.
+- If there are NO such objects, return an empty string for negative_prompt.
+- Return STRICT JSON ONLY with the schema below.
 
 Schema:
 {{
   "positive_prompt": "object.",
-  "negative_prompt": "object1. object2. object3."
+  "negative_prompt": "object1. object2."
 }}
 """
 
-    resp = client.chat.completions.create(
-        model=model,
-        messages=[
-            {
-                "role": "user",
-                "content": [
-                    {"type": "text", "text": prompt_text},
-                    {
-                        "type": "image_url",
-                        "image_url": {
-                            "url": image_url,
-                            "detail": "high"
-                        },
-                    },
-                ],
-            }
+    # Load image (URL or local)
+    if image_path.startswith(("http://", "https://")):
+        response = requests.get(image_path)
+        response.raise_for_status()
+        img = Image.open(BytesIO(response.content))
+    else:
+        img = Image.open(image_path)
+
+    # Convert if needed
+    if img.mode in ("RGBA", "P"):
+        img = img.convert("RGB")
+
+    # Gemini request
+    response = client.models.generate_content(
+        model=model_name,
+        contents=[
+            types.Part.from_text(text=prompt_text),
+            img,
         ],
+        config=types.GenerateContentConfig(
+            response_mime_type="application/json"
+        ),
     )
 
-    content = resp.choices[0].message.content.strip()
+    content = (response.text or "").strip()
     return json.loads(content)
 
 
 # Example usage
-best_image_path = "https://m.media-amazon.com/images/I/71v0slLGRlL._AC_SL1500_.jpg"
-classes = ["sectional", "couch", "sofa", "loveseat", "recliner"]
+if __name__ == "__main__":
 
-result = infer_positive_and_negative_prompt(
-    best_image_path,
-    classes,
-    model="gpt-5.2"
-)
+    my_path = "/Users/davinwinkyi/gemini_ranking_test/test_images_2/image_01.jpg"
 
-print(result)
+    result = infer_positive_and_negative_prompt(
+        image_path=my_path,
+        class_name="sectional",
+    )
+
+    print(result)

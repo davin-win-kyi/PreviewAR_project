@@ -289,49 +289,52 @@ def analyze_product_with_rag(html_content):
     
     # Use the entire HTML file with a more efficient approach
     prompt = f"""
-    You are a precise information extraction model. Extract product DIMENSIONS and IMAGE URLS from raw Amazon HTML.
+    You are a precise information extraction model. Extract product information from raw e-commerce HTML.
 
     # INPUT
-    The full HTML of the product page:
+    The (filtered) HTML of a product page:
     <HTML>
     {html_content}
     </HTML>
 
     # TASK
-    1) Find the product's physical dimensions anywhere in the HTML (bullets, specs tables, A+ content, etc.).
-    2) Collect ALL product image URLs (primary + gallery). Prefer full-resolution URLs.
+    Return a SINGLE JSON object with:
+    1) product_title: best guess of the product title/name shown on the page (string or null)
+    2) high_level_description: 1–2 sentences describing what the item is, intended use, and key traits that are explicitly supported by the HTML (string)
+    3) attributes: important shopping attributes IF explicitly present (do not guess):
+    - color (string or null)
+    - material (string or null)
+    - style (string or null)
+    - seating_capacity (string or null)
+    - assembly_required (string or null)
+    - special_features (list of strings; empty list if none)
+    4) potential_dimension_values: list of strings containing any physical dimensions found, normalized to inches
+    5) image_urls: list of ALL product image URLs (primary + gallery), prefer highest-resolution
 
-    # HOW TO EXTRACT
-    - Consider common dimension locations:
-    - Tech details/spec tables (e.g., "Product Dimensions", "Item Dimensions LxWxH")
-    - Bullets and description blocks
-    - Image blocks (e.g., image gallery JSON, "data-old-hires", "hiRes", "mainImageUrl")
-    - Dimension patterns to look for (examples):
-    - "Dimensions: 12.5 x 8 x 3 inches"
-    - "Item Dimensions LxWxH: 10 x 5 x 2 in"
-    - "Height: 15 cm", "Width: 8.2 in", "Length: 20 cm"
-    - For dimensions given as LxWxH:
-    - If units are in cm/mm, convert to inches (1 inch = 2.54 cm; 10 mm = 1 cm).
-    - Do NOT return CSS selectors—return actual values and absolute image URLs.
+    # EXTRACTION RULES
+    - Use only information supported by the HTML. If an attribute is not present, set it to null (or [] for lists).
+    - Color: if a color word appears in the title, option labels, or specs, extract it (e.g., beige, black, gray/grey, navy, cream, ivory, walnut).
+    - Prefer high-confidence text from visible content (headings, bullets, specs tables) and product JSON blobs.
+    - Do NOT return CSS selectors; return actual values.
     - Deduplicate image URLs.
-
-    # IMAGE URL RULES
-    - Prefer highest-resolution URLs available (fields like "hiRes", "data-old-hires", "mainImage", or the largest variant in gallery JSON).
-    - If URLs are relative, resolve against the page origin (if unknown, return as-is).
-    - Include ALL product images in the list; order with primary first if identifiable.
+    - If units are in cm/mm, convert to inches (1 inch = 2.54 cm; 10 mm = 1 cm).
+    - Output must be valid JSON. No prose. No markdown. No trailing commas.
 
     # OUTPUT FORMAT (STRICT)
-    Return ONLY a single JSON object. No prose, no markdown, no explanations.
-
     {{
-    "potential_dimension_values": [<string>, ...]        // e.g., "height: 3 in"
-    "image_urls": [<string>, ...]      // absolute URLs if possible; [] if none found
+    "product_title": null or string,
+    "high_level_description": string,
+    "attributes": {{
+        "color": null or string,
+        "material": null or string,
+        "style": null or string,
+        "seating_capacity": null or string,
+        "assembly_required": null or string,
+        "special_features": [string]
+    }},
+    "potential_dimension_values": [string],
+    "image_urls": [string]
     }}
-
-    # CONVERSION & VALIDATION
-    - Normalize units to inches in the strings above (e.g., "31.8 cm" -> "12.52 in").
-    - If you can only partially infer, fill what you can and set the rest to null.
-    - The JSON must be valid and parseable. No trailing commas. No comments in the JSON.
     """
 
     response = client.chat.completions.create(
@@ -506,9 +509,16 @@ if __name__ == "__main__":
     # url= "https://www.ikea.com/us/en/p/uppland-sofa-blekinge-white-s19384116/"
 
     url = (
-       "https://www.wayfair.com/furniture/pdp/latitude-run-cenie-modern-upholstered"
-       "-arc-shaped-3d-knit-fabric-sofa-no-assembly-required3-seat-w115334476.html?"
-       "piid=224002162"
+        "https://www.amazon.com/Sectional-Minimalist-Upholstered-Couch%EF%BC%8CNo-Assembly/dp/B0DMSNCX14/ref=sr_1_1_sspa"
+        "?crid=3Q0OC9EF9BOT2"
+        "&dib=eyJ2IjoiMSJ9.Uwy_-hTxn36mxYatk6YVYoZzfr9ccOrbiBYTzPXlkhX20Xljw7XFV30e8JTA_UIVAcnSUfDH6SdliqACjdbtTxjItAW9S6wE3RCmOValBQUGnzlCgRtfgk4fa-PzKL8th62Cz6rAe5mruSurnxNcQ4vdjN_j0FIIIrxNqwaXdeeWa4zdYX7h608_MdeH7Xej50FqMcTQb_HicnZzBSAQVlt295PrnBXwNELEt5T-1MFOtNIs_4fB2vVpJb6X5ZdbREdGQxJexPzxwM9GK0X86-1R1IhzscV8fquOFk9dwMk.SxonPO9dTDRt6Xrhq1MNRk2KVFfS9rSsWmQ8r_nFdNE"
+        "&dib_tag=se"
+        "&keywords=couch"
+        "&qid=1762054233"
+        "&sprefix=couch%2Caps%2C195"
+        "&sr=8-1-spons"
+        "&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY"
+        "&th=1"
     )
 
     main(url, "Ikea")

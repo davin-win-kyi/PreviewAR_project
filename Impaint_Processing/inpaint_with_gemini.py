@@ -20,31 +20,58 @@ UPLOADS_DIR = "uploads"
 os.makedirs(UPLOADS_DIR, exist_ok=True)
 
 
-def build_inpaint_prompt(target_class: str, classes_in_crop: List[str]) -> str:
+def replace_black_with_white(
+    img: Image.Image,
+    threshold: int = 10,
+) -> Image.Image:
     """
-    Builds a structured inpainting prompt like:
+    Replaces black (or near-black) pixels with white.
 
-    "can you fill the mask with the same texture and fabric as the rest of the <target_object>
-     with only the <target_object> and no white gaps or holes in the <target_object>.
-     You must not include the following objects in the image <other_object#1>, ..., <other_object#n>."
+    threshold:
+        0  -> only pure (0,0,0)
+        10 -> replaces very dark pixels too
     """
-    other_objects = sorted({
-        c for c in classes_in_crop
-        if c.lower() != target_class.lower()
-    })
+    img = img.convert("RGB")
+    pixels = img.load()
+
+    width, height = img.size
+
+    for y in range(height):
+        for x in range(width):
+            r, g, b = pixels[x, y]
+
+            # Replace pure or near black
+            if r <= threshold and g <= threshold and b <= threshold:
+                pixels[x, y] = (255, 255, 255)
+
+    return img
+
+
+
+def build_inpaint_prompt(target_class: str, classes_in_crop: str) -> str:
+    """
+    Builds a structured inpainting prompt that:
+    - fills masked regions with consistent object texture
+    - removes unwanted objects
+    - ensures a pure white background
+    """
+
+    other_objects = classes_in_crop
 
     if other_objects:
-        others_str = format_object_list(other_objects=other_objects)
         prompt = (
-            f"can you fill the mask with the same texture and fabric as the rest of the {target_class} "
-            f"with only the {target_class} and no white gaps or holes in the {target_class}. "
-            f"Also make sure to not include {others_str}."
+            f"Fill the masked region with the same texture, material, and geometry as the rest of the {target_class}. "
+            f"The final image must contain only the {target_class}. "
+            f"There must be no gaps, holes, or missing parts in the {target_class}. "
+            f"Do not include the following objects: {other_objects}. "
+            f"The background must be a clean pure white studio background with no objects, shadows, or textures."
         )
     else:
         prompt = (
-            f"Can you fill the mask with the same texture and fabric as the rest of the {target_class} "
-            f"with only the {target_class} and no white gaps or holes in the {target_class}. "
-            f"There are no other objects that should be included."
+            f"Fill the masked region with the same texture, material, and geometry as the rest of the {target_class}. "
+            f"The final image must contain only the {target_class}. "
+            f"There must be no gaps, holes, or missing parts in the {target_class}. "
+            f"The background must be a clean pure white studio background with no objects, shadows, or textures."
         )
 
     return prompt
@@ -68,7 +95,7 @@ def recontext_masked_area(
         inpainted_output_path = combined_image_path
 
     response = client.models.generate_content(
-        model="gemini-2.5-flash-image",
+        model="gemini-3.1-flash-image-preview",
         contents=[full_prompt, image],
         config=GenerateContentConfig(
             response_modalities=["TEXT", "IMAGE"],
@@ -81,7 +108,12 @@ def recontext_masked_area(
             print("[gemini] text:", part.text)
         elif part.inline_data is not None:
             image = Image.open(BytesIO(part.inline_data.data))
+
+            # Replace black pixels with white
+            image = replace_black_with_white(image, threshold=10)
+
             image.save(inpainted_output_path)
+
             print(f"[gemini] Inpainted image saved to {inpainted_output_path}")
 
     return image
