@@ -5,19 +5,32 @@ import argparse
 import json
 import shutil
 import time
+from collections import defaultdict
+from copy import deepcopy
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Tuple
 
 from WebScrape_Processing.rank_images_from_local_paths import rank_images_from_local_paths
 from WebScrape_Processing.prompt import infer_positive_and_negative_prompt
 
-# Replace these imports with your actual module paths
 from Image_Processing.Get_Impainting_Images import main as impaint_main
+from Image_Processing.Grounded_SAM2_Config import GroundedSAM2Config, build_models
 from Impaint_Processing.nano_banana import run_full_inpaint_with_manual_mask
+
+import gc
+import torch
+
 
 # ------------------------------------------------------------
 # Helpers
 # ------------------------------------------------------------
+
+def cleanup_cuda():
+    gc.collect()
+    if torch.cuda.is_available():
+        torch.cuda.empty_cache()
+        torch.cuda.ipc_collect()
+
 
 def safe_json_load(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
@@ -50,9 +63,15 @@ def newest_file_in_dir(path: Path) -> Optional[Path]:
 
 
 def sanitize_filename(text: str, max_len: int = 120) -> str:
-    cleaned = "".join(c if c.isalnum() or c in ("-", "_") else "_" for c in text)
+    cleaned = "".join(c if c.isalnum() or c in ("-", "_", "#") else "_" for c in text)
     cleaned = cleaned.strip("_")
     return cleaned[:max_len] or "item"
+
+
+def sanitize_object_type(text: str, max_len: int = 80) -> str:
+    cleaned = "".join(c.lower() if c.isalnum() or c in ("-", "_") else "_" for c in text)
+    cleaned = cleaned.strip("_")
+    return cleaned[:max_len] or "object"
 
 
 def load_products(path: Path) -> List[Dict[str, Any]]:
@@ -60,9 +79,19 @@ def load_products(path: Path) -> List[Dict[str, Any]]:
         raise FileNotFoundError(f"Missing input JSON: {path.resolve()}")
 
     data = safe_json_load(path)
-    if not isinstance(data, list):
-        raise ValueError("Expected a top-level JSON list in webscrapping_output/all_products.json")
-    return data
+
+    # Support either:
+    # 1) top-level list
+    # 2) {"products": [...]}
+    if isinstance(data, list):
+        return data
+
+    if isinstance(data, dict) and isinstance(data.get("products"), list):
+        return data["products"]
+
+    raise ValueError(
+        "Expected either a top-level JSON list or an object with a 'products' list"
+    )
 
 
 def resolve_local_image_path(raw_path: str, project_root: Path) -> Path:
@@ -70,6 +99,139 @@ def resolve_local_image_path(raw_path: str, project_root: Path) -> Path:
     if p.is_absolute():
         return p
     return (project_root / p).resolve()
+
+
+def build_name_mapping(products: List[Dict[str, Any]]) -> Dict[str, str]:
+    """
+    Creates a deterministic mapping:
+      url -> <object_type>#n
+    based on product order in the input JSON.
+    Keeps numbering separate for each object_type.
+    """
+    counts: Dict[str, int] = defaultdict(int)
+    mapping: Dict[str, str] = {}
+
+    for i, product in enumerate(products):
+        url = str(product.get("url", "")).strip()
+        object_type = str(product.get("object_type", "object")).strip() or "object"
+        base = sanitize_object_type(object_type)
+
+        counts[base] += 1
+        generated_name = f"{base}#{counts[base]}"
+
+        key = url if url else f"__index__:{i}"
+        mapping[key] = generated_name
+
+    return mapping
+
+
+def resolve_existing_path(raw_path: str, project_root: Path) -> Path:
+    p = Path(raw_path)
+    if p.is_absolute():
+        return p
+    return (project_root / p).resolve()
+
+
+# ------------------------------------------------------------
+# Existing JSON loading / lookup
+# ------------------------------------------------------------
+
+def load_existing_impainted_records(path: Path) -> Dict[str, Dict[str, Any]]:
+    """
+    Load existing impainted_images.json and index records by:
+      1) name
+      2) url
+    """
+    if not path.exists():
+        return {}
+
+    try:
+        data = safe_json_load(path)
+    except Exception as e:
+        print(f"[WARN] Could not read existing impainted json {path}: {e}")
+        return {}
+
+    records = data.get("impainted_images", [])
+    if not isinstance(records, list):
+        return {}
+
+    indexed: Dict[str, Dict[str, Any]] = {}
+
+    for rec in records:
+        if not isinstance(rec, dict):
+            continue
+
+        name = str(rec.get("name", "")).strip()
+        url = str(rec.get("url", "")).strip()
+
+        if name:
+            indexed[f"name::{name}"] = rec
+        if url:
+            indexed[f"url::{url}"] = rec
+
+    return indexed
+
+
+def load_existing_runtime_records(path: Path) -> Dict[str, Dict[str, Any]]:
+    """
+    Load existing preprocessing_runtime.json and index runtime records by:
+      1) url
+      2) object_type fallback
+    """
+    if not path.exists():
+        return {}
+
+    try:
+        data = safe_json_load(path)
+    except Exception as e:
+        print(f"[WARN] Could not read existing runtime json {path}: {e}")
+        return {}
+
+    records = data.get("runtimes", [])
+    if not isinstance(records, list):
+        return {}
+
+    indexed: Dict[str, Dict[str, Any]] = {}
+
+    for rec in records:
+        if not isinstance(rec, dict):
+            continue
+
+        url = str(rec.get("url", "")).strip()
+        object_type = str(rec.get("object_type", "")).strip()
+
+        if url:
+            indexed[f"url::{url}"] = rec
+        elif object_type:
+            indexed[f"object_type::{object_type}"] = rec
+
+    return indexed
+
+
+def get_existing_impainted_record(
+    *,
+    existing_impainted_records: Dict[str, Dict[str, Any]],
+    generated_name: str,
+    url: str,
+) -> Optional[Dict[str, Any]]:
+    rec = (
+        existing_impainted_records.get(f"name::{generated_name}")
+        or existing_impainted_records.get(f"url::{url}")
+    )
+    return deepcopy(rec) if rec is not None else None
+
+
+def get_existing_runtime_record(
+    *,
+    existing_runtime_records: Dict[str, Dict[str, Any]],
+    url: str,
+    object_type: str,
+) -> Optional[Dict[str, Any]]:
+    rec = (
+        existing_runtime_records.get(f"url::{url}")
+        or existing_runtime_records.get(f"object_type::{object_type}")
+    )
+    return deepcopy(rec) if rec is not None else None
 
 
 # ------------------------------------------------------------
@@ -84,27 +246,83 @@ def process_one_product(
     impainted_dir: Path,
     uploads_dir: Path,
     clear_uploads_between_items: bool,
-) -> Dict[str, Any]:
+    device: str,
+    sam2_predictor,
+    processor,
+    grounding_model,
+    box_threshold: float,
+    text_threshold: float,
+    crop_pad: int,
+    generated_name: str,
+    existing_impainted_records: Dict[str, Dict[str, Any]],
+    existing_runtime_records: Dict[str, Dict[str, Any]],
+) -> Tuple[Dict[str, Any], Optional[Dict[str, Any]], bool]:
     """
-    Process one product from all_products.json:
-      1) gather local images
-      2) rerank local images
-      3) infer positive/negative prompt from best image
-      4) run two-stage inpainting
-      5) copy newest uploads output into impainted_images/
-      6) return output record
+    Returns:
+      (impainted_record, runtime_record_or_none, reused_existing_json)
+
+    Behavior:
+      1) If item already exists in impainted_images.json and its image path exists,
+         reuse the old impainted JSON object exactly as-is.
+      2) If a matching runtime object exists in preprocessing_runtime.json,
+         reuse that old runtime JSON object exactly as-is too.
+      3) Otherwise run the normal pipeline and create fresh records.
     """
 
-    url = product.get("url", "")
-    object_type = product.get("object_type", "product")
+    url = str(product.get("url", "")).strip()
+    object_type = str(product.get("object_type", "product"))
     site = product.get("site", "")
-    scraped_at = product.get("scraped_at", "")
-    scrape_runtime_seconds = product.get("runtime_seconds", None)
-    name = product.get("name", "")
-    description = product.get("description", "")
-    dims = product.get("dimensions", {})
     standardized_dimensions = product.get("standardized_dimensions", None)
     images = product.get("images", [])
+
+    impainted_dir.mkdir(parents=True, exist_ok=True)
+
+    # ------------------------------------------------------------
+    # 0) Reuse existing JSON objects exactly as-is if possible
+    # ------------------------------------------------------------
+    existing_impainted = get_existing_impainted_record(
+        existing_impainted_records=existing_impainted_records,
+        generated_name=generated_name,
+        url=url,
+    )
+
+    if existing_impainted:
+        existing_path_str = str(existing_impainted.get("impainted_image_path", "")).strip()
+        if existing_path_str:
+            existing_path = resolve_existing_path(existing_path_str, project_root)
+            if existing_path.exists():
+                existing_runtime = get_existing_runtime_record(
+                    existing_runtime_records=existing_runtime_records,
+                    url=url,
+                    object_type=object_type,
+                )
+                print(f"  [skip] Reusing existing JSON objects: {generated_name}")
+                return existing_impainted, existing_runtime, True
+
+    # ------------------------------------------------------------
+    # Fallback: if there is no prior JSON record, but a matching image
+    # exists on disk, reuse image and create fresh JSON objects.
+    # ------------------------------------------------------------
+    existing_candidates = []
+    base_name = sanitize_filename(generated_name)
+
+    for ext in (".png", ".jpg", ".jpeg", ".webp"):
+        candidate = impainted_dir / f"{base_name}{ext}"
+        if candidate.exists():
+            existing_candidates.append(candidate)
+
+    if existing_candidates:
+        existing_path = existing_candidates[0]
+        print(f"  [skip] Reusing existing impainted image on disk: {existing_path}")
+        return {
+            "url": url,
+            "object_type": object_type,
+            "site": site,
+            "name": generated_name,
+            "standardized_dimensions": standardized_dimensions,
+            "impainted_image_path": str(existing_path),
+            "status": "ok",
+        }, None, False
 
     if not isinstance(images, list) or not images:
         raise RuntimeError("No images found for this product.")
@@ -144,20 +362,16 @@ def process_one_product(
     if not best_image_path:
         raise RuntimeError("rank_images_from_local_paths returned empty best_image_path")
 
-    best_image_url = image_url_lookup.get(best_image_path, "")
     local_best = Path(best_image_path)
 
     if not local_best.exists():
         raise RuntimeError(f"Best image path does not exist: {local_best}")
 
     # 2) Prompt inference
-    # You can pass object_type directly, or if you want old multi-class behavior:
     classes = product.get("product_names") or []
     if not isinstance(classes, list) or not classes:
         classes = [object_type]
 
-    # Your current prompt function takes image_path + class_name
-    # so we use object_type (or classes[0] if preferred)
     target_info = infer_positive_and_negative_prompt(
         image_path=str(local_best),
         class_name=classes[0] if classes else object_type,
@@ -169,7 +383,7 @@ def process_one_product(
     if not positive_prompt:
         raise RuntimeError("infer_positive_and_negative_prompt returned empty positive_prompt")
 
-    # 3) Run inpainting stage 1
+    # 3) Run inpainting stage 1 using prebuilt Grounded-SAM2 models
     if clear_uploads_between_items:
         clear_directory(uploads_dir)
 
@@ -177,6 +391,13 @@ def process_one_product(
         image_path=str(local_best),
         positive_prompt=positive_prompt,
         negative_prompt=negative_prompt,
+        device=device,
+        sam2_predictor=sam2_predictor,
+        processor=processor,
+        grounding_model=grounding_model,
+        box_threshold=box_threshold,
+        text_threshold=text_threshold,
+        crop_pad=crop_pad,
     )
 
     idx_path = Path(impaint_index_json)
@@ -192,12 +413,16 @@ def process_one_product(
             "Could not find index_data['targets'][0]['final_composite'] from impaint index json"
         )
 
+    del index_data
+    cleanup_cuda()
+
     # 4) Run inpainting stage 2
     _ = run_full_inpaint_with_manual_mask(
         final_composite_path,
         target_class=positive_prompt,
         classes_in_crop=negative_prompt,
     )
+    cleanup_cuda()
 
     # 5) Pick newest output from uploads/
     newest = newest_file_in_dir(uploads_dir)
@@ -205,37 +430,23 @@ def process_one_product(
         raise RuntimeError("No inpainted outputs found in uploads/ after run_full_inpaint_with_manual_mask")
 
     # 6) Copy to outputs_preprocessing/impainted_images/
-    impainted_dir.mkdir(parents=True, exist_ok=True)
-
-    folder_tag = sanitize_filename(name or object_type or url)
     ext = newest.suffix if newest.suffix else ".png"
-    out_name = f"{sanitize_filename(object_type)}__{folder_tag}{ext}"
+    out_name = f"{base_name}{ext}"
     out_path = impainted_dir / out_name
 
     shutil.copy2(newest, out_path)
 
-    return {
+    new_impainted_record = {
         "url": url,
         "object_type": object_type,
         "site": site,
-        "scraped_at": scraped_at,
-        "scrape_runtime_seconds": scrape_runtime_seconds,
-        "name": name,
-        "description": description,
-        "dimensions": dims if isinstance(dims, dict) else None,
+        "name": generated_name,
         "standardized_dimensions": standardized_dimensions,
-        "images": images,
-
-        "best_image_path": str(local_best),
-        "best_image_url": best_image_url,
-        "ranking_reasoning": ranking.get("reasoning", ""),
-        "ranking_scores": ranking.get("scores", {}),
-
-        "positive_prompt": positive_prompt,
-        "negative_prompt": negative_prompt,
-
         "impainted_image_path": str(out_path),
+        "status": "ok",
     }
+
+    return new_impainted_record, None, False
 
 
 # ------------------------------------------------------------
@@ -264,6 +475,47 @@ def main() -> None:
         action="store_true",
         help="Delete uploads/* before each item to avoid mixing outputs",
     )
+
+    # Grounded-SAM2 config args
+    ap.add_argument(
+        "--grounding-model",
+        default="IDEA-Research/grounding-dino-tiny",
+        help="HuggingFace grounding model name",
+    )
+    ap.add_argument(
+        "--sam2-checkpoint",
+        default="/home/davin123/PreviewAR_project/grounded_sam2/checkpoints/sam2.1_hiera_large.pt",
+        help="Path to SAM2 checkpoint",
+    )
+    ap.add_argument(
+        "--sam2-model-config",
+        default="configs/sam2.1/sam2.1_hiera_l.yaml",
+        help="SAM2 model config path",
+    )
+    ap.add_argument(
+        "--box-threshold",
+        type=float,
+        default=0.4,
+        help="Grounding box threshold",
+    )
+    ap.add_argument(
+        "--text-threshold",
+        type=float,
+        default=0.3,
+        help="Grounding text threshold",
+    )
+    ap.add_argument(
+        "--crop-pad",
+        type=int,
+        default=0,
+        help="Padding around crop boxes",
+    )
+    ap.add_argument(
+        "--force-cpu",
+        action="store_true",
+        help="Force Grounded-SAM2 to run on CPU",
+    )
+
     args = ap.parse_args()
 
     project_root = Path(__file__).resolve().parent
@@ -279,76 +531,154 @@ def main() -> None:
     if not products:
         raise SystemExit(f"No products found in: {input_json}")
 
+    name_mapping = build_name_mapping(products)
+
     output_dir.mkdir(parents=True, exist_ok=True)
     impainted_dir.mkdir(parents=True, exist_ok=True)
     uploads_dir.mkdir(parents=True, exist_ok=True)
 
+    existing_impainted_records = load_existing_impainted_records(impainted_json_path)
+    existing_runtime_records = load_existing_runtime_records(runtime_json_path)
+
+    cfg = GroundedSAM2Config(
+        grounding_model=args.grounding_model,
+        sam2_checkpoint=args.sam2_checkpoint,
+        sam2_model_config=args.sam2_model_config,
+        force_cpu=bool(args.force_cpu),
+        box_threshold=args.box_threshold,
+        text_threshold=args.text_threshold,
+        crop_pad=args.crop_pad,
+    )
+
+    device, sam2_predictor, processor, grounding_model = build_models(cfg)
+
     impainted_records: List[Dict[str, Any]] = []
     runtimes: List[Dict[str, Any]] = []
 
-    for i, product in enumerate(products, start=1):
-        tag = sanitize_filename(product.get("name") or product.get("object_type") or f"item_{i}")
-        print(f"\n[{i}/{len(products)}] Processing: {tag}")
+    try:
+        for i, product in enumerate(products, start=1):
+            url = str(product.get("url", "")).strip()
+            object_type = str(product.get("object_type", "product"))
+            generated_name = name_mapping.get(url, name_mapping.get(f"__index__:{i-1}", f"object#{i}"))
 
-        t0 = time.perf_counter()
-        try:
-            rec = process_one_product(
-                product,
-                project_root=project_root,
-                output_dir=output_dir,
-                impainted_dir=impainted_dir,
-                uploads_dir=uploads_dir,
-                clear_uploads_between_items=bool(args.clear_uploads_between_items),
-            )
+            print(f"\n[{i}/{len(products)}] Processing: {generated_name}")
 
-            runtime_sec = round(time.perf_counter() - t0, 4)
-            rec["preprocessing_runtime_sec"] = runtime_sec
-            rec["status"] = "ok"
+            t0 = time.perf_counter()
+            try:
+                rec, existing_runtime_rec, reused_existing_json = process_one_product(
+                    product,
+                    project_root=project_root,
+                    output_dir=output_dir,
+                    impainted_dir=impainted_dir,
+                    uploads_dir=uploads_dir,
+                    clear_uploads_between_items=bool(args.clear_uploads_between_items),
+                    device=device,
+                    sam2_predictor=sam2_predictor,
+                    processor=processor,
+                    grounding_model=grounding_model,
+                    box_threshold=args.box_threshold,
+                    text_threshold=args.text_threshold,
+                    crop_pad=args.crop_pad,
+                    generated_name=generated_name,
+                    existing_impainted_records=existing_impainted_records,
+                    existing_runtime_records=existing_runtime_records,
+                )
 
-            impainted_records.append(rec)
-            runtimes.append({
-                "url": rec.get("url", ""),
-                "object_type": rec.get("object_type", ""),
-                "runtime_sec": runtime_sec,
-                "status": "ok",
-            })
+                runtime_sec = round(time.perf_counter() - t0, 4)
 
-            print(f"[OK] {tag}")
-            print(f"     best_image_path: {rec.get('best_image_path', '')}")
-            print(f"     impainted_image_path: {rec.get('impainted_image_path', '')}")
+                impainted_records.append(rec)
 
-        except Exception as e:
-            runtime_sec = round(time.perf_counter() - t0, 4)
+                if reused_existing_json and existing_runtime_rec is not None:
+                    runtimes.append(existing_runtime_rec)
+                else:
+                    runtimes.append({
+                        "url": rec.get("url", ""),
+                        "object_type": rec.get("object_type", ""),
+                        "runtime_sec": runtime_sec,
+                        "status": "ok",
+                    })
 
-            impainted_records.append({
-                "url": product.get("url", ""),
-                "object_type": product.get("object_type", "product"),
-                "name": product.get("name", ""),
-                "description": product.get("description", ""),
-                "dimensions": product.get("dimensions", {}),
-                "images": product.get("images", []),
-                "best_image_path": "",
-                "best_image_url": "",
-                "positive_prompt": "",
-                "negative_prompt": "",
-                "impainted_image_path": "",
-                "preprocessing_runtime_sec": runtime_sec,
-                "status": "fail",
-                "error": str(e),
-            })
+                print(f"[OK] {generated_name}")
+                print(f"     impainted_image_path: {rec.get('impainted_image_path', '')}")
 
-            runtimes.append({
-                "url": product.get("url", ""),
-                "object_type": product.get("object_type", "product"),
-                "runtime_sec": runtime_sec,
-                "status": "fail",
-                "error": str(e),
-            })
+            except Exception as e:
+                runtime_sec = round(time.perf_counter() - t0, 4)
 
-            print(f"[FAIL] {product.get('object_type', 'product')}: {e}")
+                existing_impainted = get_existing_impainted_record(
+                    existing_impainted_records=existing_impainted_records,
+                    generated_name=generated_name,
+                    url=url,
+                )
+                existing_runtime = get_existing_runtime_record(
+                    existing_runtime_records=existing_runtime_records,
+                    url=url,
+                    object_type=object_type,
+                )
+
+                if existing_impainted:
+                    existing_path_str = str(existing_impainted.get("impainted_image_path", "")).strip()
+                    if existing_path_str:
+                        existing_path = resolve_existing_path(existing_path_str, project_root)
+                        if existing_path.exists():
+                            impainted_records.append(existing_impainted)
+                        else:
+                            impainted_records.append({
+                                "url": product.get("url", ""),
+                                "object_type": product.get("object_type", "product"),
+                                "site": product.get("site", ""),
+                                "name": generated_name,
+                                "standardized_dimensions": product.get("standardized_dimensions", None),
+                                "impainted_image_path": "",
+                                "status": "fail",
+                            })
+                    else:
+                        impainted_records.append({
+                            "url": product.get("url", ""),
+                            "object_type": product.get("object_type", "product"),
+                            "site": product.get("site", ""),
+                            "name": generated_name,
+                            "standardized_dimensions": product.get("standardized_dimensions", None),
+                            "impainted_image_path": "",
+                            "status": "fail",
+                        })
+                else:
+                    impainted_records.append({
+                        "url": product.get("url", ""),
+                        "object_type": product.get("object_type", "product"),
+                        "site": product.get("site", ""),
+                        "name": generated_name,
+                        "standardized_dimensions": product.get("standardized_dimensions", None),
+                        "impainted_image_path": "",
+                        "status": "fail",
+                    })
+
+                if existing_runtime is not None:
+                    runtimes.append(existing_runtime)
+                else:
+                    runtimes.append({
+                        "url": product.get("url", ""),
+                        "object_type": product.get("object_type", "product"),
+                        "runtime_sec": runtime_sec,
+                        "status": "fail",
+                        "error": str(e),
+                    })
+
+                print(f"[FAIL] {generated_name}: {e}")
+            finally:
+                cleanup_cuda()
+
+    finally:
+        del sam2_predictor
+        del processor
+        del grounding_model
+        cleanup_cuda()
 
     avg_runtime = None
-    ok_vals = [r["runtime_sec"] for r in runtimes if r.get("status") == "ok"]
+    ok_vals = [
+        r["runtime_sec"]
+        for r in runtimes
+        if isinstance(r, dict) and r.get("status") == "ok" and isinstance(r.get("runtime_sec"), (int, float))
+    ]
     if ok_vals:
         avg_runtime = round(sum(ok_vals) / len(ok_vals), 4)
 

@@ -1,0 +1,53 @@
+{
+    "target_index": 1,
+    "image_path": "/home/davin123/PreviewAR_project/webscrape_output/lamp#1/images/image_01.jpg",
+    "crop": {
+        "xyxy": [
+            848,
+            369,
+            908,
+            490
+        ],
+        "width": 60,
+        "height": 121
+    },
+    "positive_prompt": "lamp.",
+    "negative_prompt": ".",
+    "neg_boxes_in_crop": [],
+    "masks": {
+        "positive_rle": {
+            "size": [
+                121,
+                60
+            ],
+            "counts": "f7R2f12O0O2O0XOkMLU20UNJk13[NJe14_NJa15bNI^16cNJ]15eNJ[15gNJY15hNKX14jNKV14lNKT15mNJS15oNJR14oNLQ14POKP14QOLo03ROMo00SO0m0NUO3Y2O000000000000000000aNNWO2i00UO0j03TOMl04ROMn04QOLo05POKP15oNLQ14oNLQ15mNLS15kNLU15iNLW15gNLY14fNMZ14eNL[15cNL]15`NM`15\\NMd15XNMh15TNMl1P1O2O0O2Od0RNeNMk0"
+        },
+        "inpaint_rle": {
+            "size": [
+                121,
+                60
+            ],
+            "counts": "lR7"
+        },
+        "final_rle": {
+            "size": [
+                121,
+                60
+            ],
+            "counts": "f7R2f12O0O2O0XOkMLU20UNJk13[NJe14_NJa15bNI^16cNJ]15eNJ[15gNJY15hNKX14jNKV14lNKT15mNJS15oNJR14oNLQ14POKP14QOLo03ROMo00SO0m0NUO3Y2O000000000000000000aNNWO2i00UO0j03TOMl04ROMn04QOLo05POKP15oNLQ14oNLQ15mNLS15kNLU15iNLW15gNLY14fNMZ14eNL[15cNL]15`NM`15\\NMd15XNMh15TNMl1P1O2O0O2Od0RNeNMk0"
+        }
+    },
+    "stats": {
+        "positive_pixels": 5631,
+        "inpaint_pixels": 0,
+        "final_pixels": 5631
+    },
+    "artifacts": {
+        "crop.jpg": "crop image",
+        "positive_mask.png": "binary mask (0/255)",
+        "inpaint_mask.png": "binary inpaint mask (0/255) derived from negative boxes",
+        "final_mask.png": "binary keep mask = positive minus inpaint",
+        "preview_whited.png": "preview with inpaint region whitened",
+        "final_overlay.jpg": "visual overlay of final mask"
+    }
+}

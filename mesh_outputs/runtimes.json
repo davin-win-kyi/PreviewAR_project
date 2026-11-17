@@ -1,13 +1,43 @@
 {
   "runtimes": [
     {
+      "description": "lamp",
+      "runtime_sec": 55.63388514518738,
+      "status": "ok"
+    },
+    {
       "description": "table",
-      "runtime_sec": 61.55618977546692,
+      "runtime_sec": 83.53932571411133,
+      "status": "ok"
+    },
+    {
+      "description": "table",
+      "runtime_sec": 52.78753733634949,
       "status": "ok"
     },
     {
       "description": "lamp",
-      "runtime_sec": 74.12646722793579,
+      "runtime_sec": 47.23623704910278,
+      "status": "ok"
+    },
+    {
+      "description": "table",
+      "runtime_sec": 65.74011826515198,
+      "status": "ok"
+    },
+    {
+      "description": "table",
+      "runtime_sec": 56.65970230102539,
+      "status": "ok"
+    },
+    {
+      "description": "lamp",
+      "runtime_sec": 48.25612115859985,
+      "status": "ok"
+    },
+    {
+      "description": "lamp",
+      "runtime_sec": 70.62761616706848,
       "status": "ok"
     }
   ]

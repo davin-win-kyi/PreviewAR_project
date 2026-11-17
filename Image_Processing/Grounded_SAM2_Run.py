@@ -29,6 +29,39 @@ from transformers import AutoModelForZeroShotObjectDetection, AutoProcessor
 from grounded_sam2.sam2.sam2_image_predictor import SAM2ImagePredictor
 
 
+import gc
+
+import gc
+import torch
+
+# def cleanup_cuda(models_to_delete: list):
+#     """
+#     Forcefully removes models from VRAM and clears cache.
+#     """
+#     for model in models_to_delete:
+#         if model is not None:
+#             # Move to CPU first to ensure it's off the GPU
+#             model.cpu()
+#             del model
+    
+#     # Trigger Python's garbage collector
+#     gc.collect()
+    
+#     # Clear the PyTorch CUDA cache
+#     if torch.cuda.is_available():
+#         torch.cuda.empty_cache()
+#         torch.cuda.ipc_collect()
+
+import gc
+import torch
+
+def cleanup_cuda():
+    gc.collect()
+    if torch.cuda.is_available():
+        torch.cuda.empty_cache()
+        torch.cuda.ipc_collect()
+
+
 
 def ensure_3d_masks(masks: np.ndarray) -> np.ndarray:
     """SAM2 can return (N,1,H,W) or (N,H,W). Return (N,H,W)."""
@@ -64,13 +97,15 @@ def run_grounded_sam2(
     box_threshold: float,
     text_threshold: float,
 ):
-    """Return boxes, scores, labels, masks_bool (N,H,W)."""
     text = normalize_prompt(text_prompt)
 
-    sam2_predictor.set_image(np.array(image_pil.convert("RGB")))
+    image_np = np.array(image_pil.convert("RGB"))
+    sam2_predictor.set_image(image_np)
+    del image_np
 
     inputs = processor(images=image_pil, text=text, return_tensors="pt").to(device)
-    with torch.no_grad():
+
+    with torch.inference_mode():
         outputs = grounding_model(**inputs)
 
     results = processor.post_process_grounded_object_detection(
@@ -78,8 +113,12 @@ def run_grounded_sam2(
         inputs.input_ids,
         threshold=box_threshold,
         text_threshold=text_threshold,
-        target_sizes=[image_pil.size[::-1]],  # (H,W)
+        target_sizes=[image_pil.size[::-1]],
     )
+
+    del outputs
+    del inputs
+    cleanup_cuda()
 
     boxes_t = results[0].get("boxes", None)
     scores_t = results[0].get("scores", None)
@@ -89,8 +128,12 @@ def run_grounded_sam2(
         h, w = image_pil.size[1], image_pil.size[0]
         return [], [], [], np.zeros((0, h, w), dtype=bool)
 
-    input_boxes = boxes_t.detach().cpu().numpy()  # (N,4)
+    input_boxes = boxes_t.detach().cpu().numpy()
     confidences = scores_t.detach().cpu().numpy().tolist()
+
+    del boxes_t
+    del scores_t
+    cleanup_cuda()
 
     masks, sam_scores, logits = sam2_predictor.predict(
         point_coords=None,
@@ -98,8 +141,14 @@ def run_grounded_sam2(
         box=input_boxes,
         multimask_output=False,
     )
+
     masks = ensure_3d_masks(masks)
     masks_bool = masks.astype(bool)
+
+    del masks
+    del sam_scores
+    del logits
+    cleanup_cuda()
 
     return input_boxes.tolist(), confidences, labels, masks_bool
 
@@ -180,34 +229,15 @@ def run_pos_neg_and_write(
     text_threshold: float,
     dump_json: bool = True,
 ):
-    """
-    Runs positive/negative on the full image, writes:
-      out_root/positive_prompt/*
-      out_root/negative_prompt/*
-
-    Returns:
-      image_pil, img_bgr, pos_boxes, pos_masks, neg_masks, pos_labels, pos_scores, neg_labels, neg_scores, paths
-    """
     out_root_p = Path(out_root)
     pos_dir = out_root_p / "positive_prompt"
     neg_dir = out_root_p / "negative_prompt"
 
-    image_pil = Image.open(image_path)
+    image_pil = Image.open(image_path).convert("RGB")
     img_bgr = cv2.imread(image_path)
 
     pos_boxes, pos_scores, pos_labels, pos_masks = run_grounded_sam2(
         text_prompt=positive_prompt,
-        image_pil=image_pil,
-        processor=processor,
-        grounding_model=grounding_model,
-        sam2_predictor=sam2_predictor,
-        device=device,
-        box_threshold=box_threshold,
-        text_threshold=text_threshold,
-    )
-
-    neg_boxes, neg_scores, neg_labels, neg_masks = run_grounded_sam2(
-        text_prompt=negative_prompt,
         image_pil=image_pil,
         processor=processor,
         grounding_model=grounding_model,
@@ -230,6 +260,17 @@ def run_pos_neg_and_write(
         dump_json=dump_json,
     )
 
+    neg_boxes, neg_scores, neg_labels, neg_masks = run_grounded_sam2(
+        text_prompt=negative_prompt,
+        image_pil=image_pil,
+        processor=processor,
+        grounding_model=grounding_model,
+        sam2_predictor=sam2_predictor,
+        device=device,
+        box_threshold=box_threshold,
+        text_threshold=text_threshold,
+    )
+
     write_prompt_folder(
         folder=neg_dir,
         prompt_name="negative",
@@ -244,12 +285,12 @@ def run_pos_neg_and_write(
     )
 
     return {
-        "image_pil": image_pil,
         "img_bgr": img_bgr,
         "pos_boxes": pos_boxes,
         "pos_masks": pos_masks,
         "pos_labels": pos_labels,
         "pos_scores": pos_scores,
+        "neg_boxes": neg_boxes,
         "neg_masks": neg_masks,
         "neg_labels": neg_labels,
         "neg_scores": neg_scores,

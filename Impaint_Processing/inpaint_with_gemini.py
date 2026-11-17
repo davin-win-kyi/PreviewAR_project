@@ -51,30 +51,42 @@ def replace_black_with_white(
 def build_inpaint_prompt(target_class: str, classes_in_crop: str) -> str:
     """
     Builds a structured inpainting prompt that:
-    - fills masked regions with consistent object texture
+    - reconstructs missing parts of the target object
     - removes unwanted objects
-    - ensures a pure white background
+    - places the final object on a pure white studio background
     """
 
-    other_objects = classes_in_crop
+    other_objects = classes_in_crop.strip()
+
+    base_prompt = (
+        f"Edit the image so the final result contains only one complete {target_class}. "
+        f"Reconstruct and fill any masked, missing, or occluded regions so they match the {target_class}'s "
+        f"existing texture, material, color, shape, and geometry. "
+        f"The {target_class} must look complete, natural, and fully assembled, with no gaps, holes, missing parts, or artifacts. "
+        f"Keep the object centered and fully visible. "
+        f"Place the object on a clean pure white studio background. "
+        f"The background must be solid white and contain no other objects, no decorations, no shadows, no text, no reflections, and no visible texture."
+    )
 
     if other_objects:
         prompt = (
-            f"Fill the masked region with the same texture, material, and geometry as the rest of the {target_class}. "
-            f"The final image must contain only the {target_class}. "
-            f"There must be no gaps, holes, or missing parts in the {target_class}. "
-            f"Do not include the following objects: {other_objects}. "
-            f"The background must be a clean pure white studio background with no objects, shadows, or textures."
+            base_prompt
+            + f" Remove any non-target objects, including: {other_objects}. "
+            + f"Do not include any object other than the single {target_class}."
         )
     else:
         prompt = (
-            f"Fill the masked region with the same texture, material, and geometry as the rest of the {target_class}. "
-            f"The final image must contain only the {target_class}. "
-            f"There must be no gaps, holes, or missing parts in the {target_class}. "
-            f"The background must be a clean pure white studio background with no objects, shadows, or textures."
+            base_prompt
+            + f" Do not include any object other than the single {target_class}."
         )
 
     return prompt
+
+
+from io import BytesIO
+from PIL import Image
+from google import genai
+from google.genai.types import GenerateContentConfig
 
 def recontext_masked_area(
     combined_image_path: str,
@@ -82,42 +94,40 @@ def recontext_masked_area(
     inpainted_output_path: str | None = None,
 ) -> Image.Image:
     """
-    Sends the combined image + prompt to Gemini to in-paint the masked area.
+    Sends the combined image + prompt to Gemini to inpaint the masked area.
+    Saves and returns the generated image directly, without replacing black pixels.
     """
     client = genai.Client()
 
     full_prompt = prompt
     print("[gemini] prompt:", full_prompt)
 
-    image = Image.open(combined_image_path)
+    input_image = Image.open(combined_image_path)
 
     if inpainted_output_path is None:
         inpainted_output_path = combined_image_path
 
     response = client.models.generate_content(
-        model="gemini-3.1-flash-image-preview",
-        contents=[full_prompt, image],
+        model="gemini-3-pro-image-preview",
+        contents=[full_prompt, input_image],
         config=GenerateContentConfig(
             response_modalities=["TEXT", "IMAGE"],
             candidate_count=1,
         ),
     )
 
+    output_image = input_image
+
     for part in response.candidates[0].content.parts:
-        if part.text is not None:
+        if getattr(part, "text", None) is not None:
             print("[gemini] text:", part.text)
-        elif part.inline_data is not None:
-            image = Image.open(BytesIO(part.inline_data.data))
-
-            # Replace black pixels with white
-            image = replace_black_with_white(image, threshold=10)
-
-            image.save(inpainted_output_path)
-
+        elif getattr(part, "inline_data", None) is not None:
+            output_image = Image.open(BytesIO(part.inline_data.data)).convert("RGB")
+            output_image.save(inpainted_output_path)
             print(f"[gemini] Inpainted image saved to {inpainted_output_path}")
+            break
 
-    return image
-
+    return output_image
 
 def inpaint_image_with_mask(
     original_image_path: str,

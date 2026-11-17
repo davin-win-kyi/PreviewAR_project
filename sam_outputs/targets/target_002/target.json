@@ -1,0 +1,53 @@
+{
+    "target_index": 2,
+    "image_path": "/home/davin123/PreviewAR_project/webscrape_output/lamp#4/images/image_01.png",
+    "crop": {
+        "xyxy": [
+            1148,
+            1,
+            1313,
+            258
+        ],
+        "width": 165,
+        "height": 257
+    },
+    "positive_prompt": "lamp.",
+    "negative_prompt": ".",
+    "neg_boxes_in_crop": [],
+    "masks": {
+        "positive_rle": {
+            "size": [
+                257,
+                165
+            ],
+            "counts": "Zj0d0W7<E9I5K6K5J5L5K4M4K4M2M4L4M3M3L3N3M3M2N3M3M3L4M2N3M3M3M3N2M2N3M4L5L8G:PMSKN;4^OZ1b6L4L2O1N3M2O2M2O1N2O1N2O1N2O002N1N2O1O0O2O1O1O1N10001N10000000000O101O0000000000000000000N200000000000000002N0000000O2O00000O10001N1O1O1O2N100O2M2O1O2O0N2O2M2O1O2M3N1M4I6C>XOZNcJW2T5?E<K4O2M3L4M2N3N2M3M3M3N1N3N2M3N2M3M4M2M3M3N2M3M4M2M4L4L3M4L4L4K5L4K6K5J8G;_OTN"
+        },
+        "inpaint_rle": {
+            "size": [
+                257,
+                165
+            ],
+            "counts": "U]Y1"
+        },
+        "final_rle": {
+            "size": [
+                257,
+                165
+            ],
+            "counts": "Zj0d0W7<E9I5K6K5J5L5K4M4K4M2M4L4M3M3L3N3M3M2N3M3M3L4M2N3M3M3M3N2M2N3M4L5L8G:PMSKN;4^OZ1b6L4L2O1N3M2O2M2O1N2O1N2O1N2O002N1N2O1O0O2O1O1O1N10001N10000000000O101O0000000000000000000N200000000000000002N0000000O2O00000O10001N1O1O1O2N100O2M2O1O2O0N2O2M2O1O2M3N1M4I6C>XOZNcJW2T5?E<K4O2M3L4M2N3N2M3M3M3N1N3N2M3N2M3M4M2M3M3N2M3M4M2M4L4L3M4L4L4K5L4K6K5J8G;_OTN"
+        }
+    },
+    "stats": {
+        "positive_pixels": 28773,
+        "inpaint_pixels": 0,
+        "final_pixels": 28773
+    },
+    "artifacts": {
+        "crop.jpg": "crop image",
+        "positive_mask.png": "binary mask (0/255)",
+        "inpaint_mask.png": "binary inpaint mask (0/255) derived from negative boxes",
+        "final_mask.png": "binary keep mask = positive minus inpaint",
+        "preview_whited.png": "preview with inpaint region whitened",
+        "final_overlay.jpg": "visual overlay of final mask"
+    }
+}

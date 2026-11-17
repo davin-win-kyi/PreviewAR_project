@@ -1,0 +1,444 @@
+{
+  "meshes": [
+    {
+      "object_type": "Bed",
+      "name": "bed#2",
+      "standardized_dimensions": {
+        "l": 78.23,
+        "w": 57.17,
+        "h": 45.08
+      },
+      "path": "Bed__bed#2.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "Bed",
+      "name": "bed#3",
+      "standardized_dimensions": {
+        "l": 82.0,
+        "w": 59.5,
+        "h": 37.0
+      },
+      "path": "Bed__bed#3.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "bed",
+      "name": "bed#5",
+      "standardized_dimensions": {
+        "l": 83.12,
+        "w": 63.375,
+        "h": 45.625
+      },
+      "path": "bed__bed#5.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "Cabinet",
+      "name": "cabinet#1",
+      "standardized_dimensions": {
+        "l": 11.8,
+        "w": 38.9,
+        "h": 20.6
+      },
+      "path": "Cabinet__cabinet#1.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "Cabinet",
+      "name": "cabinet#2",
+      "standardized_dimensions": {
+        "l": 11.8,
+        "w": 23.6,
+        "h": 31.5
+      },
+      "path": "Cabinet__cabinet#2.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "Cabinet",
+      "name": "cabinet#3",
+      "standardized_dimensions": {
+        "l": 15.75,
+        "w": 31.5,
+        "h": 31.7
+      },
+      "path": "Cabinet__cabinet#3.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "Cabinet",
+      "name": "cabinet#4",
+      "standardized_dimensions": {
+        "l": 22.8,
+        "w": 7.9,
+        "h": 24.3
+      },
+      "path": "Cabinet__cabinet#4.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "Chair",
+      "name": "chair#1",
+      "standardized_dimensions": {
+        "l": 21.25,
+        "w": 21.75,
+        "h": 30.25
+      },
+      "path": "Chair__chair#1.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "Chair",
+      "name": "chair#2",
+      "standardized_dimensions": {
+        "l": 21.6,
+        "w": 20.4,
+        "h": 32.6
+      },
+      "path": "Chair__chair#2.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "Chair",
+      "name": "chair#3",
+      "standardized_dimensions": {
+        "l": 22.8,
+        "w": 22.2,
+        "h": 40.4
+      },
+      "path": "Chair__chair#3.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "Chair",
+      "name": "chair#4",
+      "standardized_dimensions": {
+        "l": 17.9,
+        "w": 18.3,
+        "h": 30.4
+      },
+      "path": "Chair__chair#4.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "Chair",
+      "name": "chair#5",
+      "standardized_dimensions": {
+        "l": 21.25,
+        "w": 18.125,
+        "h": 31.5
+      },
+      "path": "Chair__chair#5.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "Couch",
+      "name": "couch#1",
+      "standardized_dimensions": {
+        "l": 30.0,
+        "w": 68.0,
+        "h": 35.0
+      },
+      "path": "Couch__couch#1.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "Couch",
+      "name": "couch#2",
+      "standardized_dimensions": {
+        "l": 31.0,
+        "w": 62.0,
+        "h": 33.0
+      },
+      "path": "Couch__couch#2.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "Couch",
+      "name": "couch#3",
+      "standardized_dimensions": {
+        "l": 32.3,
+        "w": 66.1,
+        "h": 30.7
+      },
+      "path": "Couch__couch#3.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "Couch",
+      "name": "couch#4",
+      "standardized_dimensions": {
+        "l": 29.5,
+        "w": 100.5,
+        "h": 33.5
+      },
+      "path": "Couch__couch#4.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "Couch",
+      "name": "couch#5",
+      "standardized_dimensions": {
+        "l": 31.12,
+        "w": 57.88,
+        "h": null
+      },
+      "path": "Couch__couch#5.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "Desk",
+      "name": "desk#1",
+      "standardized_dimensions": {
+        "l": 24.0,
+        "w": 48.0,
+        "h": 27.0
+      },
+      "path": "Desk__desk#1.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "Desk",
+      "name": "desk#3",
+      "standardized_dimensions": {
+        "l": 19.69,
+        "w": 31.5,
+        "h": 29.69
+      },
+      "path": "Desk__desk#3.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "Desk",
+      "name": "desk#5",
+      "standardized_dimensions": {
+        "l": 55.125,
+        "w": 23.625,
+        "h": 28.75
+      },
+      "path": "Desk__desk#5.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "Lamp",
+      "name": "lamp#2",
+      "standardized_dimensions": {
+        "l": 4.1,
+        "w": 4.1,
+        "h": 14.7
+      },
+      "path": "Lamp__lamp#2.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "Lamp",
+      "name": "lamp#3",
+      "standardized_dimensions": {
+        "l": 5.9,
+        "w": 5.9,
+        "h": 9.6
+      },
+      "path": "Lamp__lamp#3.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "Lamp",
+      "name": "lamp#4",
+      "standardized_dimensions": {
+        "l": 4.4,
+        "w": 4.4,
+        "h": 12.6
+      },
+      "path": "Lamp__lamp#4.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "Lamp",
+      "name": "lamp#5",
+      "standardized_dimensions": {
+        "l": 6.0,
+        "w": 6.0,
+        "h": 9.0
+      },
+      "path": "Lamp__lamp#5.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "Shelf",
+      "name": "shelf#1",
+      "standardized_dimensions": {
+        "l": 17.3,
+        "w": 12.8,
+        "h": 28.9
+      },
+      "path": "Shelf__shelf#1.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "shelf",
+      "name": "shelf#2",
+      "standardized_dimensions": {
+        "l": 23.0,
+        "w": 14.0,
+        "h": 48.0
+      },
+      "path": "shelf__shelf#2.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "Shelf",
+      "name": "shelf#4",
+      "standardized_dimensions": {
+        "l": 25.4,
+        "w": 27.2,
+        "h": 32.0
+      },
+      "path": "Shelf__shelf#4.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "Shelf",
+      "name": "shelf#5",
+      "standardized_dimensions": {
+        "l": 9.125,
+        "w": 14.5,
+        "h": 39.625
+      },
+      "path": "Shelf__shelf#5.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "Stool",
+      "name": "stool#1",
+      "standardized_dimensions": {
+        "l": 9.3,
+        "w": 9.3,
+        "h": 9.3
+      },
+      "path": "Stool__stool#1.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "Stool",
+      "name": "stool#2",
+      "standardized_dimensions": {
+        "l": 10.5,
+        "w": 13.0,
+        "h": 11.0
+      },
+      "path": "Stool__stool#2.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "Stool",
+      "name": "stool#3",
+      "standardized_dimensions": {
+        "l": 11.4,
+        "w": 17.7,
+        "h": 17.5
+      },
+      "path": "Stool__stool#3.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "Stool",
+      "name": "stool#4",
+      "standardized_dimensions": {
+        "l": 11.8,
+        "w": 11.8,
+        "h": 27.5
+      },
+      "path": "Stool__stool#4.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "Stool",
+      "name": "stool#5",
+      "standardized_dimensions": {
+        "l": 18.875,
+        "w": 16.5,
+        "h": 17.75
+      },
+      "path": "Stool__stool#5.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "Table",
+      "name": "table#1",
+      "standardized_dimensions": {
+        "l": 23.6,
+        "w": 63.0,
+        "h": 29.5
+      },
+      "path": "Table__table#1.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "table",
+      "name": "table#3",
+      "standardized_dimensions": {
+        "l": 24.0,
+        "w": 48.0,
+        "h": 30.0
+      },
+      "path": "table__table#3.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "Table",
+      "name": "table#4",
+      "standardized_dimensions": {
+        "l": 47.5,
+        "w": 31.5,
+        "h": 29.5
+      },
+      "path": "Table__table#4.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "Wardrobe",
+      "name": "wardrobe#1",
+      "standardized_dimensions": {
+        "l": 19.9,
+        "w": 38.0,
+        "h": 70.3
+      },
+      "path": "Wardrobe__wardrobe#1.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "Wardrobe",
+      "name": "wardrobe#2",
+      "standardized_dimensions": {
+        "l": 17.7,
+        "w": 31.5,
+        "h": 70.8
+      },
+      "path": "Wardrobe__wardrobe#2.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "Wardrobe",
+      "name": "wardrobe#3",
+      "standardized_dimensions": {
+        "l": 18.9,
+        "w": 31.5,
+        "h": 68.9
+      },
+      "path": "Wardrobe__wardrobe#3.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "Wardrobe",
+      "name": "wardrobe#5",
+      "standardized_dimensions": {
+        "l": 21.625,
+        "w": 31.125,
+        "h": 69.25
+      },
+      "path": "Wardrobe__wardrobe#5.glb",
+      "status": "ok"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+    "image_path": "/home/davin123/PreviewAR_project/webscrape_output/bed#1/images/image_01.jpg",
+    "positive_prompt": "bed.",
+    "negative_prompt": "pillow. blanket.",
+    "targets_dir": "sam_outputs/targets",
+    "num_targets": 1,
+    "targets": [
+        {
+            "target_index": 0,
+            "folder": "sam_outputs/targets/target_000",
+            "target_json": "sam_outputs/targets/target_000/target.json",
+            "crop_xyxy": [
+                176,
+                376,
+                849,
+                853
+            ],
+            "crop": "sam_outputs/targets/target_000/crop.jpg",
+            "inpaint_mask": "sam_outputs/targets/target_000/inpaint_mask.png",
+            "final_mask": "sam_outputs/targets/target_000/final_mask.png",
+            "final_composite": "sam_outputs/targets/target_000/final_composite.png",
+            "preview_whited": "sam_outputs/targets/target_000/preview_whited.png"
+        }
+    ],
+    "neg_mask_mode": "negative_boxes",
+    "neg_box_mask_params": {
+        "shrink_px": 12,
+        "dilate_px": 1,
+        "feather_px": 0,
+        "constrain_to_pos_region": true,
+        "pos_region_dilate_px": 20
+    }
+}

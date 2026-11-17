@@ -1,0 +1,305 @@
+{
+  "runtimes": [
+    {
+      "url": "https://www.amazon.com/dp/B0DKND9NVW",
+      "object_type": "bed",
+      "runtime_sec": 59.7493,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.ebay.com/itm/365318948490?_skw=bed+frame&itmmeta=01KNN8KBJNHM12Y3JP062A092A&hash=item550eb4c68a:g:J7UAAOSw8lRndmYh&itmprp=enc%3AAQALAAAA8GfYFPkwiKCW4ZNSs2u11xCNQqMyJyJeQ5dJie8r%2FjeskJcUZqBzj9uqXURXN2KYqmyuUH%2ByUsy%2BYcTgaH1PR5iOq4rW%2FLlP5VJWIaaVPTvmKMW%2Bn9oLak9IoxJmEjmksc1pniwhayhSZayZ%2BQ0tRC%2BfHx0EVRE0EI2%2FmB6Cn5B0FeGbC06EZIw%2FcD1mhVuz%2BHqZR6f74ePpGd0OEne6Ed7pjDHw3GPs5CdOZYdoiO2aRMhK96yIVBK0LD4vwyEdu2ABa2t4XKuPnF2J8aHM1VP%2BF5HfrspWZuDcQJ0QQnYB2zFrm21QpVIEjGQ5fqPGXg%3D%3D%7Ctkp%3ABk9SR_65zaitZw",
+      "object_type": "bed",
+      "runtime_sec": 53.4952,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0G4V5V7W9",
+      "object_type": "bed",
+      "runtime_sec": 51.1449,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0GM174X5R",
+      "object_type": "bed",
+      "runtime_sec": 45.8993,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.ikea.com/us/en/p/tonstad-bed-frame-with-storage-oak-veneer-10489146/",
+      "object_type": "bed",
+      "runtime_sec": 43.5753,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0F995LVQV",
+      "object_type": "cabinet",
+      "runtime_sec": 41.46,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0C3H36NVJ",
+      "object_type": "cabinet",
+      "runtime_sec": 46.6013,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.amazon.com/dp/B09W5L6KMY",
+      "object_type": "cabinet",
+      "runtime_sec": 43.9395,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.ebay.com/itm/406125802283?_skw=wooden+cabinet&itmmeta=01KNNA4M1AE5XXR337JBVGRACY&hash=item5e8efbf32b:g:YPwAAeSwNQ9omug7&itmprp=enc%3AAQALAAAA0GfYFPkwiKCW4ZNSs2u11xCf2YiKWQ7CdrzhfL3uBLqcUoi1iI95frKh5d9cnTO%2Bwi6%2F%2BgK5GDgVkNJikRA0H%2FBK832qAZeVuyqqe8YD0eEEtMirLuptCFROB9CV1VdJzqt7KKQyDmA7nq75pzh0gW9uzIHXZ7GsUUGPwAy0oncv4yqBukh9PmenzllSw%2FLARgW3R6IC2lTR4u6S4sulnMDtN7pLkR1Ik4Ayto2unaJBY3x8vHixbePCLahjr9q3Dq6VUMBD8c07YWC2tZWuVOQ%3D%7Ctkp%3ABk9SR6LBkqqtZw",
+      "object_type": "cabinet",
+      "runtime_sec": 45.6979,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.ikea.com/us/en/p/lommarp-cabinet-dark-blue-green-90483027/",
+      "object_type": "cabinet",
+      "runtime_sec": 41.9942,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0CPJ5HD19",
+      "object_type": "chair",
+      "runtime_sec": 46.9963,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.amazon.com/dp/B07R658RDF",
+      "object_type": "chair",
+      "runtime_sec": 44.1637,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.amazon.com/dp/B08C7F3251",
+      "object_type": "chair",
+      "runtime_sec": 45.6475,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.ebay.com/itm/198223786486?_skw=chair&itmmeta=01KNARNN3RYHMTDASG5AE7FF5N&hash=item2e270ef1f6:g:24UAAeSw4TBpw6vG&itmprp=enc%3AAQALAAAA4GfYFPkwiKCW4ZNSs2u11xAJj91aGaDWKxdABVF1H2U1lAeb0F89D5aeh6xWPq%2F8EYn7LWjMO5ul3k5nNiSusM%2B1RAgV5RKE6VzAKlB4VJzTlrKhhHcbDMI8ZA0xZVTN3BD5c9lbSUc3Hf0xXQqrFwdLe2JsKYTe7V3M4Wvjb6EbrNdfU5d6S0md3g3gJTBxiZvlaKxCp7tJHV6HWd9OgBwHqXsJXfHUEGYgGrtbHd6nuP2y8%2Ba7w3CvVeHmGKiwxWEP72oLAQ40GpWHl%2BwdDizShwyDyMPJYwSzukGeaPmW%7Ctkp%3ABk9SR6rS1tiqZw",
+      "object_type": "chair",
+      "runtime_sec": 53.6068,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.ikea.com/us/en/p/vihals-chair-green-tibbleby-gray-green-90595124/",
+      "object_type": "chair",
+      "runtime_sec": 39.4422,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0D8T1PYLD",
+      "object_type": "couch",
+      "runtime_sec": 46.5897,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0F9FB8PGJ",
+      "object_type": "couch",
+      "runtime_sec": 59.2019,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0GK1KQ5TJ",
+      "object_type": "couch",
+      "runtime_sec": 52.2541,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.ebay.com/itm/316843501663?_skw=couch&itmmeta=01KNB7EKRMMES72FQDMXZC96NY&hash=item49c558285f:g:RhkAAeSwiwJpzs0J&itmprp=enc%3AAQALAAAA4GfYFPkwiKCW4ZNSs2u11xCyO5FmrkP2RVS91Rxq5Zsr0wIjLBwz0RZQlj7Ri7kgOOdYh5jaw2mwKyzD%2FcxB1H2iBBRM6lQtnFQiOHVbS%2FHeghS89Rb146lKOM4iGQJpmC%2FepDPHUtpDbjnyxozU9AlvTmAi5wPpcgzvQvpWKxURqsGccaVfSKHJBdwXHlOIsw4M5B7kWPmhoBvLIB1vUFsiyZ8gz1jz9W1kVYApwY6EGiPhhscBrI4zsYphY5M4yLBV2o%2BkVozP%2BMYwwboU317y9Noq4960YTLdJ57V87mZ%7Ctkp%3ABk9SR-S8uueqZw",
+      "object_type": "couch",
+      "runtime_sec": 48.5658,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.ikea.com/us/en/p/saltmyran-loveseat-oereryd-gray-beige-80618531/",
+      "object_type": "couch",
+      "runtime_sec": 47.733,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0GHQVF5N4",
+      "object_type": "desk",
+      "runtime_sec": 49.0745,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.amazon.com/gp/aw/d/B07Q419RSC/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=d0e4236abc194687c132092ddaa02454&hsa_cr_id=0&qid=1775548937&sr=1-3-f02f01d6-adaf-4bef-9a7c-29308eff9043&ref_=sbx__sbtcd2_asin_2_title&pd_rd_w=qQ3l4&content-id=amzn1.sym.d3360101-5266-4e0e-8e4a-de7eb0be6ed9%3Aamzn1.sym.d3360101-5266-4e0e-8e4a-de7eb0be6ed9&pf_rd_p=d3360101-5266-4e0e-8e4a-de7eb0be6ed9&pf_rd_r=BQ10T5SAVG024CV24ZZR&pd_rd_wg=keB9I&pd_rd_r=5c17af08-126b-43fb-828c-637c25a6ab16&th=1",
+      "object_type": "desk",
+      "runtime_sec": 49.9143,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.amazon.com/dp/B08DK1WS6S",
+      "object_type": "desk",
+      "runtime_sec": 43.2867,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.ebay.com/itm/198238314392?_skw=desk&itmmeta=01KNMZ2PPBKQWE6EARCVZK1WZ9&hash=item2e27ec9f98:g:IEgAAeSwXsFpyfzi&itmprp=enc%3AAQALAAAA4GfYFPkwiKCW4ZNSs2u11xCQkuo4chM2ce6rHRz45pTOJyHGVIYhB8l8azIRqwLfcoW5RoeOvo0%2F99aJT2A9dbpiuj6%2F4JQnCcrpcxw8WrqWhLsxIhR3DCNoPdZOGvUCfmf4YxYAssdJmN%2B70sOG0sOLkEqgcA3UXZQpvKRJ5BDVJA0SXwyrdgKPQF2v3FN7WyGXnCLRSY3osRB2Cj0QdAsbMwJrr%2Fopz%2Fa9ulXYpgYFBM6kozc9uBY%2FAvhQvCyzAnfxKroXauI5M8aIGHxHfsVmYW%2F9RPQCXkhWO7RSfim2%7Ctkp%3ABFBM2uuKn61n",
+      "object_type": "desk",
+      "runtime_sec": 53.9089,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.ikea.com/us/en/p/lagkapten-adils-desk-gray-wood-effect-black-s79585372/",
+      "object_type": "desk",
+      "runtime_sec": 48.4603,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0DZD1X83N",
+      "object_type": "lamp",
+      "runtime_sec": 47.7213,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0BZTT3MKR",
+      "object_type": "lamp",
+      "runtime_sec": 44.1648,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.amazon.com/dp/B09Z7YWHRY",
+      "object_type": "lamp",
+      "runtime_sec": 44.6063,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.ebay.com/itm/336475314873?_skw=floor+lamp&itmmeta=01KNKEX3B8377Q0JJAQ51AH001&hash=item4e577ddab9:g:R~AAAeSwykppsndo&itmprp=enc%3AAQALAAAA8GfYFPkwiKCW4ZNSs2u11xCOjr53pdeL%2BC8djJXgSWYHOGkAEzo33cf1wPFOVQYaBiDR8N1pmKNMEn7%2FNiBtxLnoJZNXMmxD7DQ0sAq2%2FUpjl1BmxbbMgznVar%2Fbc%2BaBklsprU9tjR6nlHdrGp2Q6q2hf48quwEhFPwoZPnsRecpWPnPxI1nHRuWsHqfPOmfw9BdKRbc%2BdW0C4%2B19atYU8mQJ4PonnRP68kv7fuhcsOVl3mqDAuHV7Bw6Fgj3Y97rNuyIP816lvhDwNZ8ibID50DlUkOPgASJx3GnbJlYt6mIlmEf0%2BJtYw8PcsrJkiJng%3D%3D%7Ctkp%3ABk9SR_S19O6sZw",
+      "object_type": "lamp",
+      "runtime_sec": 70.7736,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.ikea.com/us/en/p/arstid-table-lamp-brass-white-80321380/",
+      "object_type": "lamp",
+      "runtime_sec": 45.0735,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.amazon.com/gp/aw/d/B0CGRGFR4C/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=ef7fb16861f9dbbd611ed9c848f3858b&hsa_cr_id=0&qid=1775549164&sr=1-3-f02f01d6-adaf-4bef-9a7c-29308eff9043&ref_=sbx__sbtcd2_asin_2_title&pd_rd_w=jFsU0&content-id=amzn1.sym.d3360101-5266-4e0e-8e4a-de7eb0be6ed9%3Aamzn1.sym.d3360101-5266-4e0e-8e4a-de7eb0be6ed9&pf_rd_p=d3360101-5266-4e0e-8e4a-de7eb0be6ed9&pf_rd_r=4JA7AK0781RYWFDCNH1N&pd_rd_wg=Zb46y&pd_rd_r=73b06671-57a5-4128-9abb-b5ba9136f624&th=1",
+      "object_type": "shelf",
+      "runtime_sec": 45.7282,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.amazon.com/dp/B09WKN7477",
+      "object_type": "shelf",
+      "runtime_sec": 51.3472,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0F213BBJY",
+      "object_type": "shelf",
+      "runtime_sec": 54.3532,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.ebay.com/itm/134904705154?_skw=shelf&itmmeta=01KNKG153XHA3MP1PW2T165175&hash=item1f68f27082:g:~4IAAOSwggFlsNYq&itmprp=enc%3AAQALAAAA4GfYFPkwiKCW4ZNSs2u11xBkekYYL1c%2FZ4f6IFFg9i4gznPGs%2BI2WyxX1BhhbCfPeumQaYvo%2FABE5RrSPZ%2BWew0JwGXxwfVi6UTYGlBqT%2FueIon7LW%2F8KmQNVkyP4aDP1BVZux%2BCNdQubXEM2cA7XX6T6r8xQIzWzp%2FZgpz%2Bhkb4X1QRvYGtjHRcyjrXGNS%2FhqOb4qgoP%2B2%2Bb8BuJHPCuLRqhqwaLd%2FgF2vA2DQxQTsyz7EOC5R%2BcCAKt4Ogx90RQiIKLfyGEw%2Fxjp4fHcQ5Da94qVtCkC7J8TOGLbxZexp4%7Ctkp%3ABk9SR7TShPCsZw",
+      "object_type": "shelf",
+      "runtime_sec": 48.1382,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.ikea.com/us/en/p/vesken-shelf-unit-white-40307866/",
+      "object_type": "shelf",
+      "runtime_sec": 45.5898,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0DHZ72KQD",
+      "object_type": "stool",
+      "runtime_sec": 39.9281,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.amazon.com/dp/B06XSDF7MP",
+      "object_type": "stool",
+      "runtime_sec": 47.6271,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.amazon.com/dp/B089SM7X9Q",
+      "object_type": "stool",
+      "runtime_sec": 39.9298,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.ebay.com/itm/227273894784?_skw=stool&itmmeta=01KNBKVXD87H0ZFWR3001PF2PK&hash=item34ea946b80:g:-ysAAeSwHpVpxQZ8&itmprp=enc%3AAQALAAAAwGfYFPkwiKCW4ZNSs2u11xBoOO68IyWCF0wRKbQm2o4GO9mHZiL4djKfcZM615Or7nVVv6ALbAsIA5ZREXG85IIPFv%2FIkg9zSnMvk6u3vhJxnZEbELrfONGZllwqlI0i7BritmKS5g%2Fbyc6Nh6JgNtXUDxz87v1Hl01IUKFx6sS1U8vwNagMfh7XbKAadjfEMc0EvBIb9Yh7w7bb0Cl7iHpPNkPmlUPt3F2J9oCsZwYE0nUrvyl1RhhQQh6hEGPh2A%3D%3D%7Ctkp%3ABk9SR_DW7_OqZw",
+      "object_type": "stool",
+      "runtime_sec": 55.1705,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.ikea.com/us/en/p/grejsimojs-childrens-stool-wood-orange-60598973/",
+      "object_type": "stool",
+      "runtime_sec": 52.2519,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0G2QJ1GMS",
+      "object_type": "table",
+      "runtime_sec": 51.1334,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0FYF9ZRY6",
+      "object_type": "table",
+      "runtime_sec": 46.0225,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.amazon.com/dp/B085PVV9RH",
+      "object_type": "table",
+      "runtime_sec": 63.7388,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.ebay.com/itm/406839227908?_skw=table&itmmeta=01KNP9T5N2YMHZWVSY23NE4ZY9&hash=item5eb981f604:g:kbEAAeSwv5dp1iO9&itmprp=enc%3AAQALAAAA4GfYFPkwiKCW4ZNSs2u11xDhwaGgDRXow6billr9QpDLw2fjKW3zbjFCaZbANJ4TW8AwGjScjwSjNbVlNfuVrYLFqDHeYHzLTFjbqNVVX%2FY3pP6hqWp9KesBk1jU%2FY8frO9PInJ2UST9jsGUMF4reoCoE%2BkdUtdmNHTfWzT8tD2CLRAvgJG2ejI0ZcgdtyXOLWlIa8YTa%2FrQTb0%2BKdhtaFwDaGSqINub009o1DGWFDJz%2B16hVNBD18qCSFKUmbDfU%2BaFQsKrmUthFCt1iIB4SIg0mZC5%2FGqBi81UjRTJMdhl%7Ctkp%3ABk9SR_za6MmtZw",
+      "object_type": "table",
+      "runtime_sec": 46.6092,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.ebay.com/itm/316843552370?_skw=dinning+table&epid=18061978894&itmmeta=01KNKFB3AEZV0RRZAHHQM1YD6D&hash=item49c558ee72:g:52kAAeSwT7ppgtgs&itmprp=enc%3AAQALAAAA0GfYFPkwiKCW4ZNSs2u11xCy3QfI9DgBojQKqqOjHOOrjt48N5YmaQgLf3TDcmdXfv2HDW5LJLNDHkkzcdHkr01Y1gCK%2BDHJ0oterPvby2HEOvITFS2s%2BH85LX4y2yuC0GuhHJXgygT1G106jDLLF5DeStL7ILW8HXjfQMj%2B%2BT3PM8CPR8rQ1zbiPxpkm9bJ4BB3oZcvF7tauTpNGFx1MEmdIpQru%2Fdrn%2F8wymH5s6wQ0ZUhWG4vNuCG3kCbxygIEuy7Ei9LP%2FGqKLJpNfM5568%3D%7Ctkp%3ABk9SR_y2rO-sZw",
+      "object_type": "table",
+      "runtime_sec": 44.8196,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0GJZJJG2P",
+      "object_type": "wardrobe",
+      "runtime_sec": 47.9172,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0DWXBL7FC",
+      "object_type": "wardrobe",
+      "runtime_sec": 52.4492,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.amazon.com/dp/B098KC4QWF",
+      "object_type": "wardrobe",
+      "runtime_sec": 46.4118,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.ikea.com/us/en/p/sundvik-wardrobe-white-90576700/",
+      "object_type": "wardrobe",
+      "runtime_sec": 48.1544,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.ebay.com/itm/397422421987?_skw=wardrobe&itmmeta=01KNN04PX1V3X5HTTENH48J6DT&hash=item5c8838e7e3:g:qZsAAeSw6z9pSohj&itmprp=enc%3AAQALAAAA4GfYFPkwiKCW4ZNSs2u11xAYLM83BFQkPefQDOkaAkMZ574uLzgUZ7TQ2eGkvkl6q3hNWdtGwUZsHVKWNKjVQ%2FSiKjqrEOXkAc8GJKeKxssMnvjJJqYSvTrjccg6SZVVUBB%2FxscfS0U6%2BIhq9eeZTmr4L7SXmQXSkN69U12W5OBQkOEIhHy%2FgdyaDvuLG3H4ssRE9ybXRM26BuHnqNrNHqCtDRca4aDZ931Xhe6NXBZqyrzmu1oz4xbN8kKI%2FWO5KOL7T6aNwsJ7EMI%2F3VyhtnIbsGByTO%2FGVljweX52L8qD%7Ctkp%3ABFBMgO-SoK1n",
+      "object_type": "wardrobe",
+      "runtime_sec": 46.7065,
+      "status": "ok"
+    }
+  ],
+  "average_runtime_sec": 48.5754
+}

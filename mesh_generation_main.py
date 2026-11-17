@@ -309,6 +309,23 @@ def resolve_input_path(raw_path: str, project_root: Path) -> Path:
 
 
 # ============================================================
+# Existing output helpers
+# ============================================================
+
+def load_existing_json_list(json_path: Path, key: str) -> List[Dict[str, Any]]:
+    if not json_path.exists():
+        return []
+    try:
+        data = json.loads(json_path.read_text(encoding="utf-8"))
+        items = data.get(key, [])
+        if isinstance(items, list):
+            return items
+    except Exception:
+        pass
+    return []
+
+
+# ============================================================
 # Main
 # ============================================================
 
@@ -316,7 +333,6 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--impainted_index", default="outputs_preprocessing/impainted_images.json")
     ap.add_argument("--out_dir", default="mesh_outputs", help="Where to write glbs + meshes.json + runtimes.json")
-    ap.add_argument("--skip_existing", action="store_true", help="Skip if GLB already exists")
 
     ap.add_argument("--gradio_url", default="http://127.0.0.1:8080/")
     ap.add_argument("--gradio_cache_dir", default="hunyuan/gradio_cache")
@@ -346,40 +362,31 @@ def main() -> int:
 
     cache_dir = resolve_input_path(args.gradio_cache_dir, project_root)
 
-    meshes_out: List[Dict[str, Any]] = []
-    runtimes_out: List[Dict[str, Any]] = []
+    meshes_json_path = out_dir / "meshes.json"
+    runtimes_json_path = out_dir / "runtimes.json"
 
-    driver = build_driver(headless=bool(args.headless))
+    # Preserve existing JSON exactly as-is.
+    existing_meshes = load_existing_json_list(meshes_json_path, "meshes")
+    existing_runtimes = load_existing_json_list(runtimes_json_path, "runtimes")
+
+    meshes_out: List[Dict[str, Any]] = list(existing_meshes)
+    runtimes_out: List[Dict[str, Any]] = list(existing_runtimes)
+
+    driver: Optional[webdriver.Chrome] = None
+    did_open_driver = False
+
     try:
-        driver.get(args.gradio_url)
-        wait = WebDriverWait(driver, 60)
-        wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "div.gradio-container")))
-        wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "input[type='file']")))
-        print("[selenium] Gradio loaded and ready.")
-        print(f"[paths] project_root={project_root}")
-        print(f"[paths] cache_dir={cache_dir}")
-        print(f"[paths] glb_dir={glb_dir}")
-
         total = len(records)
+
         for i, rec in enumerate(records, start=1):
             img_raw = rec.get("impainted_image_path")
             if not isinstance(img_raw, str) or not img_raw.strip():
                 print(f"[{i}/{total}] [SKIP] missing impainted_image_path")
-                runtimes_out.append({
-                    "description": rec.get("object_type", "item"),
-                    "runtime_sec": 0.0,
-                    "status": "skip_missing_path",
-                })
                 continue
 
             img_path = resolve_input_path(img_raw, project_root)
             if not img_path.exists():
                 print(f"[{i}/{total}] [SKIP] image missing: {img_path}")
-                runtimes_out.append({
-                    "description": rec.get("object_type", "item"),
-                    "runtime_sec": 0.0,
-                    "status": "skip_missing_file",
-                })
                 continue
 
             object_type = rec.get("object_type")
@@ -387,56 +394,29 @@ def main() -> int:
                 object_type = infer_object_type_from_filename(img_path)
             object_type = object_type.strip()
 
-            dims = normalize_dimensions(rec.get("dimensions"))
-            text_desc = rec.get("description")
-            if not isinstance(text_desc, str):
-                text_desc = ""
-
-            product_name = rec.get("name", "")
-            source_url = rec.get("url", "")
-            best_image_path = rec.get("best_image_path", "")
-            best_image_url = rec.get("best_image_url", "")
-            positive_prompt = rec.get("positive_prompt", "")
-            negative_prompt = rec.get("negative_prompt", "")
-            preprocessing_runtime_sec = rec.get("preprocessing_runtime_sec", None)
-            ranking_reasoning = rec.get("ranking_reasoning", "")
-            ranking_scores = rec.get("ranking_scores", {})
-            source_images = rec.get("images", [])
-            scrape_runtime_seconds = rec.get("scrape_runtime_seconds", None)
-            site = rec.get("site", "")
-            scraped_at = rec.get("scraped_at", "")
+            standardized_dimensions = normalize_dimensions(rec.get("standardized_dimensions"))
+            product_name = str(rec.get("name", "")).strip()
 
             out_glb = glb_dir / f"{object_type}__{img_path.stem}.glb"
 
-            if args.skip_existing and out_glb.exists():
-                print(f"[{i}/{total}] [SKIP] exists: {out_glb.name}")
-                meshes_out.append({
-                    "description": object_type,
-                    "text_description": text_desc,
-                    "name": product_name,
-                    "dimensions": dims,
-                    "path": str(out_glb),
-                    "source_image": str(img_path),
-                    "source_url": source_url,
-                    "best_image_path": best_image_path,
-                    "best_image_url": best_image_url,
-                    "positive_prompt": positive_prompt,
-                    "negative_prompt": negative_prompt,
-                    "site": site,
-                    "scraped_at": scraped_at,
-                    "scrape_runtime_seconds": scrape_runtime_seconds,
-                    "preprocessing_runtime_sec": preprocessing_runtime_sec,
-                    "ranking_reasoning": ranking_reasoning,
-                    "ranking_scores": ranking_scores,
-                    "images": source_images,
-                    "status": "skip",
-                })
-                runtimes_out.append({
-                    "description": object_type,
-                    "runtime_sec": 0.0,
-                    "status": "skip",
-                })
+            # Only check whether the output path already exists.
+            # If it exists, skip generation and do not modify JSON.
+            if out_glb.exists():
+                print(f"[{i}/{total}] [SKIP] already generated: {out_glb.name}")
                 continue
+
+            # Lazily open Selenium only if we actually need to generate something new.
+            if driver is None:
+                driver = build_driver(headless=bool(args.headless))
+                driver.get(args.gradio_url)
+                wait = WebDriverWait(driver, 60)
+                wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "div.gradio-container")))
+                wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "input[type='file']")))
+                did_open_driver = True
+                print("[selenium] Gradio loaded and ready.")
+                print(f"[paths] project_root={project_root}")
+                print(f"[paths] cache_dir={cache_dir}")
+                print(f"[paths] glb_dir={glb_dir}")
 
             print(f"[{i}/{total}] Gradio(Selenium) generating: {object_type} :: {img_path.name}")
 
@@ -464,27 +444,13 @@ def main() -> int:
                 total_sec = time.time() - t0
 
                 meshes_out.append({
-                    "description": object_type,
-                    "text_description": text_desc,
+                    "object_type": object_type,
                     "name": product_name,
-                    "dimensions": dims,
+                    "standardized_dimensions": standardized_dimensions,
                     "path": str(out_glb),
-                    "source_image": str(img_path),
-                    "source_url": source_url,
-                    "best_image_path": best_image_path,
-                    "best_image_url": best_image_url,
-                    "positive_prompt": positive_prompt,
-                    "negative_prompt": negative_prompt,
-                    "site": site,
-                    "scraped_at": scraped_at,
-                    "scrape_runtime_seconds": scrape_runtime_seconds,
-                    "preprocessing_runtime_sec": preprocessing_runtime_sec,
-                    "ranking_reasoning": ranking_reasoning,
-                    "ranking_scores": ranking_scores,
-                    "images": source_images,
-                    "mesh_generation_runtime_sec": float(total_sec),
                     "status": "ok",
                 })
+
                 runtimes_out.append({
                     "description": object_type,
                     "runtime_sec": float(total_sec),
@@ -500,52 +466,41 @@ def main() -> int:
                     torch.cuda.synchronize()
                 total_sec = time.time() - t0
                 print(f"  [FAIL] {e}")
+
+                meshes_out.append({
+                    "object_type": object_type,
+                    "name": product_name,
+                    "standardized_dimensions": standardized_dimensions,
+                    "path": str(out_glb),
+                    "status": "fail",
+                })
+
                 runtimes_out.append({
                     "description": object_type,
                     "runtime_sec": float(total_sec),
                     "status": "fail",
                     "error": str(e),
                 })
-                meshes_out.append({
-                    "description": object_type,
-                    "text_description": text_desc,
-                    "name": product_name,
-                    "dimensions": dims,
-                    "path": str(out_glb),
-                    "source_image": str(img_path),
-                    "source_url": source_url,
-                    "best_image_path": best_image_path,
-                    "best_image_url": best_image_url,
-                    "positive_prompt": positive_prompt,
-                    "negative_prompt": negative_prompt,
-                    "site": site,
-                    "scraped_at": scraped_at,
-                    "scrape_runtime_seconds": scrape_runtime_seconds,
-                    "preprocessing_runtime_sec": preprocessing_runtime_sec,
-                    "ranking_reasoning": ranking_reasoning,
-                    "ranking_scores": ranking_scores,
-                    "images": source_images,
-                    "mesh_generation_runtime_sec": float(total_sec),
-                    "status": "fail",
-                    "error": str(e),
-                })
 
     finally:
-        driver.quit()
+        if driver is not None:
+            driver.quit()
 
     out_dir.mkdir(parents=True, exist_ok=True)
-    (out_dir / "meshes.json").write_text(
+    meshes_json_path.write_text(
         json.dumps({"meshes": meshes_out}, indent=2),
         encoding="utf-8",
     )
-    (out_dir / "runtimes.json").write_text(
+    runtimes_json_path.write_text(
         json.dumps({"runtimes": runtimes_out}, indent=2),
         encoding="utf-8",
     )
 
-    print(f"\nWrote: {(out_dir / 'meshes.json').resolve()}")
-    print(f"Wrote: {(out_dir / 'runtimes.json').resolve()}")
+    print(f"\nWrote: {meshes_json_path.resolve()}")
+    print(f"Wrote: {runtimes_json_path.resolve()}")
     print(f"GLBs:  {glb_dir}")
+    if not did_open_driver:
+        print("No new meshes needed; Selenium was not started.")
     return 0
 
 

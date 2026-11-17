@@ -1,0 +1,61 @@
+{
+    "prompt_name": "negative",
+    "text_prompt": "pillow. blanket.",
+    "image_path": "/home/davin123/PreviewAR_project/webscrape_output/bed#1/images/image_01.jpg",
+    "box_format": "xyxy",
+    "img_width": 1448,
+    "img_height": 1086,
+    "annotations": [
+        {
+            "class_name": "pillow",
+            "bbox": [
+                425.7519226074219,
+                408.51495361328125,
+                603.934814453125,
+                504.3720397949219
+            ],
+            "segmentation": {
+                "size": [
+                    1086,
+                    1448
+                ],
+                "counts": "fZV>2kQ1:ooNIhm0?lQOFTn0d0TQOKjn0e10O100N1O2N2N2O1O0N3N2N1N3M3M2QOnoNLZP12QPO\\OXP1c0b0000O010O1]O_OioNa0jP1000000000000001O00000000000000000000000000001O0000000000000000000000000000000O1000000000000000000O10000000000001O0001O00000000000000000000000000000O1000000000000O2O0000000000000000000O10000000000O100000000000000000000O100000001O000O10000000000O100000000O01000O1000000O2OO1O1N2H8G9L4N2N3M3MXlQl0"
+            },
+            "score": 0.4335017800331116
+        },
+        {
+            "class_name": "pillow",
+            "bbox": [
+                517.6668701171875,
+                451.80670166015625,
+                692.8818359375,
+                532.5061645507812
+            ],
+            "segmentation": {
+                "size": [
+                    1086,
+                    1448
+                ],
+                "counts": "bkUa06gQ11N2O2N100O101N1O100O100O1O1O101N1O2N1O1O100O2O0O1O1O1O100O2N100O1O100O1O1O100O100O2N1O2N1O1O2N1O100O2N100O1O100O101N1O1O2O0O100O2N1O100O101N1N200O10000O1000000O2O00000001O000000001O0000000000000000001O00001O001O00001O00001O0000001O0000001O0000001N100O1O1O1O2O0O1O100O100N2O2M2O2N1O2N1N2O2N1O1O2N1N2O2N1O1O1O2N1O1O2N1O1N2O101O0O2N1O2N2N101N1O2N2N2NkWPi0"
+            },
+            "score": 0.4373428225517273
+        },
+        {
+            "class_name": "pillow",
+            "bbox": [
+                640.0548706054688,
+                459.3902893066406,
+                786.2557983398438,
+                517.7855224609375
+            ],
+            "segmentation": {
+                "size": [
+                    1086,
+                    1448
+                ],
+                "counts": "`Uhe01mQ100001O0O2O00001aoNLRo04mPONRo02mPOOSo01kPO1Uo00hPO2Xo0NgPO3Xo0NgPO3Yo0MfPO4Zo0MdPO4\\o0LcPO5]o0KbPO6^o0K`PO6`o0J_PO7ao0I^PO8bo0H]PO9co0HZPO:fo0FYPO;go0EYPO:ho0GVPO:ko0ETPO<lo0ESPO;mo0ERPO<no0EQPO;oo0EPPO<PP1EmoN=SP1DkoN=UP1DioN=WP1DgoN=YP1DfoN<ZP1EdoN<\\P1c00000000000000000000000000000001O000000000000000000001O000000001O00000000001O0O10001O000000000000001O1O1O001O00000010O01O001O001O001O010O1DUoNClP1<ToNDmP1:UoNElP1:ToNFlP1:ToNGlP18ToNHmP18RoNHoP17QoNIoP17QoNIPQ1c0O01O1O1O002O0O100\\OjnN>^Q1M6K3K3N1Nd`le0"
+            },
+            "score": 0.4602889120578766
+        }
+    ]
+}

@@ -1,0 +1,53 @@
+{
+    "target_index": 7,
+    "image_path": "/home/davin123/PreviewAR_project/webscrape_output/lamp#4/images/image_01.jpg",
+    "crop": {
+        "xyxy": [
+            108,
+            313,
+            180,
+            480
+        ],
+        "width": 72,
+        "height": 167
+    },
+    "positive_prompt": "lamp.",
+    "negative_prompt": "hand. charging cables. smartphone. smartwatch.",
+    "neg_boxes_in_crop": [],
+    "masks": {
+        "positive_rle": {
+            "size": [
+                167,
+                72
+            ],
+            "counts": "i:>f4k1VNh0YO5L2TOQM\\Oo2b0TM]Om2`0VM^Ol2`0VM_Ok2?WM@j2>WMBj2<XMCi2<XMCi2<XMCi2<XMCh2=XMBj2<XMCh2=YMBh2=XMCh2<ZMCg2<YMDg2<ZMCf2<[MDf2;ZMEf2;ZMDg2<YMDh2:YMFg2:YMFh28YMHg27ZMIj21XMOP400000000000dN6ZMJf29XMGg2:YMFg2;XMEh2;XMEg2<XMEh2;XMFg2;XMEh2;XMEh2;XMEg2=XMCh2=XMCh2>WMBi2>VMDi2=VMCj2>UMBj2?UMBk2?TMBk2?TMAl2`0SM@m2a0QMAn2`0QM@n2b0PM_OP3c0mL^OS3h0gLYOX3[1O101N2N2N2H8dNa1aNh0"
+        },
+        "inpaint_rle": {
+            "size": [
+                167,
+                72
+            ],
+            "counts": "hg;"
+        },
+        "final_rle": {
+            "size": [
+                167,
+                72
+            ],
+            "counts": "i:>f4k1VNh0YO5L2TOQM\\Oo2b0TM]Om2`0VM^Ol2`0VM_Ok2?WM@j2>WMBj2<XMCi2<XMCi2<XMCi2<XMCh2=XMBj2<XMCh2=YMBh2=XMCh2<ZMCg2<YMDg2<ZMCf2<[MDf2;ZMEf2;ZMDg2<YMDh2:YMFg2:YMFh28YMHg27ZMIj21XMOP400000000000dN6ZMJf29XMGg2:YMFg2;XMEh2;XMEg2<XMEh2;XMFg2;XMEh2;XMEh2;XMEg2=XMCh2=XMCh2>WMBi2>VMDi2=VMCj2>UMBj2?UMBk2?TMBk2?TMAl2`0SM@m2a0QMAn2`0QM@n2b0PM_OP3c0mL^OS3h0gLYOX3[1O101N2N2N2H8dNa1aNh0"
+        }
+    },
+    "stats": {
+        "positive_pixels": 9293,
+        "inpaint_pixels": 0,
+        "final_pixels": 9293
+    },
+    "artifacts": {
+        "crop.jpg": "crop image",
+        "positive_mask.png": "binary mask (0/255)",
+        "inpaint_mask.png": "binary inpaint mask (0/255) derived from negative boxes",
+        "final_mask.png": "binary keep mask = positive minus inpaint",
+        "preview_whited.png": "preview with inpaint region whitened",
+        "final_overlay.jpg": "visual overlay of final mask"
+    }
+}

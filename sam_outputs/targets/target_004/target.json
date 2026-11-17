@@ -1,0 +1,53 @@
+{
+    "target_index": 4,
+    "image_path": "/home/davin123/PreviewAR_project/webscrape_output/lamp#4/images/image_02.jpg",
+    "crop": {
+        "xyxy": [
+            394,
+            1026,
+            505,
+            1316
+        ],
+        "width": 111,
+        "height": 290
+    },
+    "positive_prompt": "lamp.",
+    "negative_prompt": ".",
+    "neg_boxes_in_crop": [],
+    "masks": {
+        "positive_rle": {
+            "size": [
+                290,
+                111
+            ],
+            "counts": "\\d0c2d4Q3eN9J3N3M2O0O101N1000000TOYJ]Nh5X1eJdN\\5X1iJgNW5W1lJhNT5V1oJiNQ5V1QKiNo4V1RKjNn4V1RKjNn4U1TKjNl4U1UKkNk4U1UKkNk4U1VKjNj4V1VKjNj4V1VKjNj4U1WKkNi4U1WKkNj4T1VKlNj4T1VKlNj4T1VKlNj4T1VKlNj4T1VKlNj4T1VKlNj4T1VKlNj4T1VKlNj4T1VKlNj4T1VKlNj4T1VKlNj4T1VKlNj4T1VKlNj4S1WKmNi4S1WKmNi4S1WKmNi4S1WKmNi4S1WKmNj4R1VKnNj4Q1WKoNj4o0WKQOo45`I6f1EX700000000001O000000000]Ml0XKTOf4P1XKPOh4R1VKnNi4S1WKmNi4S1WKmNi4S1WKmNi4S1WKmNi4S1WKmNi4S1WKmNi4S1WKmNi4S1WKmNi4S1WKmNi4S1WKmNi4S1WKmNi4S1WKmNi4S1WKmNi4S1WKmNi4S1WKmNi4S1WKmNi4S1WKmNi4S1WKmNi4T1VKlNj4T1VKlNj4T1VKlNj4T1VKlNj4T1VKlNj4U1TKlNl4T1TKlNl4U1SKkNm4U1SKkNm4V1QKkNo4U1QKkNo4V1PKjNo4Y1nJhNR5[1jJfNV5^1eJcN[5b1_J_Na5j1TJXNl5_2O10001N100O3L4I8nNe0"
+        },
+        "inpaint_rle": {
+            "size": [
+                290,
+                111
+            ],
+            "counts": "n]o0"
+        },
+        "final_rle": {
+            "size": [
+                290,
+                111
+            ],
+            "counts": "\\d0c2d4Q3eN9J3N3M2O0O101N1000000TOYJ]Nh5X1eJdN\\5X1iJgNW5W1lJhNT5V1oJiNQ5V1QKiNo4V1RKjNn4V1RKjNn4U1TKjNl4U1UKkNk4U1UKkNk4U1VKjNj4V1VKjNj4V1VKjNj4U1WKkNi4U1WKkNj4T1VKlNj4T1VKlNj4T1VKlNj4T1VKlNj4T1VKlNj4T1VKlNj4T1VKlNj4T1VKlNj4T1VKlNj4T1VKlNj4T1VKlNj4T1VKlNj4T1VKlNj4S1WKmNi4S1WKmNi4S1WKmNi4S1WKmNi4S1WKmNj4R1VKnNj4Q1WKoNj4o0WKQOo45`I6f1EX700000000001O000000000]Ml0XKTOf4P1XKPOh4R1VKnNi4S1WKmNi4S1WKmNi4S1WKmNi4S1WKmNi4S1WKmNi4S1WKmNi4S1WKmNi4S1WKmNi4S1WKmNi4S1WKmNi4S1WKmNi4S1WKmNi4S1WKmNi4S1WKmNi4S1WKmNi4S1WKmNi4S1WKmNi4S1WKmNi4T1VKlNj4T1VKlNj4T1VKlNj4T1VKlNj4T1VKlNj4U1TKlNl4T1TKlNl4U1SKkNm4U1SKkNm4V1QKkNo4U1QKkNo4V1PKjNo4Y1nJhNR5[1jJfNV5^1eJcN[5b1_J_Na5j1TJXNl5_2O10001N100O3L4I8nNe0"
+        }
+    },
+    "stats": {
+        "positive_pixels": 26212,
+        "inpaint_pixels": 0,
+        "final_pixels": 26212
+    },
+    "artifacts": {
+        "crop.jpg": "crop image",
+        "positive_mask.png": "binary mask (0/255)",
+        "inpaint_mask.png": "binary inpaint mask (0/255) derived from negative boxes",
+        "final_mask.png": "binary keep mask = positive minus inpaint",
+        "preview_whited.png": "preview with inpaint region whitened",
+        "final_overlay.jpg": "visual overlay of final mask"
+    }
+}

@@ -1,0 +1,53 @@
+{
+    "target_index": 6,
+    "image_path": "/home/davin123/PreviewAR_project/webscrape_output/lamp#4/images/image_01.jpg",
+    "crop": {
+        "xyxy": [
+            105,
+            1183,
+            179,
+            1353
+        ],
+        "width": 74,
+        "height": 170
+    },
+    "positive_prompt": "lamp.",
+    "negative_prompt": "hand. charging cables. smartphone. smartwatch.",
+    "neg_boxes_in_crop": [],
+    "masks": {
+        "positive_rle": {
+            "size": [
+                170,
+                74
+            ],
+            "counts": "U`0k2^27I5K4ZOfLVO]3b0jL[OY3?mL_OT3=PMBQ3<QMCo2=QMCP3;RMDn2<SMCn2;TMDm2;TMDl2;VMCl2<TMDl2<UMCk2=UMCl2;VMDj2<VMDj2;XMDi2;WMEi2;WMDk2;UMEl29UMGl28TMHn25SMKo21SMOT40000000000000b>3ZA4L2RLGh2;WMEi2<VMDj2<VMDj2=UMDi2=VMDj2<VMDj2=UMCk2=UMCj2?TMBl2?SMAm2?SMBk2`0SMAm2?SMAm2`0RM@n2`0RM@m2b0QM@n2a0QM_Oo2b0PM^OP3c0nL^OR3c0mL^OQ3e0lL\\OT3g0hL[OW3\\1O101N2M3K5^Oc0hNU6"
+        },
+        "inpaint_rle": {
+            "size": [
+                170,
+                74
+            ],
+            "counts": "TY<"
+        },
+        "final_rle": {
+            "size": [
+                170,
+                74
+            ],
+            "counts": "U`0k2^27I5K4ZOfLVO]3b0jL[OY3?mL_OT3=PMBQ3<QMCo2=QMCP3;RMDn2<SMCn2;TMDm2;TMDl2;VMCl2<TMDl2<UMCk2=UMCl2;VMDj2<VMDj2;XMDi2;WMEi2;WMDk2;UMEl29UMGl28TMHn25SMKo21SMOT40000000000000b>3ZA4L2RLGh2;WMEi2<VMDj2<VMDj2=UMDi2=VMDj2<VMDj2=UMCk2=UMCj2?TMBl2?SMAm2?SMBk2`0SMAm2?SMAm2`0RM@n2`0RM@m2b0QM@n2a0QM_Oo2b0PM^OP3c0nL^OR3c0mL^OQ3e0lL\\OT3g0hL[OW3\\1O101N2M3K5^Oc0hNU6"
+        }
+    },
+    "stats": {
+        "positive_pixels": 9912,
+        "inpaint_pixels": 0,
+        "final_pixels": 9912
+    },
+    "artifacts": {
+        "crop.jpg": "crop image",
+        "positive_mask.png": "binary mask (0/255)",
+        "inpaint_mask.png": "binary inpaint mask (0/255) derived from negative boxes",
+        "final_mask.png": "binary keep mask = positive minus inpaint",
+        "preview_whited.png": "preview with inpaint region whitened",
+        "final_overlay.jpg": "visual overlay of final mask"
+    }
+}

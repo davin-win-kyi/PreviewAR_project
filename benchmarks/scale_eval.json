@@ -1,0 +1,2664 @@
+{
+  "summary": {
+    "n_ok": 53,
+    "n_fail": 0,
+    "mean_mse_absolute_in2": 923.0320289593058,
+    "rmse_absolute_in": 30.38144218037231,
+    "mean_mse_relative_ratio": 0.004023183458064379,
+    "rmse_relative_ratio": 0.06342856973055895,
+    "mean_relative_rmse_normalized": 0.04614477883984765,
+    "mean_relative_rmse_percent": 4.614477883984764
+  },
+  "items": {
+    "bed#1": {
+      "name": "bed#1",
+      "description": null,
+      "url": null,
+      "path_to_glb": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/bed__bed#1.glb",
+      "glb_absolute": {
+        "a": 78.30880758330578,
+        "b": 70.93959905969815,
+        "c": 44.53705990408349
+      },
+      "glb_relative": {
+        "a": 1.0,
+        "b": 0.9058955339631729,
+        "c": 0.5687362798457182
+      },
+      "actual_absolute": {
+        "a": 79.9,
+        "b": 57.1,
+        "c": 35.4
+      },
+      "actual_relative": {
+        "a": 1.0,
+        "b": 0.7146433041301626,
+        "c": 0.44305381727158943
+      },
+      "metrics": {
+        "mse_absolute_in2": 92.51741971031781,
+        "rmse_absolute_in": 9.618597595820184,
+        "mse_relative_ratio": 0.017457832271598615,
+        "rmse_relative_ratio": 0.13212809039564075,
+        "relative_rmse_normalized": 0.13212809039564075,
+        "relative_rmse_percent": 13.212809039564075
+      },
+      "matching": "sorted_desc",
+      "debug": {
+        "raw_gt_dims_in": {
+          "a": 79.9,
+          "b": 57.1,
+          "c": 35.4
+        },
+        "raw_glb_dims_in": {
+          "a": 78.30880758330578,
+          "b": 70.93959905969815,
+          "c": 44.53705990408349
+        },
+        "blender_json_keys": [
+          "largest_mesh_name",
+          "glb_absolute",
+          "debug"
+        ],
+        "gt_parse_source": "dimensions_or_text_description"
+      }
+    },
+    "bed#2": {
+      "name": "bed#2",
+      "description": null,
+      "url": null,
+      "path_to_glb": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/bed__bed#2.glb",
+      "glb_absolute": {
+        "a": 78.3066392883541,
+        "b": 71.31386929609644,
+        "c": 47.393239389254354
+      },
+      "glb_relative": {
+        "a": 1.0,
+        "b": 0.9107001646883646,
+        "c": 0.6052263233355586
+      },
+      "actual_absolute": {
+        "a": 77.5,
+        "b": 39.8,
+        "c": 39.3
+      },
+      "actual_relative": {
+        "a": 1.0,
+        "b": 0.5135483870967742,
+        "c": 0.5070967741935484
+      },
+      "metrics": {
+        "mse_absolute_in2": 353.09171625491496,
+        "rmse_absolute_in": 18.790734851381277,
+        "mse_relative_ratio": 0.05578631428632475,
+        "rmse_relative_ratio": 0.23619126632101525,
+        "relative_rmse_normalized": 0.23619126632101525,
+        "relative_rmse_percent": 23.619126632101526
+      },
+      "matching": "sorted_desc",
+      "debug": {
+        "raw_gt_dims_in": {
+          "a": 77.5,
+          "b": 39.8,
+          "c": 39.3
+        },
+        "raw_glb_dims_in": {
+          "a": 78.3066392883541,
+          "b": 71.31386929609644,
+          "c": 47.393239389254354
+        },
+        "blender_json_keys": [
+          "largest_mesh_name",
+          "glb_absolute",
+          "debug"
+        ],
+        "gt_parse_source": "dimensions_or_text_description"
+      }
+    },
+    "bed#3": {
+      "name": "bed#3",
+      "description": null,
+      "url": null,
+      "path_to_glb": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/bed__bed#3.glb",
+      "glb_absolute": {
+        "a": 78.28474983455628,
+        "b": 65.2478341981182,
+        "c": 53.11252094629243
+      },
+      "glb_relative": {
+        "a": 1.0,
+        "b": 0.8334680041260941,
+        "c": 0.6784529689184446
+      },
+      "actual_absolute": {
+        "a": 78.23,
+        "b": 57.17,
+        "c": 45.08
+      },
+      "actual_relative": {
+        "a": 1.0,
+        "b": 0.7307938131151732,
+        "c": 0.576249520644254
+      },
+      "metrics": {
+        "mse_absolute_in2": 43.258598543099474,
+        "rmse_absolute_in": 6.577126921620068,
+        "mse_relative_ratio": 0.006995844779627408,
+        "rmse_relative_ratio": 0.08364116677586109,
+        "relative_rmse_normalized": 0.08364116677586109,
+        "relative_rmse_percent": 8.364116677586109
+      },
+      "matching": "sorted_desc",
+      "debug": {
+        "raw_gt_dims_in": {
+          "a": 78.23,
+          "b": 57.17,
+          "c": 45.08
+        },
+        "raw_glb_dims_in": {
+          "a": 78.28474983455628,
+          "b": 65.2478341981182,
+          "c": 53.11252094629243
+        },
+        "blender_json_keys": [
+          "largest_mesh_name",
+          "glb_absolute",
+          "debug"
+        ],
+        "gt_parse_source": "dimensions_or_text_description"
+      }
+    },
+    "bed#4": {
+      "name": "bed#4",
+      "description": null,
+      "url": null,
+      "path_to_glb": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/bed__bed#4.glb",
+      "glb_absolute": {
+        "a": 78.29224969458393,
+        "b": 51.30766883609802,
+        "c": 41.822772326431874
+      },
+      "glb_relative": {
+        "a": 1.0,
+        "b": 0.6553352220206716,
+        "c": 0.5341878984137184
+      },
+      "actual_absolute": {
+        "a": 81.69,
+        "b": 59.45,
+        "c": 47.2
+      },
+      "actual_relative": {
+        "a": 1.0,
+        "b": 0.7277512547435427,
+        "c": 0.5777940996449994
+      },
+      "metrics": {
+        "mse_absolute_in2": 35.58561379133045,
+        "rmse_absolute_in": 5.96536786722583,
+        "mse_relative_ratio": 0.0023818608603809713,
+        "rmse_relative_ratio": 0.04880431190357028,
+        "relative_rmse_normalized": 0.04880431190357028,
+        "relative_rmse_percent": 4.880431190357028
+      },
+      "matching": "sorted_desc",
+      "debug": {
+        "raw_gt_dims_in": {
+          "a": 81.69,
+          "b": 59.45,
+          "c": 47.2
+        },
+        "raw_glb_dims_in": {
+          "a": 78.29224969458393,
+          "b": 51.30766883609802,
+          "c": 41.822772326431874
+        },
+        "blender_json_keys": [
+          "largest_mesh_name",
+          "glb_absolute",
+          "debug"
+        ],
+        "gt_parse_source": "dimensions_or_text_description"
+      }
+    },
+    "bed#5": {
+      "name": "bed#5",
+      "description": null,
+      "url": null,
+      "path_to_glb": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/bed__bed#5.glb",
+      "glb_absolute": {
+        "a": 78.30536740971363,
+        "b": 71.14259746130996,
+        "c": 45.78295655137911
+      },
+      "glb_relative": {
+        "a": 1.0,
+        "b": 0.9085277269573844,
+        "c": 0.5846720099253353
+      },
+      "actual_absolute": {
+        "a": 83.125,
+        "b": 63.375,
+        "c": 45.625
+      },
+      "actual_relative": {
+        "a": 1.0,
+        "b": 0.762406015037594,
+        "c": 0.5488721804511278
+      },
+      "metrics": {
+        "mse_absolute_in2": 27.86312629947436,
+        "rmse_absolute_in": 5.27855342868426,
+        "mse_relative_ratio": 0.007544394161584183,
+        "rmse_relative_ratio": 0.08685847201962617,
+        "relative_rmse_normalized": 0.08685847201962617,
+        "relative_rmse_percent": 8.685847201962616
+      },
+      "matching": "sorted_desc",
+      "debug": {
+        "raw_gt_dims_in": {
+          "a": 83.125,
+          "b": 63.375,
+          "c": 45.625
+        },
+        "raw_glb_dims_in": {
+          "a": 78.30536740971363,
+          "b": 71.14259746130996,
+          "c": 45.78295655137911
+        },
+        "blender_json_keys": [
+          "largest_mesh_name",
+          "glb_absolute",
+          "debug"
+        ],
+        "gt_parse_source": "dimensions_or_text_description"
+      }
+    },
+    "cabinet#1": {
+      "name": "cabinet#1",
+      "description": null,
+      "url": null,
+      "path_to_glb": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/cabinet__cabinet#1.glb",
+      "glb_absolute": {
+        "a": 78.26962339596486,
+        "b": 41.587531097291965,
+        "c": 29.767319912046897
+      },
+      "glb_relative": {
+        "a": 1.0,
+        "b": 0.5313367982735941,
+        "c": 0.3803176586330877
+      },
+      "actual_absolute": {
+        "a": 38.9,
+        "b": 20.6,
+        "c": 11.8
+      },
+      "actual_relative": {
+        "a": 1.0,
+        "b": 0.5295629820051414,
+        "c": 0.30334190231362473
+      },
+      "metrics": {
+        "mse_absolute_in2": 771.0894309072459,
+        "rmse_absolute_in": 27.768497094859956,
+        "mse_relative_ratio": 0.00197613782836919,
+        "rmse_relative_ratio": 0.04445377181262789,
+        "relative_rmse_normalized": 0.04445377181262789,
+        "relative_rmse_percent": 4.445377181262789
+      },
+      "matching": "sorted_desc",
+      "debug": {
+        "raw_gt_dims_in": {
+          "a": 11.8,
+          "b": 38.9,
+          "c": 20.6
+        },
+        "raw_glb_dims_in": {
+          "a": 78.26962339596486,
+          "b": 41.587531097291965,
+          "c": 29.767319912046897
+        },
+        "blender_json_keys": [
+          "largest_mesh_name",
+          "glb_absolute",
+          "debug"
+        ],
+        "gt_parse_source": "dimensions_or_text_description"
+      }
+    },
+    "cabinet#2": {
+      "name": "cabinet#2",
+      "description": null,
+      "url": null,
+      "path_to_glb": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/cabinet__cabinet#2.glb",
+      "glb_absolute": {
+        "a": 78.29255945100559,
+        "b": 56.46130231421763,
+        "c": 30.42332300050991
+      },
+      "glb_relative": {
+        "a": 1.0,
+        "b": 0.7211579581780098,
+        "c": 0.38858511222319164
+      },
+      "actual_absolute": {
+        "a": 31.5,
+        "b": 23.6,
+        "c": 11.8
+      },
+      "actual_relative": {
+        "a": 1.0,
+        "b": 0.7492063492063492,
+        "c": 0.3746031746031746
+      },
+      "metrics": {
+        "mse_absolute_in2": 1205.4123231145397,
+        "rmse_absolute_in": 34.71904841890889,
+        "mse_relative_ratio": 0.00032740227296289347,
+        "rmse_relative_ratio": 0.01809426077414862,
+        "relative_rmse_normalized": 0.01809426077414862,
+        "relative_rmse_percent": 1.809426077414862
+      },
+      "matching": "sorted_desc",
+      "debug": {
+        "raw_gt_dims_in": {
+          "a": 11.8,
+          "b": 23.6,
+          "c": 31.5
+        },
+        "raw_glb_dims_in": {
+          "a": 78.29255945100559,
+          "b": 56.46130231421763,
+          "c": 30.42332300050991
+        },
+        "blender_json_keys": [
+          "largest_mesh_name",
+          "glb_absolute",
+          "debug"
+        ],
+        "gt_parse_source": "dimensions_or_text_description"
+      }
+    },
+    "cabinet#3": {
+      "name": "cabinet#3",
+      "description": null,
+      "url": null,
+      "path_to_glb": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/cabinet__cabinet#3.glb",
+      "glb_absolute": {
+        "a": 78.28030999251239,
+        "b": 76.54540182098629,
+        "c": 38.26870927660484
+      },
+      "glb_relative": {
+        "a": 1.0,
+        "b": 0.9778372342714018,
+        "c": 0.4888676255914839
+      },
+      "actual_absolute": {
+        "a": 31.7,
+        "b": 31.5,
+        "c": 15.75
+      },
+      "actual_relative": {
+        "a": 1.0,
+        "b": 0.9936908517350158,
+        "c": 0.4968454258675079
+      },
+      "metrics": {
+        "mse_absolute_in2": 1568.635257232304,
+        "rmse_absolute_in": 39.606000268044035,
+        "mse_relative_ratio": 0.00010499416130891211,
+        "rmse_relative_ratio": 0.010246665863045994,
+        "relative_rmse_normalized": 0.010246665863045994,
+        "relative_rmse_percent": 1.0246665863045994
+      },
+      "matching": "sorted_desc",
+      "debug": {
+        "raw_gt_dims_in": {
+          "a": 15.75,
+          "b": 31.5,
+          "c": 31.7
+        },
+        "raw_glb_dims_in": {
+          "a": 78.28030999251239,
+          "b": 76.54540182098629,
+          "c": 38.26870927660484
+        },
+        "blender_json_keys": [
+          "largest_mesh_name",
+          "glb_absolute",
+          "debug"
+        ],
+        "gt_parse_source": "dimensions_or_text_description"
+      }
+    },
+    "cabinet#4": {
+      "name": "cabinet#4",
+      "description": null,
+      "url": null,
+      "path_to_glb": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/cabinet__cabinet#4.glb",
+      "glb_absolute": {
+        "a": 78.27919299208273,
+        "b": 77.97974770463358,
+        "c": 34.129643064784254
+      },
+      "glb_relative": {
+        "a": 1.0,
+        "b": 0.9961746502997363,
+        "c": 0.4359989131241577
+      },
+      "actual_absolute": {
+        "a": 31.0,
+        "b": 30.0,
+        "c": 14.9
+      },
+      "actual_relative": {
+        "a": 1.0,
+        "b": 0.967741935483871,
+        "c": 0.4806451612903226
+      },
+      "metrics": {
+        "mse_absolute_in2": 1635.7191507273003,
+        "rmse_absolute_in": 40.44402490760904,
+        "mse_relative_ratio": 0.0009339022490383683,
+        "rmse_relative_ratio": 0.030559814283440408,
+        "relative_rmse_normalized": 0.030559814283440408,
+        "relative_rmse_percent": 3.0559814283440407
+      },
+      "matching": "sorted_desc",
+      "debug": {
+        "raw_gt_dims_in": {
+          "a": 14.9,
+          "b": 30.0,
+          "c": 31.0
+        },
+        "raw_glb_dims_in": {
+          "a": 78.27919299208273,
+          "b": 77.97974770463358,
+          "c": 34.129643064784254
+        },
+        "blender_json_keys": [
+          "largest_mesh_name",
+          "glb_absolute",
+          "debug"
+        ],
+        "gt_parse_source": "dimensions_or_text_description"
+      }
+    },
+    "cabinet#5": {
+      "name": "cabinet#5",
+      "description": null,
+      "url": null,
+      "path_to_glb": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/cabinet__cabinet#5.glb",
+      "glb_absolute": {
+        "a": 78.25041849782149,
+        "b": 78.24934373690388,
+        "c": 42.41701655500517
+      },
+      "glb_relative": {
+        "a": 1.0,
+        "b": 0.9999862651096539,
+        "c": 0.5420676000114437
+      },
+      "actual_absolute": {
+        "a": 40.125,
+        "b": 39.625,
+        "c": 19.625
+      },
+      "actual_relative": {
+        "a": 1.0,
+        "b": 0.9875389408099688,
+        "c": 0.48909657320872274
+      },
+      "metrics": {
+        "mse_absolute_in2": 1154.954494461388,
+        "rmse_absolute_in": 33.98462144060734,
+        "mse_relative_ratio": 0.0009869551875853718,
+        "rmse_relative_ratio": 0.031415842939277815,
+        "relative_rmse_normalized": 0.031415842939277815,
+        "relative_rmse_percent": 3.1415842939277816
+      },
+      "matching": "sorted_desc",
+      "debug": {
+        "raw_gt_dims_in": {
+          "a": 19.625,
+          "b": 40.125,
+          "c": 39.625
+        },
+        "raw_glb_dims_in": {
+          "a": 78.25041849782149,
+          "b": 78.24934373690388,
+          "c": 42.41701655500517
+        },
+        "blender_json_keys": [
+          "largest_mesh_name",
+          "glb_absolute",
+          "debug"
+        ],
+        "gt_parse_source": "dimensions_or_text_description"
+      }
+    },
+    "chair#1": {
+      "name": "chair#1",
+      "description": null,
+      "url": null,
+      "path_to_glb": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/chair__chair#1.glb",
+      "glb_absolute": {
+        "a": 78.23281400785672,
+        "b": 62.242061134398455,
+        "c": 55.86380094993772
+      },
+      "glb_relative": {
+        "a": 1.0,
+        "b": 0.7956004385595493,
+        "c": 0.7140712200934951
+      },
+      "actual_absolute": {
+        "a": 34.0,
+        "b": 29.0,
+        "c": 24.0
+      },
+      "actual_relative": {
+        "a": 1.0,
+        "b": 0.8529411764705882,
+        "c": 0.7058823529411765
+      },
+      "metrics": {
+        "mse_absolute_in2": 1358.9594248313272,
+        "rmse_absolute_in": 36.86406685149276,
+        "mse_relative_ratio": 0.0011183392564735916,
+        "rmse_relative_ratio": 0.033441579754455254,
+        "relative_rmse_normalized": 0.033441579754455254,
+        "relative_rmse_percent": 3.3441579754455253
+      },
+      "matching": "sorted_desc",
+      "debug": {
+        "raw_gt_dims_in": {
+          "a": 29.0,
+          "b": 24.0,
+          "c": 34.0
+        },
+        "raw_glb_dims_in": {
+          "a": 78.23281400785672,
+          "b": 62.242061134398455,
+          "c": 55.86380094993772
+        },
+        "blender_json_keys": [
+          "largest_mesh_name",
+          "glb_absolute",
+          "debug"
+        ],
+        "gt_parse_source": "dimensions_or_text_description"
+      }
+    },
+    "chair#2": {
+      "name": "chair#2",
+      "description": null,
+      "url": null,
+      "path_to_glb": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/chair__chair#2.glb",
+      "glb_absolute": {
+        "a": 78.2167629932794,
+        "b": 51.349711230420695,
+        "c": 51.18816386996292
+      },
+      "glb_relative": {
+        "a": 1.0,
+        "b": 0.6565051948625489,
+        "c": 0.6544398145748009
+      },
+      "actual_absolute": {
+        "a": 33.1,
+        "b": 21.7,
+        "c": 21.1
+      },
+      "actual_relative": {
+        "a": 1.0,
+        "b": 0.6555891238670695,
+        "c": 0.6374622356495468
+      },
+      "metrics": {
+        "mse_absolute_in2": 1273.308428034941,
+        "rmse_absolute_in": 35.68344753572644,
+        "mse_relative_ratio": 9.635912407733013e-05,
+        "rmse_relative_ratio": 0.009816268337679556,
+        "relative_rmse_normalized": 0.009816268337679556,
+        "relative_rmse_percent": 0.9816268337679556
+      },
+      "matching": "sorted_desc",
+      "debug": {
+        "raw_gt_dims_in": {
+          "a": 21.7,
+          "b": 21.1,
+          "c": 33.1
+        },
+        "raw_glb_dims_in": {
+          "a": 78.2167629932794,
+          "b": 51.349711230420695,
+          "c": 51.18816386996292
+        },
+        "blender_json_keys": [
+          "largest_mesh_name",
+          "glb_absolute",
+          "debug"
+        ],
+        "gt_parse_source": "dimensions_or_text_description"
+      }
+    },
+    "chair#3": {
+      "name": "chair#3",
+      "description": null,
+      "url": null,
+      "path_to_glb": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/chair__chair#3.glb",
+      "glb_absolute": {
+        "a": 78.28726543216256,
+        "b": 48.951220324658976,
+        "c": 48.300074780081204
+      },
+      "glb_relative": {
+        "a": 1.0,
+        "b": 0.625276921532994,
+        "c": 0.6169595337562808
+      },
+      "actual_absolute": {
+        "a": 40.4,
+        "b": 22.8,
+        "c": 22.2
+      },
+      "actual_relative": {
+        "a": 1.0,
+        "b": 0.5643564356435644,
+        "c": 0.5495049504950495
+      },
+      "metrics": {
+        "mse_absolute_in2": 933.5150366406092,
+        "rmse_absolute_in": 30.553478306742903,
+        "mse_relative_ratio": 0.002753808801316853,
+        "rmse_relative_ratio": 0.05247674533845304,
+        "relative_rmse_normalized": 0.05247674533845304,
+        "relative_rmse_percent": 5.247674533845304
+      },
+      "matching": "sorted_desc",
+      "debug": {
+        "raw_gt_dims_in": {
+          "a": 22.8,
+          "b": 22.2,
+          "c": 40.4
+        },
+        "raw_glb_dims_in": {
+          "a": 78.28726543216256,
+          "b": 48.951220324658976,
+          "c": 48.300074780081204
+        },
+        "blender_json_keys": [
+          "largest_mesh_name",
+          "glb_absolute",
+          "debug"
+        ],
+        "gt_parse_source": "dimensions_or_text_description"
+      }
+    },
+    "chair#4": {
+      "name": "chair#4",
+      "description": null,
+      "url": null,
+      "path_to_glb": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/chair__chair#4.glb",
+      "glb_absolute": {
+        "a": 78.27058551818368,
+        "b": 46.27575085857722,
+        "c": 45.79448793816754
+      },
+      "glb_relative": {
+        "a": 1.0,
+        "b": 0.591227861044,
+        "c": 0.5850791537458047
+      },
+      "actual_absolute": {
+        "a": 30.4,
+        "b": 18.3,
+        "c": 17.9
+      },
+      "actual_relative": {
+        "a": 1.0,
+        "b": 0.6019736842105263,
+        "c": 0.5888157894736842
+      },
+      "metrics": {
+        "mse_absolute_in2": 1284.1126837624986,
+        "rmse_absolute_in": 35.83451804841944,
+        "mse_relative_ratio": 4.3145054029706207e-05,
+        "rmse_relative_ratio": 0.006568489478541182,
+        "relative_rmse_normalized": 0.006568489478541182,
+        "relative_rmse_percent": 0.6568489478541182
+      },
+      "matching": "sorted_desc",
+      "debug": {
+        "raw_gt_dims_in": {
+          "a": 17.9,
+          "b": 18.3,
+          "c": 30.4
+        },
+        "raw_glb_dims_in": {
+          "a": 78.27058551818368,
+          "b": 46.27575085857722,
+          "c": 45.79448793816754
+        },
+        "blender_json_keys": [
+          "largest_mesh_name",
+          "glb_absolute",
+          "debug"
+        ],
+        "gt_parse_source": "dimensions_or_text_description"
+      }
+    },
+    "chair#5": {
+      "name": "chair#5",
+      "description": null,
+      "url": null,
+      "path_to_glb": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/chair__chair#5.glb",
+      "glb_absolute": {
+        "a": 78.25152141841377,
+        "b": 54.00705525255579,
+        "c": 41.867203599824684
+      },
+      "glb_relative": {
+        "a": 1.0,
+        "b": 0.6901725905593332,
+        "c": 0.5350337327751009
+      },
+      "actual_absolute": {
+        "a": 31.875,
+        "b": 21.625,
+        "c": 19.25
+      },
+      "actual_relative": {
+        "a": 1.0,
+        "b": 0.6784313725490196,
+        "c": 0.6039215686274509
+      },
+      "metrics": {
+        "mse_absolute_in2": 1236.9723799760302,
+        "rmse_absolute_in": 35.1706181346878,
+        "mse_relative_ratio": 0.0016277967095953449,
+        "rmse_relative_ratio": 0.040345962742204394,
+        "relative_rmse_normalized": 0.040345962742204394,
+        "relative_rmse_percent": 4.03459627422044
+      },
+      "matching": "sorted_desc",
+      "debug": {
+        "raw_gt_dims_in": {
+          "a": 21.625,
+          "b": 19.25,
+          "c": 31.875
+        },
+        "raw_glb_dims_in": {
+          "a": 78.25152141841377,
+          "b": 54.00705525255579,
+          "c": 41.867203599824684
+        },
+        "blender_json_keys": [
+          "largest_mesh_name",
+          "glb_absolute",
+          "debug"
+        ],
+        "gt_parse_source": "dimensions_or_text_description"
+      }
+    },
+    "couch#1": {
+      "name": "couch#1",
+      "description": null,
+      "url": null,
+      "path_to_glb": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/couch__couch#1.glb",
+      "glb_absolute": {
+        "a": 78.28199018643598,
+        "b": 41.07775650625154,
+        "c": 37.138823449142336
+      },
+      "glb_relative": {
+        "a": 1.0,
+        "b": 0.5247408300226012,
+        "c": 0.47442359808038487
+      },
+      "actual_absolute": {
+        "a": 68.0,
+        "b": 35.0,
+        "c": 30.0
+      },
+      "actual_relative": {
+        "a": 1.0,
+        "b": 0.5147058823529411,
+        "c": 0.4411764705882353
+      },
+      "metrics": {
+        "mse_absolute_in2": 64.54041552709104,
+        "rmse_absolute_in": 8.033704968885218,
+        "mse_relative_ratio": 0.0004020238870706882,
+        "rmse_relative_ratio": 0.020050533336315228,
+        "relative_rmse_normalized": 0.020050533336315228,
+        "relative_rmse_percent": 2.0050533336315226
+      },
+      "matching": "sorted_desc",
+      "debug": {
+        "raw_gt_dims_in": {
+          "a": 30.0,
+          "b": 68.0,
+          "c": 35.0
+        },
+        "raw_glb_dims_in": {
+          "a": 78.28199018643598,
+          "b": 41.07775650625154,
+          "c": 37.138823449142336
+        },
+        "blender_json_keys": [
+          "largest_mesh_name",
+          "glb_absolute",
+          "debug"
+        ],
+        "gt_parse_source": "dimensions_or_text_description"
+      }
+    },
+    "couch#2": {
+      "name": "couch#2",
+      "description": null,
+      "url": null,
+      "path_to_glb": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/couch__couch#2.glb",
+      "glb_absolute": {
+        "a": 78.27406793128787,
+        "b": 45.00462783603218,
+        "c": 41.965762461264305
+      },
+      "glb_relative": {
+        "a": 1.0,
+        "b": 0.5749621685120422,
+        "c": 0.5361387694594274
+      },
+      "actual_absolute": {
+        "a": 62.0,
+        "b": 33.0,
+        "c": 31.0
+      },
+      "actual_relative": {
+        "a": 1.0,
+        "b": 0.532258064516129,
+        "c": 0.5
+      },
+      "metrics": {
+        "mse_absolute_in2": 176.4014409568948,
+        "rmse_absolute_in": 13.281620419094004,
+        "mse_relative_ratio": 0.0010432170520451368,
+        "rmse_relative_ratio": 0.03229887075495267,
+        "relative_rmse_normalized": 0.03229887075495267,
+        "relative_rmse_percent": 3.229887075495267
+      },
+      "matching": "sorted_desc",
+      "debug": {
+        "raw_gt_dims_in": {
+          "a": 31.0,
+          "b": 62.0,
+          "c": 33.0
+        },
+        "raw_glb_dims_in": {
+          "a": 78.27406793128787,
+          "b": 45.00462783603218,
+          "c": 41.965762461264305
+        },
+        "blender_json_keys": [
+          "largest_mesh_name",
+          "glb_absolute",
+          "debug"
+        ],
+        "gt_parse_source": "dimensions_or_text_description"
+      }
+    },
+    "couch#3": {
+      "name": "couch#3",
+      "description": null,
+      "url": null,
+      "path_to_glb": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/couch__couch#3.glb",
+      "glb_absolute": {
+        "a": 78.27220000619964,
+        "b": 39.85185322799082,
+        "c": 36.006621488436004
+      },
+      "glb_relative": {
+        "a": 1.0,
+        "b": 0.5091444117430494,
+        "c": 0.4600180074864902
+      },
+      "actual_absolute": {
+        "a": 66.1,
+        "b": 32.3,
+        "c": 30.7
+      },
+      "actual_relative": {
+        "a": 1.0,
+        "b": 0.4886535552193646,
+        "c": 0.4644478063540091
+      },
+      "metrics": {
+        "mse_absolute_in2": 77.78439059652429,
+        "rmse_absolute_in": 8.819545940496273,
+        "mse_relative_ratio": 0.0001464994396936355,
+        "rmse_relative_ratio": 0.012103695290845498,
+        "relative_rmse_normalized": 0.012103695290845498,
+        "relative_rmse_percent": 1.2103695290845498
+      },
+      "matching": "sorted_desc",
+      "debug": {
+        "raw_gt_dims_in": {
+          "a": 32.3,
+          "b": 66.1,
+          "c": 30.7
+        },
+        "raw_glb_dims_in": {
+          "a": 78.27220000619964,
+          "b": 39.85185322799082,
+          "c": 36.006621488436004
+        },
+        "blender_json_keys": [
+          "largest_mesh_name",
+          "glb_absolute",
+          "debug"
+        ],
+        "gt_parse_source": "dimensions_or_text_description"
+      }
+    },
+    "couch#4": {
+      "name": "couch#4",
+      "description": null,
+      "url": null,
+      "path_to_glb": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/couch__couch#4.glb",
+      "glb_absolute": {
+        "a": 78.27359391009713,
+        "b": 26.51785771677813,
+        "c": 25.065254977368934
+      },
+      "glb_relative": {
+        "a": 1.0,
+        "b": 0.33878421051211477,
+        "c": 0.32022619283532816
+      },
+      "actual_absolute": {
+        "a": 100.5,
+        "b": 33.5,
+        "c": 29.5
+      },
+      "actual_relative": {
+        "a": 1.0,
+        "b": 0.3333333333333333,
+        "c": 0.2935323383084577
+      },
+      "metrics": {
+        "mse_absolute_in2": 187.47680065072566,
+        "rmse_absolute_in": 13.692216790962874,
+        "mse_relative_ratio": 0.0002474246438399609,
+        "rmse_relative_ratio": 0.015729737564243115,
+        "relative_rmse_normalized": 0.015729737564243115,
+        "relative_rmse_percent": 1.5729737564243114
+      },
+      "matching": "sorted_desc",
+      "debug": {
+        "raw_gt_dims_in": {
+          "a": 100.5,
+          "b": 29.5,
+          "c": 33.5
+        },
+        "raw_glb_dims_in": {
+          "a": 78.27359391009713,
+          "b": 26.51785771677813,
+          "c": 25.065254977368934
+        },
+        "blender_json_keys": [
+          "largest_mesh_name",
+          "glb_absolute",
+          "debug"
+        ],
+        "gt_parse_source": "dimensions_or_text_description"
+      }
+    },
+    "couch#5": {
+      "name": "couch#5",
+      "description": null,
+      "url": null,
+      "path_to_glb": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/couch__couch#5.glb",
+      "glb_absolute": {
+        "a": 78.23154682249535,
+        "b": 34.089123639534776,
+        "c": 33.403843875945086
+      },
+      "glb_relative": {
+        "a": 1.0,
+        "b": 0.43574651178611884,
+        "c": 0.42698687719593786
+      },
+      "actual_absolute": {
+        "a": 57.875,
+        "b": 31.125,
+        "c": 30.375
+      },
+      "actual_relative": {
+        "a": 1.0,
+        "b": 0.5377969762419006,
+        "c": 0.5248380129589633
+      },
+      "metrics": {
+        "mse_absolute_in2": 144.11630757058145,
+        "rmse_absolute_in": 12.004845170620962,
+        "mse_relative_ratio": 0.006663047355251602,
+        "rmse_relative_ratio": 0.08162749141834265,
+        "relative_rmse_normalized": 0.08162749141834265,
+        "relative_rmse_percent": 8.162749141834265
+      },
+      "matching": "sorted_desc",
+      "debug": {
+        "raw_gt_dims_in": {
+          "a": 31.125,
+          "b": 57.875,
+          "c": 30.375
+        },
+        "raw_glb_dims_in": {
+          "a": 78.23154682249535,
+          "b": 34.089123639534776,
+          "c": 33.403843875945086
+        },
+        "blender_json_keys": [
+          "largest_mesh_name",
+          "glb_absolute",
+          "debug"
+        ],
+        "gt_parse_source": "dimensions_or_text_description"
+      }
+    },
+    "desk#1": {
+      "name": "desk#1",
+      "description": null,
+      "url": null,
+      "path_to_glb": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/desk__desk#1.glb",
+      "glb_absolute": {
+        "a": 78.25551070566253,
+        "b": 55.557376756442814,
+        "c": 40.320796290720544
+      },
+      "glb_relative": {
+        "a": 1.0,
+        "b": 0.7099484273434395,
+        "c": 0.5152454559063142
+      },
+      "actual_absolute": {
+        "a": 39.3,
+        "b": 30.0,
+        "c": 19.7
+      },
+      "actual_relative": {
+        "a": 1.0,
+        "b": 0.7633587786259542,
+        "c": 0.5012722646310432
+      },
+      "metrics": {
+        "mse_absolute_in2": 865.3095202243818,
+        "rmse_absolute_in": 29.416143870745223,
+        "mse_relative_ratio": 0.0010159718995123095,
+        "rmse_relative_ratio": 0.031874314102617325,
+        "relative_rmse_normalized": 0.031874314102617325,
+        "relative_rmse_percent": 3.1874314102617327
+      },
+      "matching": "sorted_desc",
+      "debug": {
+        "raw_gt_dims_in": {
+          "a": 19.7,
+          "b": 39.3,
+          "c": 30.0
+        },
+        "raw_glb_dims_in": {
+          "a": 78.25551070566253,
+          "b": 55.557376756442814,
+          "c": 40.320796290720544
+        },
+        "blender_json_keys": [
+          "largest_mesh_name",
+          "glb_absolute",
+          "debug"
+        ],
+        "gt_parse_source": "dimensions_or_text_description"
+      }
+    },
+    "desk#2": {
+      "name": "desk#2",
+      "description": null,
+      "url": null,
+      "path_to_glb": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/desk__desk#2.glb",
+      "glb_absolute": {
+        "a": 78.2852473221426,
+        "b": 46.125819363931974,
+        "c": 37.46590745730663
+      },
+      "glb_relative": {
+        "a": 1.0,
+        "b": 0.5892019370408953,
+        "c": 0.4785819645320272
+      },
+      "actual_absolute": {
+        "a": 48.0,
+        "b": 28.0,
+        "c": 24.0
+      },
+      "actual_relative": {
+        "a": 1.0,
+        "b": 0.5833333333333334,
+        "c": 0.5
+      },
+      "metrics": {
+        "mse_absolute_in2": 475.6907322086609,
+        "rmse_absolute_in": 21.810335444661572,
+        "mse_relative_ratio": 0.00016439091759458312,
+        "rmse_relative_ratio": 0.012821502158272373,
+        "relative_rmse_normalized": 0.012821502158272373,
+        "relative_rmse_percent": 1.2821502158272373
+      },
+      "matching": "sorted_desc",
+      "debug": {
+        "raw_gt_dims_in": {
+          "a": 24.0,
+          "b": 48.0,
+          "c": 28.0
+        },
+        "raw_glb_dims_in": {
+          "a": 78.2852473221426,
+          "b": 46.125819363931974,
+          "c": 37.46590745730663
+        },
+        "blender_json_keys": [
+          "largest_mesh_name",
+          "glb_absolute",
+          "debug"
+        ],
+        "gt_parse_source": "dimensions_or_text_description"
+      }
+    },
+    "desk#3": {
+      "name": "desk#3",
+      "description": null,
+      "url": null,
+      "path_to_glb": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/desk__desk#3.glb",
+      "glb_absolute": {
+        "a": 78.26941689168375,
+        "b": 49.647285243657635,
+        "c": 40.7260797155185
+      },
+      "glb_relative": {
+        "a": 1.0,
+        "b": 0.6343127011200813,
+        "c": 0.5203319678729549
+      },
+      "actual_absolute": {
+        "a": 46.0,
+        "b": 29.5,
+        "c": 23.5
+      },
+      "actual_relative": {
+        "a": 1.0,
+        "b": 0.6413043478260869,
+        "c": 0.5108695652173914
+      },
+      "metrics": {
+        "mse_absolute_in2": 581.322063861329,
+        "rmse_absolute_in": 24.110621391024516,
+        "mse_relative_ratio": 4.614006255920492e-05,
+        "rmse_relative_ratio": 0.006792647684018723,
+        "relative_rmse_normalized": 0.006792647684018723,
+        "relative_rmse_percent": 0.6792647684018723
+      },
+      "matching": "sorted_desc",
+      "debug": {
+        "raw_gt_dims_in": {
+          "a": 46.0,
+          "b": 23.5,
+          "c": 29.5
+        },
+        "raw_glb_dims_in": {
+          "a": 78.26941689168375,
+          "b": 49.647285243657635,
+          "c": 40.7260797155185
+        },
+        "blender_json_keys": [
+          "largest_mesh_name",
+          "glb_absolute",
+          "debug"
+        ],
+        "gt_parse_source": "dimensions_or_text_description"
+      }
+    },
+    "desk#4": {
+      "name": "desk#4",
+      "description": null,
+      "url": null,
+      "path_to_glb": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/desk__desk#4.glb",
+      "glb_absolute": {
+        "a": 78.29125941269041,
+        "b": 43.13200477540024,
+        "c": 34.84043549364946
+      },
+      "glb_relative": {
+        "a": 1.0,
+        "b": 0.5509172428564724,
+        "c": 0.44501053827730475
+      },
+      "actual_absolute": {
+        "a": 63.0,
+        "b": 31.5,
+        "c": 29.52
+      },
+      "actual_relative": {
+        "a": 1.0,
+        "b": 0.5,
+        "c": 0.4685714285714286
+      },
+      "metrics": {
+        "mse_absolute_in2": 132.4777277877373,
+        "rmse_absolute_in": 11.509896949483835,
+        "mse_relative_ratio": 0.001049227057185575,
+        "rmse_relative_ratio": 0.03239177452974096,
+        "relative_rmse_normalized": 0.03239177452974096,
+        "relative_rmse_percent": 3.2391774529740958
+      },
+      "matching": "sorted_desc",
+      "debug": {
+        "raw_gt_dims_in": {
+          "a": 63.0,
+          "b": 31.5,
+          "c": 29.52
+        },
+        "raw_glb_dims_in": {
+          "a": 78.29125941269041,
+          "b": 43.13200477540024,
+          "c": 34.84043549364946
+        },
+        "blender_json_keys": [
+          "largest_mesh_name",
+          "glb_absolute",
+          "debug"
+        ],
+        "gt_parse_source": "dimensions_or_text_description"
+      }
+    },
+    "desk#5": {
+      "name": "desk#5",
+      "description": null,
+      "url": null,
+      "path_to_glb": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/desk__desk#5.glb",
+      "glb_absolute": {
+        "a": 78.25876784136915,
+        "b": 43.81245515477939,
+        "c": 35.4327179315522
+      },
+      "glb_relative": {
+        "a": 1.0,
+        "b": 0.5598408505943695,
+        "c": 0.4527635549204463
+      },
+      "actual_absolute": {
+        "a": 55.125,
+        "b": 28.75,
+        "c": 23.625
+      },
+      "actual_relative": {
+        "a": 1.0,
+        "b": 0.5215419501133787,
+        "c": 0.42857142857142855
+      },
+      "metrics": {
+        "mse_absolute_in2": 300.4903241930684,
+        "rmse_absolute_in": 17.33465673709948,
+        "mse_relative_ratio": 0.000684021585113226,
+        "rmse_relative_ratio": 0.026153806321704418,
+        "relative_rmse_normalized": 0.026153806321704418,
+        "relative_rmse_percent": 2.615380632170442
+      },
+      "matching": "sorted_desc",
+      "debug": {
+        "raw_gt_dims_in": {
+          "a": 55.125,
+          "b": 23.625,
+          "c": 28.75
+        },
+        "raw_glb_dims_in": {
+          "a": 78.25876784136915,
+          "b": 43.81245515477939,
+          "c": 35.4327179315522
+        },
+        "blender_json_keys": [
+          "largest_mesh_name",
+          "glb_absolute",
+          "debug"
+        ],
+        "gt_parse_source": "dimensions_or_text_description"
+      }
+    },
+    "lamp#1": {
+      "name": "lamp#1",
+      "description": null,
+      "url": null,
+      "path_to_glb": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/lamp__lamp#1.glb",
+      "glb_absolute": {
+        "a": 78.28557585168073,
+        "b": 40.18691581065261,
+        "c": 39.72391443928396
+      },
+      "glb_relative": {
+        "a": 1.0,
+        "b": 0.513337423573283,
+        "c": 0.5074231620208631
+      },
+      "actual_absolute": {
+        "a": 9.0,
+        "b": 4.5,
+        "c": 4.5
+      },
+      "actual_relative": {
+        "a": 1.0,
+        "b": 0.5,
+        "c": 0.5
+      },
+      "metrics": {
+        "mse_absolute_in2": 2438.2570432005364,
+        "rmse_absolute_in": 49.378710424640865,
+        "mse_relative_ratio": 7.766340065371702e-05,
+        "rmse_relative_ratio": 0.008812684077720989,
+        "relative_rmse_normalized": 0.008812684077720989,
+        "relative_rmse_percent": 0.8812684077720989
+      },
+      "matching": "sorted_desc",
+      "debug": {
+        "raw_gt_dims_in": {
+          "a": 4.5,
+          "b": 4.5,
+          "c": 9.0
+        },
+        "raw_glb_dims_in": {
+          "a": 78.28557585168073,
+          "b": 40.18691581065261,
+          "c": 39.72391443928396
+        },
+        "blender_json_keys": [
+          "largest_mesh_name",
+          "glb_absolute",
+          "debug"
+        ],
+        "gt_parse_source": "dimensions_or_text_description"
+      }
+    },
+    "lamp#2": {
+      "name": "lamp#2",
+      "description": null,
+      "url": null,
+      "path_to_glb": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/lamp__lamp#2.glb",
+      "glb_absolute": {
+        "a": 78.2891990631584,
+        "b": 44.43867938725029,
+        "c": 44.132227034080685
+      },
+      "glb_relative": {
+        "a": 1.0,
+        "b": 0.5676220975437516,
+        "c": 0.5637077344280633
+      },
+      "actual_absolute": {
+        "a": 14.2,
+        "b": 7.87,
+        "c": 7.87
+      },
+      "actual_relative": {
+        "a": 1.0,
+        "b": 0.5542253521126761,
+        "c": 0.5542253521126761
+      },
+      "metrics": {
+        "mse_absolute_in2": 2253.214286051954,
+        "rmse_absolute_in": 47.468034360524705,
+        "mse_relative_ratio": 8.979612084007021e-05,
+        "rmse_relative_ratio": 0.009476081512949866,
+        "relative_rmse_normalized": 0.009476081512949866,
+        "relative_rmse_percent": 0.9476081512949865
+      },
+      "matching": "sorted_desc",
+      "debug": {
+        "raw_gt_dims_in": {
+          "a": 7.87,
+          "b": 7.87,
+          "c": 14.2
+        },
+        "raw_glb_dims_in": {
+          "a": 78.2891990631584,
+          "b": 44.43867938725029,
+          "c": 44.132227034080685
+        },
+        "blender_json_keys": [
+          "largest_mesh_name",
+          "glb_absolute",
+          "debug"
+        ],
+        "gt_parse_source": "dimensions_or_text_description"
+      }
+    },
+    "lamp#3": {
+      "name": "lamp#3",
+      "description": null,
+      "url": null,
+      "path_to_glb": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/lamp__lamp#3.glb",
+      "glb_absolute": {
+        "a": 78.29484977121429,
+        "b": 48.543017680250756,
+        "c": 48.34502231417679
+      },
+      "glb_relative": {
+        "a": 1.0,
+        "b": 0.6200026926687836,
+        "c": 0.6174738498821568
+      },
+      "actual_absolute": {
+        "a": 9.6,
+        "b": 5.9,
+        "c": 5.9
+      },
+      "actual_relative": {
+        "a": 1.0,
+        "b": 0.6145833333333334,
+        "c": 0.6145833333333334
+      },
+      "metrics": {
+        "mse_absolute_in2": 2779.663087072948,
+        "rmse_absolute_in": 52.72251025010994,
+        "mse_relative_ratio": 1.2574847175251266e-05,
+        "rmse_relative_ratio": 0.0035461030970984565,
+        "relative_rmse_normalized": 0.0035461030970984565,
+        "relative_rmse_percent": 0.35461030970984564
+      },
+      "matching": "sorted_desc",
+      "debug": {
+        "raw_gt_dims_in": {
+          "a": 5.9,
+          "b": 5.9,
+          "c": 9.6
+        },
+        "raw_glb_dims_in": {
+          "a": 78.29484977121429,
+          "b": 48.543017680250756,
+          "c": 48.34502231417679
+        },
+        "blender_json_keys": [
+          "largest_mesh_name",
+          "glb_absolute",
+          "debug"
+        ],
+        "gt_parse_source": "dimensions_or_text_description"
+      }
+    },
+    "lamp#4": {
+      "name": "lamp#4",
+      "description": null,
+      "url": null,
+      "path_to_glb": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/lamp__lamp#4.glb",
+      "glb_absolute": {
+        "a": 78.24385260033796,
+        "b": 24.069359922033595,
+        "c": 19.688603915567473
+      },
+      "glb_relative": {
+        "a": 1.0,
+        "b": 0.3076198208820003,
+        "c": 0.25163132004932015
+      },
+      "actual_absolute": {
+        "a": 60.5,
+        "b": 13.0,
+        "c": 13.0
+      },
+      "actual_relative": {
+        "a": 1.0,
+        "b": 0.21487603305785125,
+        "c": 0.21487603305785125
+      },
+      "metrics": {
+        "mse_absolute_in2": 160.70415217512945,
+        "rmse_absolute_in": 12.67691414245318,
+        "mse_relative_ratio": 0.003317453767265341,
+        "rmse_relative_ratio": 0.05759734166839075,
+        "relative_rmse_normalized": 0.05759734166839075,
+        "relative_rmse_percent": 5.759734166839075
+      },
+      "matching": "sorted_desc",
+      "debug": {
+        "raw_gt_dims_in": {
+          "a": 13.0,
+          "b": 13.0,
+          "c": 60.5
+        },
+        "raw_glb_dims_in": {
+          "a": 78.24385260033796,
+          "b": 24.069359922033595,
+          "c": 19.688603915567473
+        },
+        "blender_json_keys": [
+          "largest_mesh_name",
+          "glb_absolute",
+          "debug"
+        ],
+        "gt_parse_source": "dimensions_or_text_description"
+      }
+    },
+    "lamp#5": {
+      "name": "lamp#5",
+      "description": null,
+      "url": null,
+      "path_to_glb": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/lamp__lamp#5.glb",
+      "glb_absolute": {
+        "a": 78.27190902289443,
+        "b": 34.39580361674151,
+        "c": 34.146590495672754
+      },
+      "glb_relative": {
+        "a": 1.0,
+        "b": 0.4394399478193483,
+        "c": 0.4362560070648707
+      },
+      "actual_absolute": {
+        "a": 22.0,
+        "b": 9.0,
+        "c": 9.0
+      },
+      "actual_relative": {
+        "a": 1.0,
+        "b": 0.4090909090909091,
+        "c": 0.4090909090909091
+      },
+      "metrics": {
+        "mse_absolute_in2": 1481.2751999926895,
+        "rmse_absolute_in": 38.48733817754469,
+        "mse_relative_ratio": 0.0005530022332250784,
+        "rmse_relative_ratio": 0.02351599951575689,
+        "relative_rmse_normalized": 0.02351599951575689,
+        "relative_rmse_percent": 2.351599951575689
+      },
+      "matching": "sorted_desc",
+      "debug": {
+        "raw_gt_dims_in": {
+          "a": 9.0,
+          "b": 9.0,
+          "c": 22.0
+        },
+        "raw_glb_dims_in": {
+          "a": 78.27190902289443,
+          "b": 34.39580361674151,
+          "c": 34.146590495672754
+        },
+        "blender_json_keys": [
+          "largest_mesh_name",
+          "glb_absolute",
+          "debug"
+        ],
+        "gt_parse_source": "dimensions_or_text_description"
+      }
+    },
+    "shelf#1": {
+      "name": "shelf#1",
+      "description": null,
+      "url": null,
+      "path_to_glb": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/shelf__shelf#1.glb",
+      "glb_absolute": {
+        "a": 78.24926864443802,
+        "b": 32.36872474039634,
+        "c": 9.785427117910912
+      },
+      "glb_relative": {
+        "a": 1.0,
+        "b": 0.4136616904047846,
+        "c": 0.12505455050801248
+      },
+      "actual_absolute": {
+        "a": 70.9,
+        "b": 23.6,
+        "c": 9.3
+      },
+      "actual_relative": {
+        "a": 1.0,
+        "b": 0.3328631875881523,
+        "c": 0.1311706629055007
+      },
+      "metrics": {
+        "mse_absolute_in2": 43.71264088925394,
+        "rmse_absolute_in": 6.61155359119579,
+        "mse_relative_ratio": 0.002188601629422683,
+        "rmse_relative_ratio": 0.046782492766233426,
+        "relative_rmse_normalized": 0.046782492766233426,
+        "relative_rmse_percent": 4.678249276623343
+      },
+      "matching": "sorted_desc",
+      "debug": {
+        "raw_gt_dims_in": {
+          "a": 9.3,
+          "b": 23.6,
+          "c": 70.9
+        },
+        "raw_glb_dims_in": {
+          "a": 78.24926864443802,
+          "b": 32.36872474039634,
+          "c": 9.785427117910912
+        },
+        "blender_json_keys": [
+          "largest_mesh_name",
+          "glb_absolute",
+          "debug"
+        ],
+        "gt_parse_source": "dimensions_or_text_description"
+      }
+    },
+    "shelf#2": {
+      "name": "shelf#2",
+      "description": null,
+      "url": null,
+      "path_to_glb": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/shelf__shelf#2.glb",
+      "glb_absolute": {
+        "a": 78.26309504471426,
+        "b": 31.80293116982528,
+        "c": 17.515036064808765
+      },
+      "glb_relative": {
+        "a": 1.0,
+        "b": 0.4063592316615542,
+        "c": 0.22379687456523223
+      },
+      "actual_absolute": {
+        "a": 63.4,
+        "b": 23.6,
+        "c": 10.2
+      },
+      "actual_relative": {
+        "a": 1.0,
+        "b": 0.3722397476340694,
+        "c": 0.1608832807570978
+      },
+      "metrics": {
+        "mse_absolute_in2": 113.90314223818457,
+        "rmse_absolute_in": 10.67254150791575,
+        "mse_relative_ratio": 0.0017074198253855732,
+        "rmse_relative_ratio": 0.04132093688901031,
+        "relative_rmse_normalized": 0.04132093688901031,
+        "relative_rmse_percent": 4.132093688901032
+      },
+      "matching": "sorted_desc",
+      "debug": {
+        "raw_gt_dims_in": {
+          "a": 10.2,
+          "b": 23.6,
+          "c": 63.4
+        },
+        "raw_glb_dims_in": {
+          "a": 78.26309504471426,
+          "b": 31.80293116982528,
+          "c": 17.515036064808765
+        },
+        "blender_json_keys": [
+          "largest_mesh_name",
+          "glb_absolute",
+          "debug"
+        ],
+        "gt_parse_source": "dimensions_or_text_description"
+      }
+    },
+    "shelf#3": {
+      "name": "shelf#3",
+      "description": null,
+      "url": null,
+      "path_to_glb": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/shelf__shelf#3.glb",
+      "glb_absolute": {
+        "a": 78.27868142465907,
+        "b": 25.282891716544086,
+        "c": 19.3794963397379
+      },
+      "glb_relative": {
+        "a": 1.0,
+        "b": 0.3229856616948527,
+        "c": 0.24757055161168112
+      },
+      "actual_absolute": {
+        "a": 42.0,
+        "b": 8.0,
+        "c": 6.0
+      },
+      "actual_relative": {
+        "a": 1.0,
+        "b": 0.19047619047619047,
+        "c": 0.14285714285714285
+      },
+      "metrics": {
+        "mse_absolute_in2": 597.9506647675837,
+        "rmse_absolute_in": 24.45302976662777,
+        "mse_relative_ratio": 0.009507885978548163,
+        "rmse_relative_ratio": 0.09750838927265779,
+        "relative_rmse_normalized": 0.09750838927265779,
+        "relative_rmse_percent": 9.750838927265779
+      },
+      "matching": "sorted_desc",
+      "debug": {
+        "raw_gt_dims_in": {
+          "a": 6.0,
+          "b": 8.0,
+          "c": 42.0
+        },
+        "raw_glb_dims_in": {
+          "a": 78.27868142465907,
+          "b": 25.282891716544086,
+          "c": 19.3794963397379
+        },
+        "blender_json_keys": [
+          "largest_mesh_name",
+          "glb_absolute",
+          "debug"
+        ],
+        "gt_parse_source": "dimensions_or_text_description"
+      }
+    },
+    "shelf#4": {
+      "name": "shelf#4",
+      "description": null,
+      "url": null,
+      "path_to_glb": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/shelf__shelf#4.glb",
+      "glb_absolute": {
+        "a": 78.26880676539864,
+        "b": 41.29116460094302,
+        "c": 14.647240713825376
+      },
+      "glb_relative": {
+        "a": 1.0,
+        "b": 0.5275558208611553,
+        "c": 0.1871402071802209
+      },
+      "actual_absolute": {
+        "a": 69.9,
+        "b": 35.2,
+        "c": 12.5
+      },
+      "actual_relative": {
+        "a": 1.0,
+        "b": 0.5035765379113019,
+        "c": 0.17882689556509299
+      },
+      "metrics": {
+        "mse_absolute_in2": 37.24995185182417,
+        "rmse_absolute_in": 6.103273863413322,
+        "mse_relative_ratio": 0.00021470572026645036,
+        "rmse_relative_ratio": 0.014652840006853633,
+        "relative_rmse_normalized": 0.014652840006853633,
+        "relative_rmse_percent": 1.4652840006853634
+      },
+      "matching": "sorted_desc",
+      "debug": {
+        "raw_gt_dims_in": {
+          "a": 35.2,
+          "b": 12.5,
+          "c": 69.9
+        },
+        "raw_glb_dims_in": {
+          "a": 78.26880676539864,
+          "b": 41.29116460094302,
+          "c": 14.647240713825376
+        },
+        "blender_json_keys": [
+          "largest_mesh_name",
+          "glb_absolute",
+          "debug"
+        ],
+        "gt_parse_source": "dimensions_or_text_description"
+      }
+    },
+    "shelf#5": {
+      "name": "shelf#5",
+      "description": null,
+      "url": null,
+      "path_to_glb": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/shelf__shelf#5.glb",
+      "glb_absolute": {
+        "a": 78.27673371382586,
+        "b": 29.205323204280823,
+        "c": 18.724577398750725
+      },
+      "glb_relative": {
+        "a": 1.0,
+        "b": 0.3731034985574819,
+        "c": 0.23920999906826004
+      },
+      "actual_absolute": {
+        "a": 39.625,
+        "b": 14.5,
+        "c": 9.125
+      },
+      "actual_relative": {
+        "a": 1.0,
+        "b": 0.3659305993690852,
+        "c": 0.2302839116719243
+      },
+      "metrics": {
+        "mse_absolute_in2": 600.7849786204896,
+        "rmse_absolute_in": 24.510915499435953,
+        "mse_relative_ratio": 4.3708506324642196e-05,
+        "rmse_relative_ratio": 0.006611240906565287,
+        "relative_rmse_normalized": 0.006611240906565287,
+        "relative_rmse_percent": 0.6611240906565288
+      },
+      "matching": "sorted_desc",
+      "debug": {
+        "raw_gt_dims_in": {
+          "a": 9.125,
+          "b": 14.5,
+          "c": 39.625
+        },
+        "raw_glb_dims_in": {
+          "a": 78.27673371382586,
+          "b": 29.205323204280823,
+          "c": 18.724577398750725
+        },
+        "blender_json_keys": [
+          "largest_mesh_name",
+          "glb_absolute",
+          "debug"
+        ],
+        "gt_parse_source": "dimensions_or_text_description"
+      }
+    },
+    "stool#1": {
+      "name": "stool#1",
+      "description": null,
+      "url": null,
+      "path_to_glb": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/stool__stool#1.glb",
+      "glb_absolute": {
+        "a": 78.27550407469742,
+        "b": 78.2639492215134,
+        "c": 77.90739142049955
+      },
+      "glb_relative": {
+        "a": 1.0,
+        "b": 0.9998523822577623,
+        "c": 0.995297217711347
+      },
+      "actual_absolute": {
+        "a": 9.3,
+        "b": 9.3,
+        "c": 9.3
+      },
+      "actual_relative": {
+        "a": 1.0,
+        "b": 1.0,
+        "c": 1.0
+      },
+      "metrics": {
+        "mse_absolute_in2": 4740.206870703905,
+        "rmse_absolute_in": 68.8491602759533,
+        "mse_relative_ratio": 7.379317417430416e-06,
+        "rmse_relative_ratio": 0.0027164899074781073,
+        "relative_rmse_normalized": 0.0027164899074781073,
+        "relative_rmse_percent": 0.27164899074781074
+      },
+      "matching": "sorted_desc",
+      "debug": {
+        "raw_gt_dims_in": {
+          "a": 9.3,
+          "b": 9.3,
+          "c": 9.3
+        },
+        "raw_glb_dims_in": {
+          "a": 78.27550407469742,
+          "b": 78.2639492215134,
+          "c": 77.90739142049955
+        },
+        "blender_json_keys": [
+          "largest_mesh_name",
+          "glb_absolute",
+          "debug"
+        ],
+        "gt_parse_source": "dimensions_or_text_description"
+      }
+    },
+    "stool#2": {
+      "name": "stool#2",
+      "description": null,
+      "url": null,
+      "path_to_glb": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/stool__stool#2.glb",
+      "glb_absolute": {
+        "a": 78.28436967894787,
+        "b": 71.78886668888603,
+        "c": 65.53443398062639
+      },
+      "glb_relative": {
+        "a": 1.0,
+        "b": 0.9170268213603743,
+        "c": 0.8371330605252331
+      },
+      "actual_absolute": {
+        "a": 13.0,
+        "b": 11.0,
+        "c": 10.5
+      },
+      "actual_relative": {
+        "a": 1.0,
+        "b": 0.8461538461538461,
+        "c": 0.8076923076923077
+      },
+      "metrics": {
+        "mse_absolute_in2": 3662.0413870882035,
+        "rmse_absolute_in": 60.5148030409767,
+        "mse_relative_ratio": 0.0019632455139981845,
+        "rmse_relative_ratio": 0.04430852642548818,
+        "relative_rmse_normalized": 0.04430852642548818,
+        "relative_rmse_percent": 4.430852642548818
+      },
+      "matching": "sorted_desc",
+      "debug": {
+        "raw_gt_dims_in": {
+          "a": 10.5,
+          "b": 13.0,
+          "c": 11.0
+        },
+        "raw_glb_dims_in": {
+          "a": 78.28436967894787,
+          "b": 71.78886668888603,
+          "c": 65.53443398062639
+        },
+        "blender_json_keys": [
+          "largest_mesh_name",
+          "glb_absolute",
+          "debug"
+        ],
+        "gt_parse_source": "dimensions_or_text_description"
+      }
+    },
+    "stool#3": {
+      "name": "stool#3",
+      "description": null,
+      "url": null,
+      "path_to_glb": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/stool__stool#3.glb",
+      "glb_absolute": {
+        "a": 78.28143637950026,
+        "b": 75.11747164989082,
+        "c": 53.95814659088615
+      },
+      "glb_relative": {
+        "a": 1.0,
+        "b": 0.9595821835170362,
+        "c": 0.6892840638398952
+      },
+      "actual_absolute": {
+        "a": 17.7,
+        "b": 17.5,
+        "c": 11.4
+      },
+      "actual_relative": {
+        "a": 1.0,
+        "b": 0.9887005649717514,
+        "c": 0.6440677966101696
+      },
+      "metrics": {
+        "mse_absolute_in2": 2933.693104793588,
+        "rmse_absolute_in": 54.163577289481054,
+        "mse_relative_ratio": 0.0009641303202440873,
+        "rmse_relative_ratio": 0.031050447987816334,
+        "relative_rmse_normalized": 0.031050447987816334,
+        "relative_rmse_percent": 3.105044798781633
+      },
+      "matching": "sorted_desc",
+      "debug": {
+        "raw_gt_dims_in": {
+          "a": 11.4,
+          "b": 17.7,
+          "c": 17.5
+        },
+        "raw_glb_dims_in": {
+          "a": 78.28143637950026,
+          "b": 75.11747164989082,
+          "c": 53.95814659088615
+        },
+        "blender_json_keys": [
+          "largest_mesh_name",
+          "glb_absolute",
+          "debug"
+        ],
+        "gt_parse_source": "dimensions_or_text_description"
+      }
+    },
+    "stool#4": {
+      "name": "stool#4",
+      "description": null,
+      "url": null,
+      "path_to_glb": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/stool__stool#4.glb",
+      "glb_absolute": {
+        "a": 78.28159595099021,
+        "b": 42.494253849420026,
+        "c": 41.85082405570924
+      },
+      "glb_relative": {
+        "a": 1.0,
+        "b": 0.542838368753039,
+        "c": 0.5346189426427995
+      },
+      "actual_absolute": {
+        "a": 27.5,
+        "b": 11.8,
+        "c": 11.8
+      },
+      "actual_relative": {
+        "a": 1.0,
+        "b": 0.42909090909090913,
+        "c": 0.42909090909090913
+      },
+      "metrics": {
+        "mse_absolute_in2": 1474.6532443764847,
+        "rmse_absolute_in": 38.40121410029226,
+        "mse_relative_ratio": 0.008024883481638925,
+        "rmse_relative_ratio": 0.0895817139914108,
+        "relative_rmse_normalized": 0.0895817139914108,
+        "relative_rmse_percent": 8.95817139914108
+      },
+      "matching": "sorted_desc",
+      "debug": {
+        "raw_gt_dims_in": {
+          "a": 11.8,
+          "b": 11.8,
+          "c": 27.5
+        },
+        "raw_glb_dims_in": {
+          "a": 78.28159595099021,
+          "b": 42.494253849420026,
+          "c": 41.85082405570924
+        },
+        "blender_json_keys": [
+          "largest_mesh_name",
+          "glb_absolute",
+          "debug"
+        ],
+        "gt_parse_source": "dimensions_or_text_description"
+      }
+    },
+    "stool#5": {
+      "name": "stool#5",
+      "description": null,
+      "url": null,
+      "path_to_glb": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/stool__stool#5.glb",
+      "glb_absolute": {
+        "a": 71.61521536158764,
+        "b": 70.28220206733764,
+        "c": 68.04791022473434
+      },
+      "glb_relative": {
+        "a": 1.0,
+        "b": 0.9813864513634487,
+        "c": 0.950187887883296
+      },
+      "actual_absolute": {
+        "a": 11.0,
+        "b": 10.625,
+        "c": 10.625
+      },
+      "actual_relative": {
+        "a": 1.0,
+        "b": 0.9659090909090909,
+        "c": 0.9659090909090909
+      },
+      "metrics": {
+        "mse_absolute_in2": 3510.1922368375685,
+        "rmse_absolute_in": 59.246875333958066,
+        "mse_relative_ratio": 0.0001622349704041272,
+        "rmse_relative_ratio": 0.012737149225950335,
+        "relative_rmse_normalized": 0.012737149225950335,
+        "relative_rmse_percent": 1.2737149225950335
+      },
+      "matching": "sorted_desc",
+      "debug": {
+        "raw_gt_dims_in": {
+          "a": 10.625,
+          "b": 10.625,
+          "c": 11.0
+        },
+        "raw_glb_dims_in": {
+          "a": 71.61521536158764,
+          "b": 70.28220206733764,
+          "c": 68.04791022473434
+        },
+        "blender_json_keys": [
+          "largest_mesh_name",
+          "glb_absolute",
+          "debug"
+        ],
+        "gt_parse_source": "dimensions_or_text_description"
+      }
+    },
+    "table#1": {
+      "name": "table#1",
+      "description": null,
+      "url": null,
+      "path_to_glb": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/table__table#1.glb",
+      "glb_absolute": {
+        "a": 78.28490001948799,
+        "b": 42.92743412528451,
+        "c": 42.39827159821518
+      },
+      "glb_relative": {
+        "a": 1.0,
+        "b": 0.5483488401287898,
+        "c": 0.5415893944765937
+      },
+      "actual_absolute": {
+        "a": 39.4,
+        "b": 29.53,
+        "c": 23.62
+      },
+      "actual_relative": {
+        "a": 1.0,
+        "b": 0.7494923857868021,
+        "c": 0.5994923857868021
+      },
+      "metrics": {
+        "mse_absolute_in2": 681.38339162775,
+        "rmse_absolute_in": 26.10332146734875,
+        "mse_relative_ratio": 0.014603827454182315,
+        "rmse_relative_ratio": 0.12084629681617189,
+        "relative_rmse_normalized": 0.12084629681617189,
+        "relative_rmse_percent": 12.084629681617189
+      },
+      "matching": "sorted_desc",
+      "debug": {
+        "raw_gt_dims_in": {
+          "a": 23.62,
+          "b": 39.4,
+          "c": 29.53
+        },
+        "raw_glb_dims_in": {
+          "a": 78.28490001948799,
+          "b": 42.92743412528451,
+          "c": 42.39827159821518
+        },
+        "blender_json_keys": [
+          "largest_mesh_name",
+          "glb_absolute",
+          "debug"
+        ],
+        "gt_parse_source": "dimensions_or_text_description"
+      }
+    },
+    "table#2": {
+      "name": "table#2",
+      "description": null,
+      "url": null,
+      "path_to_glb": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/table__table#2.glb",
+      "glb_absolute": {
+        "a": 78.29430535083681,
+        "b": 33.71496369519572,
+        "c": 28.91251421350194
+      },
+      "glb_relative": {
+        "a": 1.0,
+        "b": 0.4306183386405813,
+        "c": 0.36927991229943163
+      },
+      "actual_absolute": {
+        "a": 63.0,
+        "b": 30.0,
+        "c": 23.6
+      },
+      "actual_relative": {
+        "a": 1.0,
+        "b": 0.47619047619047616,
+        "c": 0.3746031746031746
+      },
+      "metrics": {
+        "mse_absolute_in2": 91.97984622997258,
+        "rmse_absolute_in": 9.5906124011959,
+        "mse_relative_ratio": 0.0007017189474736628,
+        "rmse_relative_ratio": 0.02648997824600207,
+        "relative_rmse_normalized": 0.02648997824600207,
+        "relative_rmse_percent": 2.648997824600207
+      },
+      "matching": "sorted_desc",
+      "debug": {
+        "raw_gt_dims_in": {
+          "a": 23.6,
+          "b": 63.0,
+          "c": 30.0
+        },
+        "raw_glb_dims_in": {
+          "a": 78.29430535083681,
+          "b": 33.71496369519572,
+          "c": 28.91251421350194
+        },
+        "blender_json_keys": [
+          "largest_mesh_name",
+          "glb_absolute",
+          "debug"
+        ],
+        "gt_parse_source": "dimensions_or_text_description"
+      }
+    },
+    "table#3": {
+      "name": "table#3",
+      "description": null,
+      "url": null,
+      "path_to_glb": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/table__table#3.glb",
+      "glb_absolute": {
+        "a": 78.26513192785067,
+        "b": 39.57351361672709,
+        "c": 38.72528789550301
+      },
+      "glb_relative": {
+        "a": 1.0,
+        "b": 0.5056340242703257,
+        "c": 0.49479617476658977
+      },
+      "actual_absolute": {
+        "a": 63.0,
+        "b": 29.5,
+        "c": 23.6
+      },
+      "actual_relative": {
+        "a": 1.0,
+        "b": 0.46825396825396826,
+        "c": 0.3746031746031746
+      },
+      "metrics": {
+        "mse_absolute_in2": 187.758087760974,
+        "rmse_absolute_in": 13.702484729455968,
+        "mse_relative_ratio": 0.005281208625356245,
+        "rmse_relative_ratio": 0.0726719246019826,
+        "relative_rmse_normalized": 0.0726719246019826,
+        "relative_rmse_percent": 7.2671924601982605
+      },
+      "matching": "sorted_desc",
+      "debug": {
+        "raw_gt_dims_in": {
+          "a": 63.0,
+          "b": 23.6,
+          "c": 29.5
+        },
+        "raw_glb_dims_in": {
+          "a": 78.26513192785067,
+          "b": 39.57351361672709,
+          "c": 38.72528789550301
+        },
+        "blender_json_keys": [
+          "largest_mesh_name",
+          "glb_absolute",
+          "debug"
+        ],
+        "gt_parse_source": "dimensions_or_text_description"
+      }
+    },
+    "table#4": {
+      "name": "table#4",
+      "description": null,
+      "url": null,
+      "path_to_glb": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/table__table#4.glb",
+      "glb_absolute": {
+        "a": 78.27954029473733,
+        "b": 76.80715538385347,
+        "c": 41.06724825431043
+      },
+      "glb_relative": {
+        "a": 1.0,
+        "b": 0.9811906801529486,
+        "c": 0.5246230125992621
+      },
+      "actual_absolute": {
+        "a": 19.25,
+        "b": 19.0,
+        "c": 15.0
+      },
+      "actual_relative": {
+        "a": 1.0,
+        "b": 0.987012987012987,
+        "c": 0.7792207792207793
+      },
+      "metrics": {
+        "mse_absolute_in2": 2501.8850908442823,
+        "rmse_absolute_in": 50.01884735621446,
+        "mse_relative_ratio": 0.021617974008612317,
+        "rmse_relative_ratio": 0.14703052067041156,
+        "relative_rmse_normalized": 0.14703052067041156,
+        "relative_rmse_percent": 14.703052067041156
+      },
+      "matching": "sorted_desc",
+      "debug": {
+        "raw_gt_dims_in": {
+          "a": 19.0,
+          "b": 15.0,
+          "c": 19.25
+        },
+        "raw_glb_dims_in": {
+          "a": 78.27954029473733,
+          "b": 76.80715538385347,
+          "c": 41.06724825431043
+        },
+        "blender_json_keys": [
+          "largest_mesh_name",
+          "glb_absolute",
+          "debug"
+        ],
+        "gt_parse_source": "dimensions_or_text_description"
+      }
+    },
+    "table#5": {
+      "name": "table#5",
+      "description": null,
+      "url": null,
+      "path_to_glb": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/table__table#5.glb",
+      "glb_absolute": {
+        "a": 78.24709565620724,
+        "b": 78.24425622234195,
+        "c": 61.99047321409691
+      },
+      "glb_relative": {
+        "a": 1.0,
+        "b": 0.9999637119583612,
+        "c": 0.7922399252550314
+      },
+      "actual_absolute": {
+        "a": 39.0,
+        "b": 39.0,
+        "c": 29.0
+      },
+      "actual_relative": {
+        "a": 1.0,
+        "b": 1.0,
+        "c": 0.7435897435897436
+      },
+      "metrics": {
+        "mse_absolute_in2": 1389.6058289274504,
+        "rmse_absolute_in": 37.27741714399551,
+        "mse_relative_ratio": 0.0007889471642958233,
+        "rmse_relative_ratio": 0.028088203294191375,
+        "relative_rmse_normalized": 0.028088203294191375,
+        "relative_rmse_percent": 2.8088203294191376
+      },
+      "matching": "sorted_desc",
+      "debug": {
+        "raw_gt_dims_in": {
+          "a": 39.0,
+          "b": 39.0,
+          "c": 29.0
+        },
+        "raw_glb_dims_in": {
+          "a": 78.24709565620724,
+          "b": 78.24425622234195,
+          "c": 61.99047321409691
+        },
+        "blender_json_keys": [
+          "largest_mesh_name",
+          "glb_absolute",
+          "debug"
+        ],
+        "gt_parse_source": "dimensions_or_text_description"
+      }
+    },
+    "wardrobe#1": {
+      "name": "wardrobe#1",
+      "description": null,
+      "url": null,
+      "path_to_glb": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/wardrobe__wardrobe#1.glb",
+      "glb_absolute": {
+        "a": 78.29273779561201,
+        "b": 47.05886202534353,
+        "c": 25.961248893437425
+      },
+      "glb_relative": {
+        "a": 1.0,
+        "b": 0.6010629255064955,
+        "c": 0.3315920432008759
+      },
+      "actual_absolute": {
+        "a": 70.3,
+        "b": 38.0,
+        "c": 20.0
+      },
+      "actual_relative": {
+        "a": 1.0,
+        "b": 0.5405405405405406,
+        "c": 0.2844950213371266
+      },
+      "metrics": {
+        "mse_absolute_in2": 60.49444234437494,
+        "rmse_absolute_in": 7.77781732521245,
+        "mse_relative_ratio": 0.0019603628501339092,
+        "rmse_relative_ratio": 0.04427598502725726,
+        "relative_rmse_normalized": 0.04427598502725726,
+        "relative_rmse_percent": 4.4275985027257265
+      },
+      "matching": "sorted_desc",
+      "debug": {
+        "raw_gt_dims_in": {
+          "a": 20.0,
+          "b": 38.0,
+          "c": 70.3
+        },
+        "raw_glb_dims_in": {
+          "a": 78.29273779561201,
+          "b": 47.05886202534353,
+          "c": 25.961248893437425
+        },
+        "blender_json_keys": [
+          "largest_mesh_name",
+          "glb_absolute",
+          "debug"
+        ],
+        "gt_parse_source": "dimensions_or_text_description"
+      }
+    },
+    "wardrobe#2": {
+      "name": "wardrobe#2",
+      "description": null,
+      "url": null,
+      "path_to_glb": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/wardrobe__wardrobe#2.glb",
+      "glb_absolute": {
+        "a": 78.27504882662315,
+        "b": 43.94106977567898,
+        "c": 27.24976755502656
+      },
+      "glb_relative": {
+        "a": 1.0,
+        "b": 0.5613675166528113,
+        "c": 0.34812840060162675
+      },
+      "actual_absolute": {
+        "a": 70.86,
+        "b": 40.0,
+        "c": 20.98
+      },
+      "actual_relative": {
+        "a": 1.0,
+        "b": 0.5644933672029354,
+        "c": 0.2960767710979396
+      },
+      "metrics": {
+        "mse_absolute_in2": 36.60832175734648,
+        "rmse_absolute_in": 6.05048111784067,
+        "mse_relative_ratio": 0.0009063810252169414,
+        "rmse_relative_ratio": 0.030106162578730312,
+        "relative_rmse_normalized": 0.030106162578730312,
+        "relative_rmse_percent": 3.010616257873031
+      },
+      "matching": "sorted_desc",
+      "debug": {
+        "raw_gt_dims_in": {
+          "a": 20.98,
+          "b": 40.0,
+          "c": 70.86
+        },
+        "raw_glb_dims_in": {
+          "a": 78.27504882662315,
+          "b": 43.94106977567898,
+          "c": 27.24976755502656
+        },
+        "blender_json_keys": [
+          "largest_mesh_name",
+          "glb_absolute",
+          "debug"
+        ],
+        "gt_parse_source": "dimensions_or_text_description"
+      }
+    },
+    "wardrobe#3": {
+      "name": "wardrobe#3",
+      "description": null,
+      "url": null,
+      "path_to_glb": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/wardrobe__wardrobe#3.glb",
+      "glb_absolute": {
+        "a": 78.282839669956,
+        "b": 36.152720920682896,
+        "c": 19.080411261460913
+      },
+      "glb_relative": {
+        "a": 1.0,
+        "b": 0.4618217871643952,
+        "c": 0.2437368309824323
+      },
+      "actual_absolute": {
+        "a": 65.98,
+        "b": 31.69,
+        "c": 15.79
+      },
+      "actual_relative": {
+        "a": 1.0,
+        "b": 0.48029705971506514,
+        "c": 0.2393149439224007
+      },
+      "metrics": {
+        "mse_absolute_in2": 60.700849410030884,
+        "rmse_absolute_in": 7.791074984238753,
+        "mse_relative_ratio": 0.00012029626033107097,
+        "rmse_relative_ratio": 0.010967965186445067,
+        "relative_rmse_normalized": 0.010967965186445067,
+        "relative_rmse_percent": 1.0967965186445068
+      },
+      "matching": "sorted_desc",
+      "debug": {
+        "raw_gt_dims_in": {
+          "a": 15.79,
+          "b": 31.69,
+          "c": 65.98
+        },
+        "raw_glb_dims_in": {
+          "a": 78.282839669956,
+          "b": 36.152720920682896,
+          "c": 19.080411261460913
+        },
+        "blender_json_keys": [
+          "largest_mesh_name",
+          "glb_absolute",
+          "debug"
+        ],
+        "gt_parse_source": "dimensions_or_text_description"
+      }
+    },
+    "wardrobe#4": {
+      "name": "wardrobe#4",
+      "description": null,
+      "url": null,
+      "path_to_glb": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/wardrobe__wardrobe#4.glb",
+      "glb_absolute": {
+        "a": 78.28125803489385,
+        "b": 34.21618243840736,
+        "c": 33.504197916646646
+      },
+      "glb_relative": {
+        "a": 1.0,
+        "b": 0.43709290444917864,
+        "c": 0.4279976939270976
+      },
+      "actual_absolute": {
+        "a": 67.375,
+        "b": 31.5,
+        "c": 19.625
+      },
+      "actual_relative": {
+        "a": 1.0,
+        "b": 0.4675324675324675,
+        "c": 0.2912801484230056
+      },
+      "metrics": {
+        "mse_absolute_in2": 106.31874872394928,
+        "rmse_absolute_in": 10.311098327721897,
+        "mse_relative_ratio": 0.006539418083121661,
+        "rmse_relative_ratio": 0.08086666855461316,
+        "relative_rmse_normalized": 0.08086666855461316,
+        "relative_rmse_percent": 8.086666855461317
+      },
+      "matching": "sorted_desc",
+      "debug": {
+        "raw_gt_dims_in": {
+          "a": 19.625,
+          "b": 31.5,
+          "c": 67.375
+        },
+        "raw_glb_dims_in": {
+          "a": 78.28125803489385,
+          "b": 34.21618243840736,
+          "c": 33.504197916646646
+        },
+        "blender_json_keys": [
+          "largest_mesh_name",
+          "glb_absolute",
+          "debug"
+        ],
+        "gt_parse_source": "dimensions_or_text_description"
+      }
+    },
+    "wardrobe#5": {
+      "name": "wardrobe#5",
+      "description": null,
+      "url": null,
+      "path_to_glb": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/wardrobe__wardrobe#5.glb",
+      "glb_absolute": {
+        "a": 78.27426504901075,
+        "b": 34.22097427638497,
+        "c": 19.833356376708025
+      },
+      "glb_relative": {
+        "a": 1.0,
+        "b": 0.4371931726852728,
+        "c": 0.2533828502163456
+      },
+      "actual_absolute": {
+        "a": 70.87,
+        "b": 30.71,
+        "c": 19.7
+      },
+      "actual_relative": {
+        "a": 1.0,
+        "b": 0.4333286298857062,
+        "c": 0.2779737547622407
+      },
+      "metrics": {
+        "mse_absolute_in2": 22.389288402882595,
+        "rmse_absolute_in": 4.731732072178495,
+        "mse_relative_ratio": 0.00020654909247833507,
+        "rmse_relative_ratio": 0.01437181590747443,
+        "relative_rmse_normalized": 0.01437181590747443,
+        "relative_rmse_percent": 1.437181590747443
+      },
+      "matching": "sorted_desc",
+      "debug": {
+        "raw_gt_dims_in": {
+          "a": 30.71,
+          "b": 19.7,
+          "c": 70.87
+        },
+        "raw_glb_dims_in": {
+          "a": 78.27426504901075,
+          "b": 34.22097427638497,
+          "c": 19.833356376708025
+        },
+        "blender_json_keys": [
+          "largest_mesh_name",
+          "glb_absolute",
+          "debug"
+        ],
+        "gt_parse_source": "dimensions_or_text_description"
+      }
+    }
+  }
+}

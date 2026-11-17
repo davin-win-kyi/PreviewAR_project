@@ -1,0 +1,23 @@
+{
+  "products": [
+    {
+      "url": "https://www.amazon.com/dp/B0CDLVLXTG",
+      "object_type": "bed",
+      "site": "amazon",
+      "runtime_seconds": 10.6485,
+      "name": "bed#1",
+      "standardized_dimensions": {
+        "l": 4.49,
+        "w": 4.49,
+        "h": 15
+      },
+      "images": [
+        {
+          "url": "https://m.media-amazon.com/images/I/71v3S+3RTqL._AC_SL1500_.jpg",
+          "local_path": "webscrape_output/bed#1/images/image_01.jpg"
+        }
+      ]
+    }
+  ],
+  "average_runtime_seconds": 10.6485
+}

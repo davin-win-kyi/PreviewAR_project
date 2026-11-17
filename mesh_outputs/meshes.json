@@ -1,189 +1,91 @@
 {
   "meshes": [
     {
-      "description": "table",
-      "text_description": "Elegant Four-Seat Dining Table: This four-seat contemporary kitchen dining table features a high-density top with a unique cat's claw texture that adds warmth and sophistication to any dining room or kitchen. The stylish design creates a comfortable, welcoming atmosphere, perfect for enhancing the look and feel of your restaurant. Sturdy Metal Legs for Long Lasting: The dining room table and chairs for 4 are durable and come with reinforced thick metal legs that provide excellent stability and support. The sturdy frame ensures reliable strength for family meals and gatherings, so you can eat with confidence. Ergonomic Chairs: The dining table chairs are equipped with highly elastic cushions for extra comfort, and each chair features an ergonomic support structure and is upholstered with high-quality faux leather and filled with high-density foam to ensure Comfortable. The carbon steel legs are both stable and elegant, and the upholstered seat helps reduce fatigue, making it ideal for casual dining and gatherings. Space Saving Design For Compact Dining Rooms: Ideal for smaller dining spaces, this compact 4-person dining table and chairs set combines style and functionality. Table dimensions: 55.1\"L x 31.5\"W x 29.9\"H; Chair dimensions: 17.7\"D x 15.7\"W x 18.5\"H. This table set with four chairs features a streamlined, space-saving design to maximize your dining area. Versatile, easy to assemble, perfect for any space: This 5-piece modern dining table set blends perfectly into any room, from dining rooms and kitchens to breakfast nooks and balconies. Ideal for everyday family meals, casual coffee breaks, or gatherings with friends, the Dining Table with 4 Chairs Set includes all the necessary hardware and an easy-to-follow manual for quick assembly, elevating your dining experience in minutes.",
-      "name": "55.1' Kitchen Table,Kitchen & Dining Room Tables, Dinner Table for 4-6,MDF Wood Dining Table with Metal Legs for Living Room & Dining Room (Walnut Color Table, 55.1\")",
-      "dimensions": {
-        "Item Weight": "32.2 pounds",
-        "Product Dimensions": "55.1 x 31.5 x 29.9 inches",
-        "Size": "55.1\""
+      "object_type": "lamp",
+      "name": "lamp#1",
+      "standardized_dimensions": {
+        "l": 14,
+        "w": 7,
+        "h": 16
       },
-      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/table__table__55_1__Kitchen_Table_Kitchen___Dining_Room_Tables__Dinner_Table_for_4-6_MDF_Wood_Dining_Table_with_Metal_Legs_for_Living_.glb",
-      "source_image": "/home/davin123/PreviewAR_project/outputs_preprocessing/impainted_images/table__55_1__Kitchen_Table_Kitchen___Dining_Room_Tables__Dinner_Table_for_4-6_MDF_Wood_Dining_Table_with_Metal_Legs_for_Living_.png",
-      "source_url": "https://amazon.com/HIPIHOM-Kitchen-Dining-Tables-Dinner/dp/B0DMR37CM4/ref=sr_1_4_sspa?crid=3FG7H4CGGRHUC&dib=eyJ2IjoiMSJ9.MD-_G_tuW76SI5dqvwIYqd6LYJ2fDocBaqa-xpNyzs9JeV9XruSM135V2E8VqNFG9fh-PEhJ1j5hh4sXiKLUMqFHYEieUJI4kS2i58BXfpDK8j_ra0OQQvjCafeWqocYQbl3-bA7DXEnJZorgYY4HI-E5Esm2zLHKqRIKnXxrjKT22Tf4mIgsQoRPN3ZIxNRhqzctfKvtYtvcbiFfB4UIsqrre9X2m25ge7WC3WB-YsDCStfDBV-983WD7IOjVaICRFmsjkErUjRLqoc7FZoPiL5u6ZZB3nHELp4lU1BExc.xf3b6xukyqfHWpIODYEkmdtG51Pt5Wv6wRGojlS1es4&dib_tag=se&keywords=table&qid=1772759989&sprefix=tab%2Caps%2C185&sr=8-4-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1",
-      "best_image_path": "/home/davin123/PreviewAR_project/webscrape_output/amazon-ref-sr_1_4_sspa/images/551_Kitchen_TableKitchen__Dining_Room_Tables_Dinner_Table_for_4-6MDF_Wood_Dining/image_08.jpg",
-      "best_image_url": "https://m.media-amazon.com/images/I/41BqIJlPwPL.jpg",
-      "positive_prompt": "table.",
-      "negative_prompt": "books. figurine. vase. plant.",
-      "site": "amazon",
-      "scraped_at": "2026-03-06T01:40:24.650300+00:00",
-      "scrape_runtime_seconds": 11.5864,
-      "preprocessing_runtime_sec": 41.573,
-      "ranking_reasoning": "Image 08 provides the most comprehensive view of the table's geometry. It is a high-angle three-quarter shot that clearly displays the top surface, the front edge, and the side profile, while also showing the table in its intended context with chairs, which helps define the scale and structural planes better than the isolated product shots.",
-      "ranking_scores": {
-        "/home/davin123/PreviewAR_project/webscrape_output/amazon-ref-sr_1_4_sspa/images/551_Kitchen_TableKitchen__Dining_Room_Tables_Dinner_Table_for_4-6MDF_Wood_Dining/image_01.jpg": {
-          "exposure_score": 9,
-          "notes": "Excellent three-quarter view showing top, front, and side planes clearly."
-        },
-        "/home/davin123/PreviewAR_project/webscrape_output/amazon-ref-sr_1_4_sspa/images/551_Kitchen_TableKitchen__Dining_Room_Tables_Dinner_Table_for_4-6MDF_Wood_Dining/image_02.jpg": {
-          "exposure_score": 9,
-          "notes": "Identical to image 01, provides a clear three-quarter perspective."
-        },
-        "/home/davin123/PreviewAR_project/webscrape_output/amazon-ref-sr_1_4_sspa/images/551_Kitchen_TableKitchen__Dining_Room_Tables_Dinner_Table_for_4-6MDF_Wood_Dining/image_03.jpg": {
-          "exposure_score": 4,
-          "notes": "Composite image; individual panels show parts but not the whole table."
-        },
-        "/home/davin123/PreviewAR_project/webscrape_output/amazon-ref-sr_1_4_sspa/images/551_Kitchen_TableKitchen__Dining_Room_Tables_Dinner_Table_for_4-6MDF_Wood_Dining/image_04.jpg": {
-          "exposure_score": 3,
-          "notes": "Extreme close-up; does not show the full table geometry."
-        },
-        "/home/davin123/PreviewAR_project/webscrape_output/amazon-ref-sr_1_4_sspa/images/551_Kitchen_TableKitchen__Dining_Room_Tables_Dinner_Table_for_4-6MDF_Wood_Dining/image_05.jpg": {
-          "exposure_score": 5,
-          "notes": "Composite image; main view is a decent front-side angle but obscured by text."
-        },
-        "/home/davin123/PreviewAR_project/webscrape_output/amazon-ref-sr_1_4_sspa/images/551_Kitchen_TableKitchen__Dining_Room_Tables_Dinner_Table_for_4-6MDF_Wood_Dining/image_06.jpg": {
-          "exposure_score": 3,
-          "notes": "Composite image; does not show the full table."
-        },
-        "/home/davin123/PreviewAR_project/webscrape_output/amazon-ref-sr_1_4_sspa/images/551_Kitchen_TableKitchen__Dining_Room_Tables_Dinner_Table_for_4-6MDF_Wood_Dining/image_07.jpg": {
-          "exposure_score": 7,
-          "notes": "Good three-quarter view with dimensions, but slightly less clear than 01/02."
-        },
-        "/home/davin123/PreviewAR_project/webscrape_output/amazon-ref-sr_1_4_sspa/images/551_Kitchen_TableKitchen__Dining_Room_Tables_Dinner_Table_for_4-6MDF_Wood_Dining/image_08.jpg": {
-          "exposure_score": 10,
-          "notes": "Best view; high-angle three-quarter perspective showing all primary planes with context."
-        }
-      },
-      "images": [
-        {
-          "url": "https://m.media-amazon.com/images/I/81nUYW7SrsL._AC_SL1500_.jpg",
-          "local_path": "webscrape_output/amazon-ref-sr_1_4_sspa/images/551_Kitchen_TableKitchen__Dining_Room_Tables_Dinner_Table_for_4-6MDF_Wood_Dining/image_01.jpg"
-        },
-        {
-          "url": "https://m.media-amazon.com/images/I/419umXUSfjL.jpg",
-          "local_path": "webscrape_output/amazon-ref-sr_1_4_sspa/images/551_Kitchen_TableKitchen__Dining_Room_Tables_Dinner_Table_for_4-6MDF_Wood_Dining/image_02.jpg"
-        },
-        {
-          "url": "https://m.media-amazon.com/images/I/41swCkbdfwL.jpg",
-          "local_path": "webscrape_output/amazon-ref-sr_1_4_sspa/images/551_Kitchen_TableKitchen__Dining_Room_Tables_Dinner_Table_for_4-6MDF_Wood_Dining/image_03.jpg"
-        },
-        {
-          "url": "https://m.media-amazon.com/images/I/31IlV30XpwL.jpg",
-          "local_path": "webscrape_output/amazon-ref-sr_1_4_sspa/images/551_Kitchen_TableKitchen__Dining_Room_Tables_Dinner_Table_for_4-6MDF_Wood_Dining/image_04.jpg"
-        },
-        {
-          "url": "https://m.media-amazon.com/images/I/411rfajAwLL.jpg",
-          "local_path": "webscrape_output/amazon-ref-sr_1_4_sspa/images/551_Kitchen_TableKitchen__Dining_Room_Tables_Dinner_Table_for_4-6MDF_Wood_Dining/image_05.jpg"
-        },
-        {
-          "url": "https://m.media-amazon.com/images/I/41FKzEEhpyL.jpg",
-          "local_path": "webscrape_output/amazon-ref-sr_1_4_sspa/images/551_Kitchen_TableKitchen__Dining_Room_Tables_Dinner_Table_for_4-6MDF_Wood_Dining/image_06.jpg"
-        },
-        {
-          "url": "https://m.media-amazon.com/images/I/31mhF7OWSYL.jpg",
-          "local_path": "webscrape_output/amazon-ref-sr_1_4_sspa/images/551_Kitchen_TableKitchen__Dining_Room_Tables_Dinner_Table_for_4-6MDF_Wood_Dining/image_07.jpg"
-        },
-        {
-          "url": "https://m.media-amazon.com/images/I/41BqIJlPwPL.jpg",
-          "local_path": "webscrape_output/amazon-ref-sr_1_4_sspa/images/551_Kitchen_TableKitchen__Dining_Room_Tables_Dinner_Table_for_4-6MDF_Wood_Dining/image_08.jpg"
-        }
-      ],
-      "mesh_generation_runtime_sec": 61.55618977546692,
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/lamp__lamp#1.glb",
       "status": "ok"
     },
     {
-      "description": "lamp",
-      "text_description": "[Modern Elegance Design] Embrace modern fashion with the light brown wooden tripod design of this small table lamp, exuding a simple and elegant style that enhances the ambiance of your home with a warm and inviting glow [Soft Light] Our side table lamp is made of linen beige lampshade, emits warm and comfortable light without hurting your eyes, No glare or flickering; suitable for reading, working and studying, also can be used as a night light or baby light; 64.9\" silver clear power cord provides more flexibility [Robust & Durable] EDISHINE table lamp for living room has a wooden tripod, the triangular lampstand provides more robust and not easy to tip over, adding much safety when used in bedside tables, side tables, nurseries, let you enjoy family time or relaxing time without any worry [Easy to Install] Very easy to put together in a few minutes, just tighten the shade, socket ring, and tripod base and it's easy to turn ON/OFF by the switch on the cord; equipped with E26 sockets, the table lamp for bedroom works well with Incandescent/ LED/ CFL/ halogen bulbs (bulbs not included) [Space Saving] Compact in design with dimensions of 14.2\" (H) x 7.87\" (W) x 6.5\" (D), this versatile lamp is perfectly sized to fit on any table or desk, providing an ideal space-saving lighting solution for your home or office",
-      "name": "EDISHINE Tripod Table Lamp, Small Cute Bedside Lamp with Linen Beige Lampshade, Nightstand Lamp for Nursery, Bedroom, Kid Room, Living Room, Light Brown Wooden Base, E26 Socket, 14.2 Inch",
-      "dimensions": {
-        "Product Dimensions": "14.2\"D x 7.85\"W x 6.5\"H",
-        "Item Weight": "1.1 pounds",
-        "Bulb Shape Size": "A19",
-        "Size": "14.2\" H x 7.85\" W x 6.5\" D",
-        "Shade Height": "14.2 Inches"
+      "object_type": "table",
+      "name": "table#1",
+      "standardized_dimensions": {
+        "l": 23.5,
+        "w": 23.5,
+        "h": 37.5
       },
-      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/lamp__lamp__EDISHINE_Tripod_Table_Lamp__Small_Cute_Bedside_Lamp_with_Linen_Beige_Lampshade__Nightstand_Lamp_for_Nursery__Bedroom__Ki.glb",
-      "source_image": "/home/davin123/PreviewAR_project/outputs_preprocessing/impainted_images/lamp__EDISHINE_Tripod_Table_Lamp__Small_Cute_Bedside_Lamp_with_Linen_Beige_Lampshade__Nightstand_Lamp_for_Nursery__Bedroom__Ki.png",
-      "source_url": "https://www.amazon.com/EDISHINE-Lampshade-Nightstand-Bedside-Nursery/dp/B0BZTT3MKR/ref=sr_1_8?crid=1G1D3SXT51CQE&dib=eyJ2IjoiMSJ9._pJtB6Vw5BW-H0MaeLgZEY5u7mA6-p4cO1pOtDgvQNd-BqZ7LM-1l0P3gzooIf9y1lREOqblhTJBcvUQpNFIfdHrroIVV-DoVIUHEYbwWa3N2eIol4j3ORdzDQvAm4NOXTdZ1oWaJIl3ZJaK8XNa5KYuJ3K72148cfrVcEMro58CFbAb8u6zWKHtuwajrDTSOWpsMY1kWwvlJMxFK3gwvmphyMwu7XGiGiGrX9kJYB5ANd69b0dBQ_TE0THlpP_ntIyjuzwNM5o0HvHTLBiulejfog2VQQZhyjtMQ0q-TdQ.MEgDQ9nu0sIQUa97RBoI9YbMe8PWAPrxBi2HPk7KCcs&dib_tag=se&keywords=lamp&qid=1772759941&sprefix=la%2Caps%2C207&sr=8-8&th=1",
-      "best_image_path": "/home/davin123/PreviewAR_project/webscrape_output/amazon-ref-sr_1_8/images/EDISHINE_Tripod_Table_Lamp_Small_Cute_Bedside_Lamp_with_Linen_Beige_Lampshade_Ni/image_01.jpg",
-      "best_image_url": "https://m.media-amazon.com/images/I/81hd5Sql6fL._AC_SL1500_.jpg",
-      "positive_prompt": "lamp.",
-      "negative_prompt": "",
-      "site": "amazon",
-      "scraped_at": "2026-03-06T01:40:25.491391+00:00",
-      "scrape_runtime_seconds": 12.4627,
-      "preprocessing_runtime_sec": 48.0294,
-      "ranking_reasoning": "Image 01 provides the best three-quarter perspective, clearly showing the top, front, and side planes of the tripod base and the cylindrical lampshade. This angle maximizes the geometric understanding of the lamp's structure compared to the other images, which are either too close-up, flat, or represent instructional diagrams.",
-      "ranking_scores": {
-        "/home/davin123/PreviewAR_project/webscrape_output/amazon-ref-sr_1_8/images/EDISHINE_Tripod_Table_Lamp_Small_Cute_Bedside_Lamp_with_Linen_Beige_Lampshade_Ni/image_01.jpg": {
-          "exposure_score": 10,
-          "notes": "Excellent three-quarter view showing all primary geometric planes."
-        },
-        "/home/davin123/PreviewAR_project/webscrape_output/amazon-ref-sr_1_8/images/EDISHINE_Tripod_Table_Lamp_Small_Cute_Bedside_Lamp_with_Linen_Beige_Lampshade_Ni/image_02.jpg": {
-          "exposure_score": 8,
-          "notes": "Good angle, but slightly less depth than image 01."
-        },
-        "/home/davin123/PreviewAR_project/webscrape_output/amazon-ref-sr_1_8/images/EDISHINE_Tripod_Table_Lamp_Small_Cute_Bedside_Lamp_with_Linen_Beige_Lampshade_Ni/image_03.jpg": {
-          "exposure_score": 5,
-          "notes": "Focuses only on the base; does not show the full lamp."
-        },
-        "/home/davin123/PreviewAR_project/webscrape_output/amazon-ref-sr_1_8/images/EDISHINE_Tripod_Table_Lamp_Small_Cute_Bedside_Lamp_with_Linen_Beige_Lampshade_Ni/image_04.jpg": {
-          "exposure_score": 4,
-          "notes": "Close-up of the shade; does not show the full lamp."
-        },
-        "/home/davin123/PreviewAR_project/webscrape_output/amazon-ref-sr_1_8/images/EDISHINE_Tripod_Table_Lamp_Small_Cute_Bedside_Lamp_with_Linen_Beige_Lampshade_Ni/image_05.jpg": {
-          "exposure_score": 3,
-          "notes": "Instructional diagram; not a product showcase."
-        },
-        "/home/davin123/PreviewAR_project/webscrape_output/amazon-ref-sr_1_8/images/EDISHINE_Tripod_Table_Lamp_Small_Cute_Bedside_Lamp_with_Linen_Beige_Lampshade_Ni/image_06.jpg": {
-          "exposure_score": 6,
-          "notes": "Flat profile view; lacks depth."
-        },
-        "/home/davin123/PreviewAR_project/webscrape_output/amazon-ref-sr_1_8/images/EDISHINE_Tripod_Table_Lamp_Small_Cute_Bedside_Lamp_with_Linen_Beige_Lampshade_Ni/image_07.jpg": {
-          "exposure_score": 5,
-          "notes": "Lifestyle shot; lamp is small and not the primary focus."
-        },
-        "/home/davin123/PreviewAR_project/webscrape_output/amazon-ref-sr_1_8/images/EDISHINE_Tripod_Table_Lamp_Small_Cute_Bedside_Lamp_with_Linen_Beige_Lampshade_Ni/image_08.jpg": {
-          "exposure_score": 1,
-          "notes": "Video thumbnail; not a valid image for geometric analysis."
-        }
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/table__table#1.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "table",
+      "name": "table#2",
+      "standardized_dimensions": {
+        "l": 16.5,
+        "w": 16.5,
+        "h": 20.5
       },
-      "images": [
-        {
-          "url": "https://m.media-amazon.com/images/I/81hd5Sql6fL._AC_SL1500_.jpg",
-          "local_path": "webscrape_output/amazon-ref-sr_1_8/images/EDISHINE_Tripod_Table_Lamp_Small_Cute_Bedside_Lamp_with_Linen_Beige_Lampshade_Ni/image_01.jpg"
-        },
-        {
-          "url": "https://m.media-amazon.com/images/I/41Id7YdujHL.jpg",
-          "local_path": "webscrape_output/amazon-ref-sr_1_8/images/EDISHINE_Tripod_Table_Lamp_Small_Cute_Bedside_Lamp_with_Linen_Beige_Lampshade_Ni/image_02.jpg"
-        },
-        {
-          "url": "https://m.media-amazon.com/images/I/41fN5ZjQyAL.jpg",
-          "local_path": "webscrape_output/amazon-ref-sr_1_8/images/EDISHINE_Tripod_Table_Lamp_Small_Cute_Bedside_Lamp_with_Linen_Beige_Lampshade_Ni/image_03.jpg"
-        },
-        {
-          "url": "https://m.media-amazon.com/images/I/41YKnY4Y0mL.jpg",
-          "local_path": "webscrape_output/amazon-ref-sr_1_8/images/EDISHINE_Tripod_Table_Lamp_Small_Cute_Bedside_Lamp_with_Linen_Beige_Lampshade_Ni/image_04.jpg"
-        },
-        {
-          "url": "https://m.media-amazon.com/images/I/41XL8H-sAVL.jpg",
-          "local_path": "webscrape_output/amazon-ref-sr_1_8/images/EDISHINE_Tripod_Table_Lamp_Small_Cute_Bedside_Lamp_with_Linen_Beige_Lampshade_Ni/image_05.jpg"
-        },
-        {
-          "url": "https://m.media-amazon.com/images/I/41q4ni80iML.jpg",
-          "local_path": "webscrape_output/amazon-ref-sr_1_8/images/EDISHINE_Tripod_Table_Lamp_Small_Cute_Bedside_Lamp_with_Linen_Beige_Lampshade_Ni/image_06.jpg"
-        },
-        {
-          "url": "https://m.media-amazon.com/images/I/41XdYyYxMOL.jpg",
-          "local_path": "webscrape_output/amazon-ref-sr_1_8/images/EDISHINE_Tripod_Table_Lamp_Small_Cute_Bedside_Lamp_with_Linen_Beige_Lampshade_Ni/image_07.jpg"
-        },
-        {
-          "url": "https://m.media-amazon.com/images/I/811viAsX9ML._SX35_SY46._CR0,0,35,46_BG85,85,85_BR-120_PKdp-play-icon-overlay__.jpg",
-          "local_path": "webscrape_output/amazon-ref-sr_1_8/images/EDISHINE_Tripod_Table_Lamp_Small_Cute_Bedside_Lamp_with_Linen_Beige_Lampshade_Ni/image_08.jpg"
-        }
-      ],
-      "mesh_generation_runtime_sec": 74.12646722793579,
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/table__table#2.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "lamp",
+      "name": "lamp#1",
+      "standardized_dimensions": {
+        "l": 4.49,
+        "w": 4.49,
+        "h": 15
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/lamp__lamp#1.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "table",
+      "name": "table#1",
+      "standardized_dimensions": {
+        "l": 23.5,
+        "w": 23.5,
+        "h": 37.5
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/table__table#1.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "table",
+      "name": "table#2",
+      "standardized_dimensions": {
+        "l": 16.5,
+        "w": 16.5,
+        "h": 20.5
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/table__table#2.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "lamp",
+      "name": "lamp#1",
+      "standardized_dimensions": {
+        "l": 4.49,
+        "w": 4.49,
+        "h": 15
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/lamp__lamp#1.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "lamp",
+      "name": "lamp#1",
+      "standardized_dimensions": {
+        "l": 4.49,
+        "w": 4.49,
+        "h": 15
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/lamp__lamp#1.glb",
       "status": "ok"
     }
   ]

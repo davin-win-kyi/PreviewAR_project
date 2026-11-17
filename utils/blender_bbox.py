@@ -1,119 +1,97 @@
-# tools/blender_bbox.py
+# tools/blender_bbox_largest.py
 import bpy
 import sys
 import json
 from mathutils import Vector
 
-# Conversion constants
 INCHES_PER_M = 39.37007874015748
-INCHES_PER_CM = 0.3937007874015748
-INCHES_PER_MM = 0.03937007874015748
+
 
 def import_glb(path: str):
-    # Reset scene then import GLB
     bpy.ops.wm.read_factory_settings(use_empty=True)
     bpy.ops.import_scene.gltf(filepath=path)
 
-def scene_world_bbox():
-    """
-    Computes world-space bounding box over all MESH objects in the scene.
-    Returns (min_v, max_v) in Blender units (typically meters after glTF import).
-    """
+
+def object_world_bbox(obj, depsgraph):
+    obj_eval = obj.evaluated_get(depsgraph)
+    mesh = obj_eval.to_mesh()
+
+    if mesh is None or len(mesh.vertices) == 0:
+        obj_eval.to_mesh_clear()
+        return None, None
+
     min_v = Vector((float("inf"), float("inf"), float("inf")))
     max_v = Vector((float("-inf"), float("-inf"), float("-inf")))
 
-    depsgraph = bpy.context.evaluated_depsgraph_get()
+    for v in mesh.vertices:
+        w = obj_eval.matrix_world @ v.co
+        min_v.x = min(min_v.x, w.x)
+        min_v.y = min(min_v.y, w.y)
+        min_v.z = min(min_v.z, w.z)
+        max_v.x = max(max_v.x, w.x)
+        max_v.y = max(max_v.y, w.y)
+        max_v.z = max(max_v.z, w.z)
 
-    for obj in bpy.context.scene.objects:
-        if obj.type != "MESH":
-            continue
-
-        obj_eval = obj.evaluated_get(depsgraph)
-        mesh = obj_eval.to_mesh()
-
-        for v in mesh.vertices:
-            w = obj_eval.matrix_world @ v.co
-            min_v.x = min(min_v.x, w.x)
-            min_v.y = min(min_v.y, w.y)
-            min_v.z = min(min_v.z, w.z)
-            max_v.x = max(max_v.x, w.x)
-            max_v.y = max(max_v.y, w.y)
-            max_v.z = max(max_v.z, w.z)
-
-        obj_eval.to_mesh_clear()
-
+    obj_eval.to_mesh_clear()
     return min_v, max_v
 
-def parse_args(argv):
-    """
-    Usage:
-      blender -b -P tools/blender_bbox.py -- model.glb
-      blender -b -P tools/blender_bbox.py -- model.glb --gt L W H --gt_units in|cm|mm|m
-    """
-    if "--" not in argv:
-        raise SystemExit(
-            "Usage: blender -b -P tools/blender_bbox.py -- model.glb "
-            "[--gt L W H] [--gt_units in|cm|mm|m]"
-        )
-
-    idx = argv.index("--") + 1
-    if idx >= len(argv):
-        raise SystemExit("Missing model.glb after --")
-
-    glb_path = argv[idx]
-    rest = argv[idx + 1 :]
-
-    gt = None
-    gt_units = "in"
-
-    i = 0
-    while i < len(rest):
-        if rest[i] == "--gt":
-            if i + 3 >= len(rest):
-                raise SystemExit("--gt requires 3 numbers: L W H")
-            gt = (float(rest[i+1]), float(rest[i+2]), float(rest[i+3]))
-            i += 4
-            continue
-        if rest[i] == "--gt_units":
-            if i + 1 >= len(rest):
-                raise SystemExit("--gt_units requires one of: in, cm, mm, m")
-            gt_units = rest[i+1].lower().replace(".", "")
-            i += 2
-            continue
-        i += 1
-
-    return glb_path, gt, gt_units
-
-def inches_per_unit(u: str):
-    u = (u or "").strip().lower().replace(".", "")
-    if u in ("in", "inch", "inches"):
-        return 1.0
-    if u in ("cm", "centimeter", "centimeters"):
-        return INCHES_PER_CM
-    if u in ("mm", "millimeter", "millimeters"):
-        return INCHES_PER_MM
-    if u in ("m", "meter", "meters", "metre", "metres"):
-        return INCHES_PER_M
-    return None
 
 def sorted_desc(t):
     a = sorted(list(t), reverse=True)
     return (a[0], a[1], a[2])
 
-def best_fit_uniform_scale(d, g):
-    # s* = (g·d)/(d·d)
-    num = g[0] * d[0] + g[1] * d[1] + g[2] * d[2]
-    den = d[0] * d[0] + d[1] * d[1] + d[2] * d[2]
-    return (num / den) if den > 0 else 0.0
+
+def parse_args(argv):
+    if "--" not in argv:
+        raise SystemExit("Usage: blender -b -P tools/blender_bbox_largest.py -- model.glb")
+
+    idx = argv.index("--") + 1
+    if idx >= len(argv):
+        raise SystemExit("Missing model.glb after --")
+
+    return argv[idx]
+
+
+def largest_mesh_bbox():
+    depsgraph = bpy.context.evaluated_depsgraph_get()
+
+    best = None
+    best_volume = -1.0
+
+    for obj in bpy.context.scene.objects:
+        if obj.type != "MESH":
+            continue
+
+        mn, mx = object_world_bbox(obj, depsgraph)
+        if mn is None or mx is None:
+            continue
+
+        size = mx - mn
+        volume = abs(size.x * size.y * size.z)
+
+        if volume > best_volume:
+            best_volume = volume
+            best = {
+                "name": obj.name,
+                "min": mn,
+                "max": mx,
+                "size": size,
+                "volume": volume,
+            }
+
+    if best is None:
+        raise RuntimeError("No mesh objects with vertices were found in the scene.")
+
+    return best
+
 
 def main():
-    glb_path, gt, gt_units = parse_args(sys.argv)
-
+    glb_path = parse_args(sys.argv)
     import_glb(glb_path)
-    mn, mx = scene_world_bbox()
-    size = mx - mn  # Blender units (usually meters for glTF)
 
-    # GLB absolute extents in inches (x,y,z then sorted)
+    best = largest_mesh_bbox()
+    size = best["size"]
+
     glb_abs_in_xyz = (
         abs(size.x) * INCHES_PER_M,
         abs(size.y) * INCHES_PER_M,
@@ -121,66 +99,40 @@ def main():
     )
     glb_abs_sorted = sorted_desc(glb_abs_in_xyz)
 
-    # If no GT provided, just return GLB absolute
-    if gt is None:
-        out = {
-            "glb_absolute": {
-                "a": glb_abs_sorted[0],
-                "b": glb_abs_sorted[1],
-                "c": glb_abs_sorted[2],
-            },
-            "glb_relative": None,
-            "actual_absolute": None,
-            "actual_relative": None,
-        }
-        print(json.dumps(out))
-        return
-
-    mult = inches_per_unit(gt_units)
-    if mult is None:
-        raise SystemExit(f"Unsupported gt_units: {gt_units}")
-
-    actual_abs_in = (gt[0] * mult, gt[1] * mult, gt[2] * mult)
-    actual_sorted = sorted_desc(actual_abs_in)
-
-    # Relative: best-fit uniform scaling of GLB -> GT
-    s_star = best_fit_uniform_scale(glb_abs_sorted, actual_sorted)
-    glb_rel = (
-        s_star * glb_abs_sorted[0],
-        s_star * glb_abs_sorted[1],
-        s_star * glb_abs_sorted[2],
-    )
-
     out = {
+        "largest_mesh_name": best["name"],
         "glb_absolute": {
             "a": glb_abs_sorted[0],
             "b": glb_abs_sorted[1],
             "c": glb_abs_sorted[2],
         },
-        "glb_relative": {
-            "a": glb_rel[0],
-            "b": glb_rel[1],
-            "c": glb_rel[2],
-            "scale": s_star,
-        },
-        "actual_absolute": {
-            "a": actual_sorted[0],
-            "b": actual_sorted[1],
-            "c": actual_sorted[2],
-        },
-        "actual_relative": {
-            "a": actual_sorted[0],
-            "b": actual_sorted[1],
-            "c": actual_sorted[2],
-        },
-        # Optional debug: keep unsorted xyz extents too
         "debug": {
-            "glb_abs_in_xyz": {"x": glb_abs_in_xyz[0], "y": glb_abs_in_xyz[1], "z": glb_abs_in_xyz[2]},
-            "gt_units": gt_units,
+            "glb_abs_in_xyz": {
+                "x": glb_abs_in_xyz[0],
+                "y": glb_abs_in_xyz[1],
+                "z": glb_abs_in_xyz[2],
+            },
+            "bbox_min_m": {
+                "x": best["min"].x,
+                "y": best["min"].y,
+                "z": best["min"].z,
+            },
+            "bbox_max_m": {
+                "x": best["max"].x,
+                "y": best["max"].y,
+                "z": best["max"].z,
+            },
+            "bbox_size_m": {
+                "x": best["size"].x,
+                "y": best["size"].y,
+                "z": best["size"].z,
+            },
+            "bbox_volume_m3": best["volume"],
         },
     }
 
     print(json.dumps(out))
+
 
 if __name__ == "__main__":
     main()

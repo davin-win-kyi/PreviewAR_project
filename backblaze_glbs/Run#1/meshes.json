@@ -1,0 +1,565 @@
+{
+  "meshes": [
+    {
+      "object_type": "bed",
+      "name": "bed#1",
+      "standardized_dimensions": {
+        "l": 79.9,
+        "w": 57.1,
+        "h": 35.4
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/bed__bed#1.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "bed",
+      "name": "bed#2",
+      "standardized_dimensions": {
+        "l": 78.23,
+        "w": 57.17,
+        "h": 45.08
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/bed__bed#2.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "bed",
+      "name": "bed#3",
+      "standardized_dimensions": {
+        "l": 81.69,
+        "w": 59.45,
+        "h": 47.2
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/bed__bed#3.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "bed",
+      "name": "bed#4",
+      "standardized_dimensions": {
+        "l": 81.69,
+        "w": 59.45,
+        "h": 47.2
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/bed__bed#4.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "bed",
+      "name": "bed#5",
+      "standardized_dimensions": {
+        "l": 83.125,
+        "w": 63.375,
+        "h": 45.625
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/bed__bed#5.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "cabinet",
+      "name": "cabinet#1",
+      "standardized_dimensions": {
+        "l": 11.8,
+        "w": 38.9,
+        "h": 20.6
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/cabinet__cabinet#1.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "cabinet",
+      "name": "cabinet#2",
+      "standardized_dimensions": {
+        "l": 11.8,
+        "w": 23.6,
+        "h": 31.5
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/cabinet__cabinet#2.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "cabinet",
+      "name": "cabinet#3",
+      "standardized_dimensions": {
+        "l": 15.75,
+        "w": 31.5,
+        "h": 31.7
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/cabinet__cabinet#3.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "cabinet",
+      "name": "cabinet#4",
+      "standardized_dimensions": {
+        "l": 14.9,
+        "w": 30.0,
+        "h": 31.0
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/cabinet__cabinet#4.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "cabinet",
+      "name": "cabinet#5",
+      "standardized_dimensions": {
+        "l": 19.625,
+        "w": 40.125,
+        "h": 39.625
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/cabinet__cabinet#5.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "chair",
+      "name": "chair#1",
+      "standardized_dimensions": {
+        "l": 29.0,
+        "w": 24.0,
+        "h": 34.0
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/chair__chair#1.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "chair",
+      "name": "chair#2",
+      "standardized_dimensions": {
+        "l": 21.7,
+        "w": 21.1,
+        "h": 33.1
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/chair__chair#2.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "chair",
+      "name": "chair#3",
+      "standardized_dimensions": {
+        "l": 22.8,
+        "w": 22.2,
+        "h": 40.4
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/chair__chair#3.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "chair",
+      "name": "chair#4",
+      "standardized_dimensions": {
+        "l": 17.9,
+        "w": 18.3,
+        "h": 30.4
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/chair__chair#4.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "chair",
+      "name": "chair#5",
+      "standardized_dimensions": {
+        "l": 21.625,
+        "w": 19.25,
+        "h": 31.875
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/chair__chair#5.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "couch",
+      "name": "couch#1",
+      "standardized_dimensions": {
+        "l": 30.0,
+        "w": 68.0,
+        "h": 35.0
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/couch__couch#1.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "couch",
+      "name": "couch#2",
+      "standardized_dimensions": {
+        "l": 31.0,
+        "w": 62.0,
+        "h": 33.0
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/couch__couch#2.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "couch",
+      "name": "couch#3",
+      "standardized_dimensions": {
+        "l": 32.3,
+        "w": 66.1,
+        "h": 30.7
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/couch__couch#3.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "couch",
+      "name": "couch#4",
+      "standardized_dimensions": {
+        "l": 100.5,
+        "w": 29.5,
+        "h": 33.5
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/couch__couch#4.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "couch",
+      "name": "couch#5",
+      "standardized_dimensions": {
+        "l": 31.125,
+        "w": 57.875,
+        "h": 30.375
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/couch__couch#5.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "desk",
+      "name": "desk#1",
+      "standardized_dimensions": {
+        "l": 23.6,
+        "w": 47.2,
+        "h": 37.4
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/desk__desk#1.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "desk",
+      "name": "desk#2",
+      "standardized_dimensions": {
+        "l": 24.0,
+        "w": 48.0,
+        "h": 28.0
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/desk__desk#2.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "desk",
+      "name": "desk#3",
+      "standardized_dimensions": {
+        "l": 46.0,
+        "w": 23.5,
+        "h": 29.5
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/desk__desk#3.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "desk",
+      "name": "desk#4",
+      "standardized_dimensions": {
+        "l": 63.0,
+        "w": 31.5,
+        "h": 29.52
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/desk__desk#4.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "desk",
+      "name": "desk#5",
+      "standardized_dimensions": {
+        "l": 55.125,
+        "w": 23.625,
+        "h": 28.75
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/desk__desk#5.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "lamp",
+      "name": "lamp#1",
+      "standardized_dimensions": {
+        "l": 4.5,
+        "w": 4.5,
+        "h": 9.0
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/lamp__lamp#1.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "lamp",
+      "name": "lamp#2",
+      "standardized_dimensions": {
+        "l": 7.87,
+        "w": 7.87,
+        "h": 14.2
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/lamp__lamp#2.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "lamp",
+      "name": "lamp#3",
+      "standardized_dimensions": {
+        "l": 5.9,
+        "w": 5.9,
+        "h": 9.6
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/lamp__lamp#3.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "lamp",
+      "name": "lamp#4",
+      "standardized_dimensions": {
+        "l": 13.0,
+        "w": 13.0,
+        "h": 60.5
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/lamp__lamp#4.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "lamp",
+      "name": "lamp#5",
+      "standardized_dimensions": {
+        "l": 9.0,
+        "w": 9.0,
+        "h": 22.0
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/lamp__lamp#5.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "shelf",
+      "name": "shelf#1",
+      "standardized_dimensions": {
+        "l": 9.3,
+        "w": 23.6,
+        "h": 70.9
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/shelf__shelf#1.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "shelf",
+      "name": "shelf#2",
+      "standardized_dimensions": {
+        "l": 10.2,
+        "w": 23.6,
+        "h": 63.4
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/shelf__shelf#2.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "shelf",
+      "name": "shelf#3",
+      "standardized_dimensions": {
+        "l": 6.0,
+        "w": 8.0,
+        "h": 42.0
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/shelf__shelf#3.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "shelf",
+      "name": "shelf#4",
+      "standardized_dimensions": {
+        "l": 35.2,
+        "w": 12.5,
+        "h": 69.9
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/shelf__shelf#4.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "shelf",
+      "name": "shelf#5",
+      "standardized_dimensions": {
+        "l": 9.125,
+        "w": 14.5,
+        "h": 39.625
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/shelf__shelf#5.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "stool",
+      "name": "stool#1",
+      "standardized_dimensions": {
+        "l": 9.3,
+        "w": 9.3,
+        "h": 9.3
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/stool__stool#1.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "stool",
+      "name": "stool#2",
+      "standardized_dimensions": {
+        "l": 10.5,
+        "w": 13.0,
+        "h": 11.0
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/stool__stool#2.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "stool",
+      "name": "stool#3",
+      "standardized_dimensions": {
+        "l": 11.4,
+        "w": 17.7,
+        "h": 17.5
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/stool__stool#3.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "stool",
+      "name": "stool#4",
+      "standardized_dimensions": {
+        "l": 11.8,
+        "w": 11.8,
+        "h": 27.5
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/stool__stool#4.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "stool",
+      "name": "stool#5",
+      "standardized_dimensions": {
+        "l": 10.625,
+        "w": 10.625,
+        "h": 11.0
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/stool__stool#5.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "table",
+      "name": "table#1",
+      "standardized_dimensions": {
+        "l": 23.62,
+        "w": 39.4,
+        "h": 29.53
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/table__table#1.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "table",
+      "name": "table#2",
+      "standardized_dimensions": {
+        "l": 24.0,
+        "w": 48.0,
+        "h": 28.0
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/table__table#2.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "table",
+      "name": "table#3",
+      "standardized_dimensions": {
+        "l": 63.0,
+        "w": 23.6,
+        "h": 29.5
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/table__table#3.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "table",
+      "name": "table#4",
+      "standardized_dimensions": {
+        "l": 47.5,
+        "w": 31.5,
+        "h": 29.5
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/table__table#4.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "table",
+      "name": "table#5",
+      "standardized_dimensions": {
+        "l": 39.0,
+        "w": 39.0,
+        "h": 29.0
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/table__table#5.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "wardrobe",
+      "name": "wardrobe#1",
+      "standardized_dimensions": {
+        "l": 20.0,
+        "w": 38.0,
+        "h": 70.3
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/wardrobe__wardrobe#1.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "wardrobe",
+      "name": "wardrobe#2",
+      "standardized_dimensions": {
+        "l": 20.98,
+        "w": 40.0,
+        "h": 70.86
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/wardrobe__wardrobe#2.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "wardrobe",
+      "name": "wardrobe#3",
+      "standardized_dimensions": {
+        "l": 15.79,
+        "w": 31.69,
+        "h": 65.98
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/wardrobe__wardrobe#3.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "wardrobe",
+      "name": "wardrobe#4",
+      "standardized_dimensions": {
+        "l": 19.625,
+        "w": 31.5,
+        "h": 67.375
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/wardrobe__wardrobe#4.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "wardrobe",
+      "name": "wardrobe#5",
+      "standardized_dimensions": {
+        "l": 30.71,
+        "w": 19.7,
+        "h": 70.87
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/wardrobe__wardrobe#5.glb",
+      "status": "ok"
+    },
+    {
+      "object_type": "table",
+      "name": "table#4",
+      "standardized_dimensions": {
+        "l": 19.0,
+        "w": 15.0,
+        "h": 19.25
+      },
+      "path": "/home/davin123/PreviewAR_project/mesh_outputs/glbs/table__table#4.glb",
+      "status": "ok"
+    }
+  ]
+}

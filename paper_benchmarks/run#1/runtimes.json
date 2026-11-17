@@ -1,0 +1,259 @@
+{
+  "runtimes": [
+    {
+      "description": "bed",
+      "runtime_sec": 295.83795523643494,
+      "status": "ok"
+    },
+    {
+      "description": "bed",
+      "runtime_sec": 105.67825102806091,
+      "status": "ok"
+    },
+    {
+      "description": "bed",
+      "runtime_sec": 103.26294255256653,
+      "status": "ok"
+    },
+    {
+      "description": "bed",
+      "runtime_sec": 87.7986204624176,
+      "status": "ok"
+    },
+    {
+      "description": "bed",
+      "runtime_sec": 113.45445704460144,
+      "status": "ok"
+    },
+    {
+      "description": "cabinet",
+      "runtime_sec": 53.30665707588196,
+      "status": "ok"
+    },
+    {
+      "description": "cabinet",
+      "runtime_sec": 55.072155714035034,
+      "status": "ok"
+    },
+    {
+      "description": "cabinet",
+      "runtime_sec": 53.77661156654358,
+      "status": "ok"
+    },
+    {
+      "description": "cabinet",
+      "runtime_sec": 49.99220943450928,
+      "status": "ok"
+    },
+    {
+      "description": "cabinet",
+      "runtime_sec": 63.431113958358765,
+      "status": "ok"
+    },
+    {
+      "description": "chair",
+      "runtime_sec": 51.269001960754395,
+      "status": "ok"
+    },
+    {
+      "description": "chair",
+      "runtime_sec": 64.21161794662476,
+      "status": "ok"
+    },
+    {
+      "description": "chair",
+      "runtime_sec": 59.39345049858093,
+      "status": "ok"
+    },
+    {
+      "description": "chair",
+      "runtime_sec": 69.27444982528687,
+      "status": "ok"
+    },
+    {
+      "description": "chair",
+      "runtime_sec": 54.06481957435608,
+      "status": "ok"
+    },
+    {
+      "description": "couch",
+      "runtime_sec": 46.950926065444946,
+      "status": "ok"
+    },
+    {
+      "description": "couch",
+      "runtime_sec": 49.48678636550903,
+      "status": "ok"
+    },
+    {
+      "description": "couch",
+      "runtime_sec": 48.26791214942932,
+      "status": "ok"
+    },
+    {
+      "description": "couch",
+      "runtime_sec": 52.511544704437256,
+      "status": "ok"
+    },
+    {
+      "description": "couch",
+      "runtime_sec": 51.00121474266052,
+      "status": "ok"
+    },
+    {
+      "description": "desk",
+      "runtime_sec": 59.088595151901245,
+      "status": "ok"
+    },
+    {
+      "description": "desk",
+      "runtime_sec": 49.99911952018738,
+      "status": "ok"
+    },
+    {
+      "description": "desk",
+      "runtime_sec": 95.37644219398499,
+      "status": "ok"
+    },
+    {
+      "description": "desk",
+      "runtime_sec": 73.32720994949341,
+      "status": "ok"
+    },
+    {
+      "description": "desk",
+      "runtime_sec": 46.17491292953491,
+      "status": "ok"
+    },
+    {
+      "description": "lamp",
+      "runtime_sec": 56.07754731178284,
+      "status": "ok"
+    },
+    {
+      "description": "lamp",
+      "runtime_sec": 49.9691858291626,
+      "status": "ok"
+    },
+    {
+      "description": "lamp",
+      "runtime_sec": 70.80583834648132,
+      "status": "ok"
+    },
+    {
+      "description": "lamp",
+      "runtime_sec": 82.17272806167603,
+      "status": "ok"
+    },
+    {
+      "description": "lamp",
+      "runtime_sec": 59.878252267837524,
+      "status": "ok"
+    },
+    {
+      "description": "shelf",
+      "runtime_sec": 44.39037609100342,
+      "status": "ok"
+    },
+    {
+      "description": "shelf",
+      "runtime_sec": 107.31803870201111,
+      "status": "ok"
+    },
+    {
+      "description": "shelf",
+      "runtime_sec": 40.85062265396118,
+      "status": "ok"
+    },
+    {
+      "description": "shelf",
+      "runtime_sec": 42.626579999923706,
+      "status": "ok"
+    },
+    {
+      "description": "shelf",
+      "runtime_sec": 43.14469814300537,
+      "status": "ok"
+    },
+    {
+      "description": "stool",
+      "runtime_sec": 55.56742715835571,
+      "status": "ok"
+    },
+    {
+      "description": "stool",
+      "runtime_sec": 96.91124367713928,
+      "status": "ok"
+    },
+    {
+      "description": "stool",
+      "runtime_sec": 75.8562536239624,
+      "status": "ok"
+    },
+    {
+      "description": "stool",
+      "runtime_sec": 67.5019965171814,
+      "status": "ok"
+    },
+    {
+      "description": "stool",
+      "runtime_sec": 64.95444107055664,
+      "status": "ok"
+    },
+    {
+      "description": "table",
+      "runtime_sec": 57.60412955284119,
+      "status": "ok"
+    },
+    {
+      "description": "table",
+      "runtime_sec": 52.26933979988098,
+      "status": "ok"
+    },
+    {
+      "description": "table",
+      "runtime_sec": 65.19821047782898,
+      "status": "ok"
+    },
+    {
+      "description": "table",
+      "runtime_sec": 72.30097818374634,
+      "status": "ok"
+    },
+    {
+      "description": "table",
+      "runtime_sec": 61.91612148284912,
+      "status": "ok"
+    },
+    {
+      "description": "wardrobe",
+      "runtime_sec": 55.04192519187927,
+      "status": "ok"
+    },
+    {
+      "description": "wardrobe",
+      "runtime_sec": 49.47498440742493,
+      "status": "ok"
+    },
+    {
+      "description": "wardrobe",
+      "runtime_sec": 64.1702573299408,
+      "status": "ok"
+    },
+    {
+      "description": "wardrobe",
+      "runtime_sec": 47.18264126777649,
+      "status": "ok"
+    },
+    {
+      "description": "wardrobe",
+      "runtime_sec": 54.033156871795654,
+      "status": "ok"
+    },
+    {
+      "description": "table",
+      "runtime_sec": 66.57753252983093,
+      "status": "ok"
+    }
+  ]
+}
