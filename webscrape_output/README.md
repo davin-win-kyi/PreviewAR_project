@@ -1,6 +1,8 @@
 # webscrape_output
 
-The input to the batch pipeline. Stage 1 (`preprocess_main.py`) reads `all_products.json`; pass `--input-json` to use a different file. No script in this repository writes this folder, so build it with your own scraper using the format below. See the [main README](../README.md) for the full pipeline.
+The input to the batch pipeline. Stage 1 (`preprocess_main.py`) reads `all_products.json`; pass `--input-json` to use a different file. See the [main README](../README.md) for the full pipeline.
+
+The web scraper that builds this folder isn't included in this repository. **If you'd like to use it, email [davinkyi@gmail.com](mailto:davinkyi@gmail.com).** Otherwise, produce the folder with your own scraper using the format below.
 
 The checked-in file contains a single test product (`bed#1`).
 

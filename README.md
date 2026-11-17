@@ -33,7 +33,7 @@ flowchart TD
 | 3. Evaluate scale | `python benchmarking_rrmse.py` | `mesh_outputs/meshes.json` | `benchmarks/scale_eval.json` |
 | 4. Summarize runs | `python finalize_benchmarks.py` | `paper_benchmarks/run#*/` | `paper_benchmarks/benchmark_summary.json` |
 
-The input, `webscrape_output/all_products.json`, lists each product's category, listed dimensions in inches, and downloaded photos. No script in this repository writes it; [webscrape_output/](webscrape_output/) documents the format.
+The input, `webscrape_output/all_products.json`, lists each product's category, listed dimensions in inches, and downloaded photos. The web scraper that builds it isn't included in this repository. **If you'd like to use it, email [davinkyi@gmail.com](mailto:davinkyi@gmail.com).** Otherwise, [webscrape_output/](webscrape_output/) documents the format so you can produce the file with your own scraper.
 
 ### Stage 1: Preprocess
 

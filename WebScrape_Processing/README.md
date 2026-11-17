@@ -7,6 +7,8 @@ Code that works with product listings before segmentation. It has two parts:
 
 See the [main README](../README.md) for how these fit into the pipeline.
 
+The web scraper that builds the pipeline's input, `webscrape_output/all_products.json`, isn't in this folder or anywhere else in this repository. If you'd like to use it, email [davinkyi@gmail.com](mailto:davinkyi@gmail.com).
+
 ## Stage 1 helpers
 
 | File | Function | What it does |
